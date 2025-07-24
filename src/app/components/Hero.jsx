@@ -269,7 +269,7 @@ function Hero() {
               className="w-full sm:w-auto"
             >
               <a
-                href="https://cal.com/am-abdulmueed/30min"
+                href="https://cal.com/am-abdulmueed.vercel.app/30min"
                 target="_blank"
                 rel="noopener noreferrer"
               >
