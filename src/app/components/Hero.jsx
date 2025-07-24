@@ -42,6 +42,7 @@ import {
   Zap,
   Star,
   Heart,
+  PhoneCall,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -125,7 +126,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen  flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden pt-8 sm:pt-0">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-purple-950/20"></div>
 
@@ -268,13 +269,13 @@ function Hero() {
               className="w-full sm:w-auto"
             >
               <a
-                href="https://github.com/am-abdulmueed/portfolio"
+                href="cal.com/am-abdulmueed.vercel.app/30min"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button className="group w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 border-0 text-sm sm:text-base">
-                  <Github className="w-4 h-4 mr-2 group-hover:text-gray-300 transition-colors" />
-                  Get Code
+                  <PhoneCall className="w-4 h-4 mr-2 group-hover:text-gray-300 transition-colors animate-wiggle" />
+                  Book a Call
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
@@ -439,3 +440,17 @@ function Hero() {
 }
 
 export default Hero;
+
+<style jsx global>{`
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-15deg) translateY(0); }
+    20% { transform: rotate(15deg) translateY(-2px); }
+    40% { transform: rotate(-10deg) translateY(2px); }
+    60% { transform: rotate(10deg) translateY(-2px); }
+    80% { transform: rotate(-5deg) translateY(2px); }
+  }
+  .animate-wiggle {
+    animation: wiggle 1s infinite;
+    display: inline-block;
+  }
+`}</style>

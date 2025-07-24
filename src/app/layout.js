@@ -64,8 +64,8 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      
-      <Toaster />
+      <body className={bricolage_grotesque.className}>
+        <Toaster />
         <NextTopLoader
         color="hsl(var(--primary))"
         initialPosition={0.08}
@@ -81,18 +81,12 @@ export default function RootLayout({ children }) {
         zIndex={1600}
         showAtBottom={false}
         />
-      <body className={bricolage_grotesque.className}>
-      <ThemeProvider enableSystem={true} attribute="class" defaultTheme="system" >
-        <Header/>
-        
-        {children}
-        
-        
-      
+        <ThemeProvider enableSystem={true} attribute="class" defaultTheme="system" >
+          <Header/>
+          {children}
           <Footer/>
         </ThemeProvider>
       </body>
-      
     </html>
   );
 }
