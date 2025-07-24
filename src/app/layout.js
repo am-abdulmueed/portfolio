@@ -21,11 +21,11 @@ export const metadata = {
   openGraph: {
     title: 'Abdul Mueed | Full-stack Developer',
     description: 'Explore the portfolio of Abdul Mueed — full-stack developer, designer, and creator. Discover projects, skills, and experience.',
-    url: 'https://am-abdulmueed-vercel.app',
+    url: 'https://am-abdulmueed.vercel.app',
     type: 'website',
     images: [
       {
-        url: '/abdul.webp',
+        url: 'https://am-abdulmueed.vercel.app/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Abdul Mueed Portfolio',
@@ -36,7 +36,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Abdul Mueed | Full-stack Developer',
     description: 'Explore the portfolio of Abdul Mueed — full-stack developer, designer, and creator. Discover projects, skills, and experience.',
-    images: ['/abdul.webp'],
+    images: ['https://am-abdulmueed.vercel.app/og-image.jpg'],
     site: '@amabdulmueed',
   },
   metadataBase: new URL('https://am-abdulmueed-vercel.app'),
