@@ -1,0 +1,88 @@
+import "./globals.css";
+import { cn } from "@/lib/utils";
+import Providers from "./providers";
+import Header from "@/components/custom/header/Header";
+import Footer from "@/components/custom/footer/Footer";
+import AdblockDetector from "@/components/custom/AdblockDetector";
+import Script from "next/script";
+import localFont from 'next/font/local'
+
+const sfpDisplay = localFont({
+  src: [
+    {
+      path: '../../public/fonts/sfprodisplay/sf-regular.otf',
+      weight: '400'
+    },
+    {
+      path: '../../public/fonts/sfprodisplay/sf-medium.otf',
+      weight: '600'
+    },
+    {
+      path: '../../public/fonts/sfprodisplay/sf-bold.otf',
+      weight: '700'
+    }
+  ],
+  variable: '--font-sfpdisplay'
+})
+
+export const metadata = {
+  title: "muxio",
+  description: "Muxio: Discover, trend & stream from top platforms",
+  metadataBase: new URL("https://muxio.vercel.app"),
+  openGraph: {
+    title: "muxio",
+    description: "Muxio: Discover, trend & stream from top platforms",
+    url: "https://muxio.vercel.app",
+    siteName: "muxio",
+    images: [
+      {
+        url: "/images/blog/feature.jpg",
+        width: 1200,
+        height: 630,
+        alt: "muxio - Feel free when playing music",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "muxio",
+    description: "Muxio: Discover, trend & stream from top platforms",
+    images: ["/images/blog/feature.jpg"],
+  },
+};
+
+const RootLayout = ({ children }) => {
+  return (
+    <html lang="en" className="dark">
+      <head>
+        {/* <Script
+          id="adsense-script"
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-${process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID}`}
+          crossorigin="anonymous"
+          strategy="lazyOnload">
+        </Script> */}
+      </head>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          sfpDisplay.variable,
+        )} suppressHydrationWarning
+      >
+        <Providers>
+          {/* <AdblockDetector /> */}
+          <Header />
+          {children}
+          <Footer />
+          <div itemScope itemType="https://schema.org/WebSite">
+            <link itemProp="url" href="https://simpmusic.org" />
+            <meta itemProp="name" content="muxio" />
+          </div>
+        </Providers>
+      </body>
+    </html>
+  );
+};
+export default RootLayout;
