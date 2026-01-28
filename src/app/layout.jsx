@@ -26,20 +26,33 @@ const sfpDisplay = localFont({
 })
 
 export const metadata = {
-  title: "muxio",
-  description: "Muxio: Discover, trend & stream from top platforms",
-  metadataBase: new URL("https://muxio.vercel.app"),
+  title: {
+    default: "Muxio - Discover, Stream & Download Music",
+    template: "%s | Muxio",
+  },
+  description: "Muxio brings music discovery inspired by YouTube Music & SoundCloud, with playback up to 256kbps audio or 1080p video. Personalize your experience with a sleek UI influenced by Spotify.",
+  applicationName: "Muxio",
+  authors: [{ name: "am-abdulmueed", url: "https://github.com/am-abdulmueed" }],
+  generator: "Next.js",
+  keywords: ["music", "streaming", "download", "youtube music", "soundcloud", "spotify alternative", "muxio", "audio", "video", "abdulmueed", "abdul mueed", "betapix", "betaae", "a.b.d.u.l.m.u.e.e.d"],
+  referrer: "origin-when-cross-origin",
+  creator: "Abdul Mueed",
+  publisher: "Abdul Mueed",
+  metadataBase: new URL("https://muxio-web.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "muxio",
-    description: "Muxio: Discover, trend & stream from top platforms",
-    url: "https://muxio.vercel.app",
-    siteName: "muxio",
+    title: "Muxio - Discover, Stream & Download Music",
+    description: "Muxio brings music discovery inspired by YouTube Music & SoundCloud, with playback up to 256kbps audio or 1080p video. Personalize your experience with a sleek UI influenced by Spotify.",
+    url: "https://muxio-web.vercel.app",
+    siteName: "Muxio",
     images: [
       {
-        url: "/images/blog/feature.jpg",
+        url: "https://muxio-web.vercel.app/opengraph.png",
         width: 1200,
         height: 630,
-        alt: "muxio - Feel free when playing music",
+        alt: "Muxio - Music Discovery App",
       },
     ],
     locale: "en_US",
@@ -47,9 +60,28 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "muxio",
-    description: "Muxio: Discover, trend & stream from top platforms",
-    images: ["/images/blog/feature.jpg"],
+    title: "Muxio - Discover, Stream & Download Music",
+    description: "Muxio brings music discovery inspired by YouTube Music & SoundCloud, with playback up to 256kbps audio or 1080p video. Personalize your experience with a sleek UI influenced by Spotify.",
+    images: ["https://muxio-web.vercel.app/opengraph.png"],
+    creator: "@am_abdulmueed", // Assuming handle or generic
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  appleWebApp: {
+    title: "Muxio",
+    statusBarStyle: "default",
+    startupImage: [
+      "/opengraph.png",
+    ],
   },
 };
 
