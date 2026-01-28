@@ -1,9 +1,8 @@
 import fs from "fs";
 import { MetadataRoute } from "next";
 import path from "path";
-import { databases, COLLECTION_ID, DATABASE_ID, Query } from "@/lib/appwrite";
 
-const baseUrl = "https://simpmusic.org";
+const baseUrl = "https://muxio-web.vercel.app";
 const baseDir = "src/app";
 const excludeDirs = ["api", "fonts"];
 
@@ -19,22 +18,6 @@ async function getRoutes() {
       routes.push(`/${entry.name}`);
     }
   });
-
-  // to create dynamic routes.
-  async function getBlogs() {
-    const response = await databases.listDocuments(DATABASE_ID, COLLECTION_ID, [
-      Query.orderDesc("createdAt"),
-    ]);
-    const blogsViRoute = response.documents.map(
-      (blog) => `/blogs/vi/${blog.slug}`
-    );
-    const blogsEnRoute = response.documents.map(
-      (blog) => `/blogs/en/${blog.slug}`
-    );
-    routes = [...routes, ...blogsViRoute, ...blogsEnRoute];
-  }
-
-  await getBlogs();
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
