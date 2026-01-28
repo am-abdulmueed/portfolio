@@ -57,5 +57,6 @@
   },
   "browser": {
     "crypto": false
-  }
+  },
+  "packageManager": "pnpm@9.15.0"
 }
