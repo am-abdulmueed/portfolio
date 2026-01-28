@@ -77,8 +77,8 @@ const RootLayout = ({ children }) => {
           {children}
           <Footer />
           <div itemScope itemType="https://schema.org/WebSite">
-            <link itemProp="url" href="https://simpmusic.org" />
-            <meta itemProp="name" content="muxio" />
+            <link itemProp="url" href="https://muxio-web.vercel.app" />
+            <meta itemProp="name" content="Muxio" />
           </div>
         </Providers>
       </body>
