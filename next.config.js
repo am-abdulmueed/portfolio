@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "raw.githubusercontent.com",
       },
+      {
+        protocol: "https",
+        hostname: process.env.NEXT_PUBLIC_APPWRITE_IMAGE_ENDPOINT,
+      },
     ],
   },
   compiler: {

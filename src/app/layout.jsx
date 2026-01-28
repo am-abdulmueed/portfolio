@@ -26,20 +26,20 @@ const sfpDisplay = localFont({
 })
 
 export const metadata = {
-  title: "Muxio - Discover, Stream & Download Music",
-  description: "Muxio brings music discovery inspired by YouTube Music & SoundCloud, with playback up to 256kbps audio or 1080p video. Personalize your experience with a sleek UI influenced by Spotify.",
-  metadataBase: new URL("https://muxio-web.vercel.app"),
+  title: "muxio",
+  description: "Muxio: Discover, trend & stream from top platforms",
+  metadataBase: new URL("https://muxio.vercel.app"),
   openGraph: {
-    title: "Muxio - Discover, Stream & Download Music",
-    description: "Muxio brings music discovery inspired by YouTube Music & SoundCloud, with playback up to 256kbps audio or 1080p video. Personalize your experience with a sleek UI influenced by Spotify.",
-    url: "https://muxio-web.vercel.app",
-    siteName: "Muxio",
+    title: "muxio",
+    description: "Muxio: Discover, trend & stream from top platforms",
+    url: "https://muxio.vercel.app",
+    siteName: "muxio",
     images: [
       {
-        url: "/opengraph.png",
+        url: "/images/blog/feature.jpg",
         width: 1200,
         height: 630,
-        alt: "Muxio - Music Discovery App",
+        alt: "muxio - Feel free when playing music",
       },
     ],
     locale: "en_US",
@@ -47,9 +47,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muxio - Discover, Stream & Download Music",
-    description: "Muxio brings music discovery inspired by YouTube Music & SoundCloud, with playback up to 256kbps audio or 1080p video. Personalize your experience with a sleek UI influenced by Spotify.",
-    images: ["/opengraph.png"],
+    title: "muxio",
+    description: "Muxio: Discover, trend & stream from top platforms",
+    images: ["/images/blog/feature.jpg"],
   },
 };
 

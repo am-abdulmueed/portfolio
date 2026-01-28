@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "generate-ads": "node scripts/generate-ads-txt.js",
-    "build": "next build",
+    "build": "npm run generate-ads && next build",
     "start": "next start",
     "lint": "next lint"
   },
