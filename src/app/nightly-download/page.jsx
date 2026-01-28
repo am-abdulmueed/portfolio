@@ -11,12 +11,12 @@ export default function NightlyDownload() {
     
     // Download URLs for different platforms
     const downloadUrls = {
-        android: process.env.NEXT_PUBLIC_NIGHTLY_DOWNLOAD_ANDROID_URL || '#',
-        windows: process.env.NEXT_PUBLIC_NIGHTLY_DOWNLOAD_WINDOWS_URL || '#',
-        linuxDeb: process.env.NEXT_PUBLIC_NIGHTLY_DOWNLOAD_LINUX_DEB_URL || '#',
-        linuxRpm: process.env.NEXT_PUBLIC_NIGHTLY_DOWNLOAD_LINUX_RPM_URL || '#',
-        linuxAppImage: process.env.NEXT_PUBLIC_NIGHTLY_DOWNLOAD_LINUX_APPIMAGE_URL || '#',
-        macos: process.env.NEXT_PUBLIC_NIGHTLY_DOWNLOAD_MACOS_URL || '#'
+        android: '#',
+        windows: '#',
+        linuxDeb: '#',
+        linuxRpm: '#',
+        linuxAppImage: '#',
+        macos: '#'
     }
     
     // Platform configurations
