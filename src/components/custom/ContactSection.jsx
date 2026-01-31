@@ -80,10 +80,10 @@ const ContactSection = () => {
           <div className="flex flex-col gap-6 text-center md:text-left">
             <div>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend mb-4">
-                Let's Connect
+                Let&apos;s Connect
               </h2>
               <p className="text-default-500 text-lg md:text-xl leading-relaxed max-w-md mx-auto md:mx-0">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
               </p>
             </div>
 

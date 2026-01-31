@@ -15,10 +15,8 @@ export default function BlogsFilter({ blogs, defaultImage }) {
   const [currentLang, setCurrentLang] = useState('en');
 
   useEffect(() => {
-    console.log('useEffect', blogs);
     const savedLang = localStorage.getItem('language') || 'en';
     setCurrentLang(savedLang);
-    console.log(savedLang);
   }, []);
 
   const filteredBlogs = blogs.filter(blog => {
