@@ -73,6 +73,8 @@ export default function Navbar() {
         className={`z-50 pt-2 ${scroll ? "bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60" : "bg-transparent"}`}
         position="sticky"
         disableScrollHandler
+        onMenuOpenChange={setIsMenuOpen}
+        isMenuOpen={isMenuOpen}
       >
         <NavbarContent className="md:hidden pr-3" justify="start">
           <NavbarBrand>
@@ -82,14 +84,13 @@ export default function Navbar() {
 
         <NavbarContent className="md:hidden" justify="end">
           <ThemeSwitcher />
-          <Button
-            isIconOnly
-            variant="light"
-            onClick={() => setIsMenuOpen(true)}
-            aria-label="Open menu"
+          <button
+            className="md:hidden text-3xl font-bold leading-none focus:outline-none transition-transform hover:scale-110 active:scale-95"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            <Menu size={24} />
-          </Button>
+            {isMenuOpen ? <X size={28} /> : "≡"}
+          </button>
         </NavbarContent>
 
         <NavbarContent className="hidden md:flex gap-4" justify="start">
@@ -132,51 +133,51 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[90] bg-black/50 backdrop-blur-sm md:hidden"
               onClick={() => setIsMenuOpen(false)}
-              className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm md:hidden"
             />
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-              className="fixed top-0 right-0 z-[101] h-full w-[280px] bg-background/95 backdrop-blur-xl shadow-2xl md:hidden border-l border-default-100"
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              drag="y"
+              dragConstraints={{ top: 0 }}
+              dragElastic={{ top: 0, bottom: 0.5 }}
+              onDragEnd={(e, { offset, velocity }) => {
+                if (offset.y > 50 || velocity.y > 500) {
+                  setIsMenuOpen(false);
+                }
+              }}
+              className="fixed bottom-0 left-0 right-0 z-[100] h-[50vh] bg-background/95 backdrop-blur-xl rounded-t-3xl border-t border-default-200 shadow-2xl p-6 md:hidden flex flex-col overflow-y-auto"
             >
-              <div className="flex flex-col h-full">
-                <div className="flex justify-end p-4">
-                  <Button
-                    isIconOnly
-                    variant="light"
-                    onClick={() => setIsMenuOpen(false)}
-                    aria-label="Close menu"
+              <div className="flex justify-center mb-4">
+                <div className="w-12 h-1.5 rounded-full bg-default-300" />
+              </div>
+              <div className="flex flex-col gap-4">
+                {menus.map((item, index) => (
+                  <Link
+                    key={`${item}-${index}`}
+                    className="w-full"
+                    color="foreground"
+                    href={item.path}
+                    as={item.isExternal ? undefined : NextLink}
+                    isExternal={item.isExternal}
+                    showAnchorIcon={item.isExternal}
+                    onPress={() => setIsMenuOpen(false)}
+                    size="lg"
                   >
-                    <X size={24} />
-                  </Button>
-                </div>
-                <div className="flex flex-col px-6 gap-6 mt-4">
-                  {menus.map((item, index) => (
-                    <Link
-                      key={`${item}-${index}`}
-                      as={item.isExternal ? undefined : NextLink}
-                      className="w-full"
-                      color="foreground"
-                      href={item.path}
-                      isExternal={item.isExternal}
-                      showAnchorIcon={item.isExternal}
-                      onPress={() => setIsMenuOpen(false)}
+                    <p
+                      className={
+                        (item.path === '/blogs' && isBlogPage) || pathName === item.path
+                          ? "font-bold text-2xl text-primary w-full text-center py-2"
+                          : "font-semibold text-2xl w-full text-center py-2"
+                      }
                     >
-                      <p
-                        className={
-                          (item.path === '/blogs' && isBlogPage) || pathName === item.path
-                            ? "font-bold text-xl text-primary"
-                            : "font-semibold text-xl"
-                        }
-                      >
-                        {item.title}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
+                      {item.title}
+                    </p>
+                  </Link>
+                ))}
               </div>
             </motion.div>
           </>

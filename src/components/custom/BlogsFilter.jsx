@@ -19,7 +19,7 @@ export default function BlogsFilter({ blogs, defaultImage }) {
     const savedLang = localStorage.getItem('language') || 'en';
     setCurrentLang(savedLang);
     console.log(savedLang);
-  }, [blogs]);
+  }, []);
 
   const filteredBlogs = blogs.filter(blog => {
     const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||

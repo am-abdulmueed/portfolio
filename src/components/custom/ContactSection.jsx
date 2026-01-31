@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Card,
@@ -6,7 +7,7 @@ import {
   Button,
   Divider,
 } from "@nextui-org/react";
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaCalendarAlt, FaArrowRight } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaCalendarAlt, FaArrowRight, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
@@ -34,10 +35,17 @@ const ContactSection = () => {
       variant: "flat",
     },
     {
-      name: "X (Twitter)",
+      name: "Twitter",
       icon: <FaXTwitter size={24} />,
       url: "https://x.com/a.b.d.u.l.m.u.e.e.d",
       color: "default",
+      variant: "flat",
+    },
+    {
+      name: "Discord",
+      icon: <FaDiscord size={24} />,
+      url: "https://discord.com/users/am_abdulmueed", 
+      color: "secondary",
       variant: "flat",
     },
     {
@@ -72,10 +80,10 @@ const ContactSection = () => {
           <div className="flex flex-col gap-6 text-center md:text-left">
             <div>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend mb-4">
-                Let&apos;s Connect
+                Let's Connect
               </h2>
               <p className="text-default-500 text-lg md:text-xl leading-relaxed max-w-md mx-auto md:mx-0">
-                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
               </p>
             </div>
 
@@ -117,7 +125,7 @@ const ContactSection = () => {
                       isExternal
                       variant="ghost"
                       color={link.color}
-                      className={`h-14 justify-start px-4 border-default-200/50 hover:border-${link.color}/50 hover:bg-${link.color}/10 transition-all duration-300 group ${index === socialLinks.length - 1 ? "col-span-2 justify-center" : ""}`}
+                      className={`h-14 justify-start px-4 border-default-200/50 hover:border-${link.color}/50 hover:bg-${link.color}/10 transition-all duration-300 group`}
                       startContent={
                         <span className={`text-${link.color} group-hover:scale-110 transition-transform`}>
                             {link.icon}
