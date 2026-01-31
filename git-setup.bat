@@ -1,7 +1,6 @@
 @echo off
 :: 👑 Git Full Auto Setup & Push by Abdul Mueed
 
-color 0A
 title 🚀 GIT INIT & PUSH - Abdul Mueed 💻
 
 echo ======================================================

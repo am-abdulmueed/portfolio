@@ -6,14 +6,14 @@ import { FaAndroid, FaWindows, FaApple, FaLinux, FaGooglePlay, FaAppStoreIos, Fa
 const mobilePlatforms = [
   {
     name: "Play Store",
-    url: "https://play.google.com/store/apps/details?id=com.maxrave.muxio",
+    url: "https://play.google.com/store/apps/details?id=com.betapix.muxio",
     icon: <FaGooglePlay size={32} />,
     description: "Get it on Google Play",
     color: "bg-green-100 dark:bg-green-900/20",
   },
   {
     name: "App Store",
-    url: "https://apps.apple.com/app/com.maxrave.muxio",
+    url: "https://apps.apple.com/app/com.betapix.muxio",
     icon: <FaAppStoreIos size={32} />,
     description: "Download on the App Store",
     color: "bg-blue-100 dark:bg-blue-900/20",
@@ -78,7 +78,7 @@ const DownloadSection = () => {
                     as={Link} 
                     href={item.url} 
                     isExternal
-                    className="border-small border-default-200/50 bg-background/40 backdrop-blur-md hover:scale-[1.02] transition-transform"
+                    className="border-small border-default-200/50 bg-background/40 backdrop-blur-md hover:scale-[1.02] transition-transform rounded-3xl"
                   >
                     <CardBody className="flex flex-row items-center gap-4 p-4">
                       <div className={`p-3 rounded-xl ${item.color} flex items-center justify-center w-16 h-16`}>
@@ -111,7 +111,7 @@ const DownloadSection = () => {
                     as={Link}
                     href={platform.url}
                     isExternal
-                    className="border-small border-default-200/50 bg-background/40 backdrop-blur-md hover:scale-[1.02] transition-transform"
+                    className="border-small border-default-200/50 bg-background/40 backdrop-blur-md hover:scale-[1.02] transition-transform rounded-3xl"
                   >
                      <CardBody className="flex flex-row items-center gap-6 p-6">
                         <div className="p-2">

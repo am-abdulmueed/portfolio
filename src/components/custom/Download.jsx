@@ -26,7 +26,7 @@ export default function Download() {
   }, []);
 
   return (
-    <Card className="bg-background/40 backdrop-blur-md border-small border-default-200/50 shadow-sm w-full">
+    <Card className="bg-background/40 backdrop-blur-md border-small border-default-200/50 shadow-sm w-full rounded-3xl">
       <CardBody className="py-12 flex flex-col items-center justify-center gap-2">
           <h1
           className="text-center text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend drop-shadow-sm"

@@ -17,7 +17,7 @@ const communities = [
     title: "GitHub",
     description: "Contribute to the project on GitHub or create an issue.",
     icon: <FaGithub size={40} className="text-foreground" />,
-    url: "https://github.com/maxrave-dev/SimpMusic",
+    url: "https://github.com/am-abdulmueed",
   },
   {
     title: "Crowdin",
@@ -57,7 +57,7 @@ const Footer = () => {
             isBlurred
             isPressable
             onPress={() => window.open(item.url, "_blank")}
-            className="text-center shrink py-7 px-10 border-small border-default-200/50 bg-background/60 backdrop-blur-md hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out w-96"
+            className="text-center shrink py-7 px-10 border-small border-default-200/50 bg-background/60 backdrop-blur-md hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out w-96 rounded-3xl"
           >
             <CardHeader className="flex gap-3">
               {item.icon ? (
@@ -85,7 +85,7 @@ const Footer = () => {
       </div>
       <div className="pt-20 grid grid-cols-1 justify-items-center gap-2">
         <p className="text-center text-default-500 text-md">
-          © 2026 muxio - @am-abdulmueed
+          © {new Date().getFullYear()} muxio
         </p>
         <div className="flex gap-4 items-center">
           <NextLink href="/privacy-policy" passHref>
@@ -102,6 +102,9 @@ const Footer = () => {
             Built with Next.js
           </Link>
         </div>
+        <p className="text-center text-default-500 text-lg mt-2 tracking-[0.2em] font-bold hover:text-foreground transition-colors cursor-default">
+          a·b·d·u·l·m·u·e·e·d
+        </p>
       </div>
     </div>
   );

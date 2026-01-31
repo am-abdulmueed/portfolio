@@ -9,7 +9,7 @@ import {
   Chip,
   Divider,
 } from "@nextui-org/react";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Code2, Database, Globe, Smartphone, Terminal, Wrench, Monitor } from "lucide-react";
 
@@ -79,7 +79,7 @@ const AboutSection = () => {
           
           {/* Profile Card */}
           <div className="md:col-span-1">
-            <Card className="h-full bg-background/60 backdrop-blur-md border-small border-default-200/50 shadow-sm hover:shadow-md transition-shadow">
+            <Card className="h-full bg-background/60 backdrop-blur-md border-small border-default-200/50 shadow-sm hover:shadow-md transition-shadow rounded-3xl">
               <CardBody className="flex flex-col items-center text-center gap-4 py-8">
                 <div className="relative group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 blur"></div>
@@ -120,7 +120,7 @@ const AboutSection = () => {
                     isExternal
                     isIconOnly
                     variant="flat"
-                    color="primary"
+                    color="default"
                     aria-label="LinkedIn"
                     className="hover:scale-110 transition-transform"
                   >
@@ -150,6 +150,18 @@ const AboutSection = () => {
                   >
                     <FaXTwitter size={22} />
                   </Button>
+                  <Button
+                    href="mailto:am.abdulmueed3@gmail.com"
+                    as={Link}
+                    isExternal
+                    isIconOnly
+                    variant="flat"
+                    color="warning"
+                    aria-label="Email"
+                    className="hover:scale-110 transition-transform"
+                  >
+                    <FaEnvelope size={22} />
+                  </Button>
                 </div>
               </CardBody>
             </Card>
@@ -157,7 +169,7 @@ const AboutSection = () => {
 
           {/* Details Card */}
           <div className="md:col-span-2">
-            <Card className="h-full bg-background/60 backdrop-blur-md border-small border-default-200/50 shadow-sm">
+            <Card className="h-full bg-background/60 backdrop-blur-md border-small border-default-200/50 shadow-sm rounded-3xl">
               <CardHeader className="flex flex-col items-start px-6 pt-6 pb-0">
                 <h4 className="text-xl font-bold text-foreground">About Me</h4>
               </CardHeader>

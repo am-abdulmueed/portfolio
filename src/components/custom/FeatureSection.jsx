@@ -80,7 +80,7 @@ const FeatureSection = () => {
           <Card
             key={index}
             isBlurred
-            className={`py-8 border-small border-default-200/50 bg-background/40 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out group ${feature.borderColor}`}
+            className={`py-8 border-small border-default-200/50 bg-background/40 backdrop-blur-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 ease-out group ${feature.borderColor} rounded-3xl`}
           >
             <CardHeader className="flex justify-center pb-6">
               <div className={`p-6 rounded-2xl bg-gradient-to-br ${feature.color} shadow-inner`}>
