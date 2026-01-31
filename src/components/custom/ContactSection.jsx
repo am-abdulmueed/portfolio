@@ -72,10 +72,10 @@ const ContactSection = () => {
           <div className="flex flex-col gap-6 text-center md:text-left">
             <div>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend mb-4">
-                Let's Connect
+                Let&apos;s Connect
               </h2>
               <p className="text-default-500 text-lg md:text-xl leading-relaxed max-w-md mx-auto md:mx-0">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
               </p>
             </div>
 
@@ -108,7 +108,7 @@ const ContactSection = () => {
                     <h3 className="text-xl font-semibold">Social Platforms</h3>
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                   {socialLinks.map((link, index) => (
                     <Button
                       key={index}
@@ -117,7 +117,7 @@ const ContactSection = () => {
                       isExternal
                       variant="ghost"
                       color={link.color}
-                      className={`h-14 justify-start px-4 border-default-200/50 hover:border-${link.color}/50 hover:bg-${link.color}/10 transition-all duration-300 group ${index === socialLinks.length - 1 ? "sm:col-span-2 sm:justify-center" : ""}`}
+                      className={`h-14 justify-start px-4 border-default-200/50 hover:border-${link.color}/50 hover:bg-${link.color}/10 transition-all duration-300 group ${index === socialLinks.length - 1 ? "col-span-2 justify-center" : ""}`}
                       startContent={
                         <span className={`text-${link.color} group-hover:scale-110 transition-transform`}>
                             {link.icon}
