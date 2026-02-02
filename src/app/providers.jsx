@@ -6,7 +6,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 const Providers = ({ children }) => {
   return (
     <NextUIProvider>
-      <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
+      <NextThemesProvider attribute="class" defaultTheme="dark" enableSystem>
         {children}
       </NextThemesProvider>
     </NextUIProvider>

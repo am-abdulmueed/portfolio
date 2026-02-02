@@ -50,7 +50,7 @@ export default function Navbar() {
     { title: "Download", path: "/download" },
     { title: "About Us", path: "/about" },
     { title: "Contact", path: "/contact" },
-    { title: "GitHub", path: "https://github.com/am-abdulmueed/muxio", isExternal: true },
+    { title: "GitHub", path: "https://github.com/am-abdulmueed/", isExternal: true },
   ];
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState(false);
@@ -71,7 +71,7 @@ export default function Navbar() {
         isBordered={false}
         maxWidth="2xl"
         className={`z-50 pt-2 ${scroll ? "bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60" : "bg-transparent"}`}
-        position="sticky"
+        position="fixed"
         disableScrollHandler
         onMenuOpenChange={setIsMenuOpen}
         isMenuOpen={isMenuOpen}

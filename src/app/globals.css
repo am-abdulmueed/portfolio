@@ -85,6 +85,11 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    scrollbar-gutter: stable both-edges;
+  }
   body {
     @apply bg-background text-foreground overflow-x-hidden;
   }

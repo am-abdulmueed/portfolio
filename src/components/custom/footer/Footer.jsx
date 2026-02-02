@@ -1,9 +1,8 @@
 "use client";
-import { Card, CardBody, CardHeader, Image, Link } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
 import React from "react";
-import { TbBrandNextjs } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
-import NextLink from "next/link";
+import { usePathname } from "next/navigation";
 
 const communities = [
   {
@@ -28,8 +27,10 @@ const communities = [
   },
 ];
 const Footer = () => {
+  const pathname = usePathname();
+  const isAbout = pathname.startsWith("/about");
   return (
-    <div className="relative isolate px-6 py-28 lg:px-8">
+    <div className={`relative isolate px-6 ${isAbout ? "py-10" : "py-28"} lg:px-8`}>
       <div
         className="absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl"
         aria-hidden="true"
@@ -42,7 +43,7 @@ const Footer = () => {
           }}
         ></div>
       </div>
-      <div className="py-20">
+      <div className={isAbout ? "py-8" : "py-20"}>
         <h2 className="scroll-m-20 text-center text-4xl font-bold tracking-tight lg:text-5xl pb-4 bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend">
           Community
         </h2>
@@ -83,25 +84,10 @@ const Footer = () => {
           </Card>
         ))}
       </div>
-      <div className="pt-20 grid grid-cols-1 justify-items-center gap-2">
+      <div className={`${isAbout ? "pt-10" : "pt-20"} grid grid-cols-1 justify-items-center gap-2`}>
         <p className="text-center text-default-500 text-md">
           © {new Date().getFullYear()} muxio
         </p>
-        <div className="flex gap-4 items-center">
-          <NextLink href="/privacy-policy" passHref>
-            <span className="text-center text-default-500 text-md hover:text-foreground cursor-pointer transition-colors">
-              Privacy Policy
-            </span>
-          </NextLink>
-          <Link
-            className="text-center text-default-500 text-md hover:text-foreground transition-colors"
-            isExternal
-            showAnchorIcon
-            href="https://nextjs.org/"
-          >
-            Built with Next.js
-          </Link>
-        </div>
         <p className="text-center text-default-500 text-lg mt-2 tracking-[0.2em] font-bold hover:text-foreground transition-colors cursor-default">
           a·b·d·u·l·m·u·e·e·d
         </p>

@@ -33,8 +33,8 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <IntroSection />
       <div className="lg:px-16 md:px-16 sm:px-10">
-        <IntroSection />
         <AdSense className="my-8" />
         <DescriptionSection />
         <FeatureSection />
