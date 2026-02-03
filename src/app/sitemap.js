@@ -2,7 +2,7 @@ import fs from "fs";
 import { MetadataRoute } from "next";
 import path from "path";
 
-const baseUrl = "https://muxio-web.vercel.app";
+const baseUrl = "https://muxioo.vercel.app";
 const baseDir = "src/app";
 const excludeDirs = ["api", "fonts"];
 

@@ -18,6 +18,8 @@ import { usePathname } from "next/navigation";
 import { Github, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaDiscord } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 async function fetcher() {
   try {
@@ -116,7 +118,7 @@ export default function Navbar() {
                 isExternal={menu.isExternal}
                 showAnchorIcon={menu.isExternal}
               >
-                <p className="font-semibold">{menu.title}</p>
+                <p className="font-bold">{menu.title}</p>
               </Button>
             </NavbarItem>
           ))}
@@ -171,13 +173,67 @@ export default function Navbar() {
                       className={
                         (item.path === '/blogs' && isBlogPage) || pathName === item.path
                           ? "font-bold text-2xl text-primary w-full text-center py-2"
-                          : "font-semibold text-2xl w-full text-center py-2"
+                          : "font-bold text-2xl w-full text-center py-2"
                       }
                     >
                       {item.title}
                     </p>
                   </Link>
                 ))}
+              </div>
+              <div className="mt-6 mb-6">
+                <div className="w-full h-px bg-default-200/60" />
+                <p className="text-center text-sm text-default-500 mt-3">Connect</p>
+                <div className="flex justify-center gap-4 mt-2 mb-4">
+                  <Link
+                    isExternal
+                    href="https://github.com/am-abdulmueed"
+                    aria-label="GitHub"
+                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
+                  >
+                    <FaGithub size={22} />
+                  </Link>
+                  <Link
+                    isExternal
+                    href="https://x.com/a.b.d.u.l.m.u.e.e.d"
+                    aria-label="X (Twitter)"
+                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
+                  >
+                    <FaXTwitter size={22} />
+                  </Link>
+                  <Link
+                    isExternal
+                    href="https://www.instagram.com/a.b.d.u.l.m.u.e.e.d/"
+                    aria-label="Instagram"
+                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
+                  >
+                    <FaInstagram size={22} />
+                  </Link>
+                  <Link
+                    isExternal
+                    href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fmuxioo.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20"
+                    aria-label="Email"
+                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
+                  >
+                    <FaEnvelope size={22} />
+                  </Link>
+                  <Link
+                    isExternal
+                    href="https://discord.com/users/am_abdulmueed"
+                    aria-label="Discord"
+                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
+                  >
+                    <FaDiscord size={22} />
+                  </Link>
+                  <Link
+                    isExternal
+                    href="https://www.linkedin.com/in/abdulmueed/"
+                    aria-label="LinkedIn"
+                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
+                  >
+                    <FaLinkedin size={22} />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </>

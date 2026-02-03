@@ -84,14 +84,20 @@
 @layer base {
   * {
     @apply border-border;
+    cursor: none !important;
   }
   html {
     overflow-x: hidden;
     overscroll-behavior-x: none;
     scrollbar-gutter: stable both-edges;
+    cursor: none !important;
   }
   body {
     @apply bg-background text-foreground overflow-x-hidden;
+    cursor: none !important;
+  }
+  a, button, [role="button"], input, select, textarea {
+    cursor: none !important;
   }
 }
 

@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
 
           <h2>10. Contact Us</h2>
           <p>If you have any questions about this Privacy Policy, please contact us:</p>
-          <p>By email: <a href="mailto:ndtminh2608@gmail.com">ndtminh2608@gmail.com</a></p>
+          <p>By email: <a href="mailto:am.abdulmueed3@gmail.com">support@muxio.com</a></p>
         </div>
 
         <div className="mt-8">
@@ -130,7 +130,7 @@ export default function PrivacyPolicy() {
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Quay về trang chủ
+            Return to homepage
           </Link>
         </div>
       </div>
