@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Providers from "./providers";
 import Header from "@/components/custom/header/Header";
 import Footer from "@/components/custom/footer/Footer";
-import AdblockDetector from "@/components/custom/AdblockDetector";
+// import AdblockDetector from "@/components/custom/AdblockDetector";
 import CustomCursor from "@/components/custom/CustomCursor";
 import BubbleBlast from "@/components/custom/BubbleBlast";
 import RightClickDisable from "@/components/custom/RightClickDisable";
@@ -110,7 +110,7 @@ const RootLayout = ({ children }) => {
           <CustomCursor />
           <BubbleBlast />
           <RightClickDisable />
-          <AdblockDetector />
+          {/* <AdblockDetector /> */}
           <Header />
           {children}
           <Footer />
