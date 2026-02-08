@@ -151,7 +151,7 @@ export default function Navbar() {
                   setIsMenuOpen(false);
                 }
               }}
-              className="fixed bottom-0 left-0 right-0 z-[100] h-[50vh] bg-background/95 backdrop-blur-xl rounded-t-3xl border-t border-default-200 shadow-2xl p-6 md:hidden flex flex-col overflow-y-auto"
+              className="fixed bottom-0 left-0 right-0 z-[100] h-[65vh] bg-background/95 backdrop-blur-xl rounded-t-3xl border-t border-default-200 shadow-2xl p-6 md:hidden flex flex-col overflow-y-auto pb-2"
             >
               <div className="flex justify-center mb-4">
                 <div className="w-12 h-1.5 rounded-full bg-default-300" />
@@ -181,10 +181,10 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
-              <div className="mt-6 mb-6">
+              <div className="mt-6 mb-0">
                 <div className="w-full h-px bg-default-200/60" />
                 <p className="text-center text-sm text-default-500 mt-3">Connect</p>
-                <div className="flex justify-center gap-4 mt-2 mb-4">
+                <div className="flex justify-center gap-4 mt-2 mb-1">
                   <Link
                     isExternal
                     href="https://github.com/am-abdulmueed"
