@@ -32,9 +32,9 @@ const HomeHeading = () => {
           >
             Download Now
           </Button>
-          <Chip variant="flat" color="secondary" size="lg">
+          <p className="text-default-500 font-medium">
              v{version}
-          </Chip>
+          </p>
         </div>
       </div>
       <div className="flex gap-2 items-center text-sm text-default-400 mt-2">

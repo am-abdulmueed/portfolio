@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
+import { ExternalLink } from "lucide-react";
 
 const ScreenshotSection = () => {
   return (
@@ -21,15 +22,16 @@ const ScreenshotSection = () => {
             style={{ objectFit: "contain" }}
           />
           <Button
-            className="absolute hidden group-hover:block transition-all duration-500 ease-in-out"
-            color="secondary"
+            className="absolute opacity-0 group-hover:opacity-100 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-out transform scale-90 group-hover:scale-100 bg-black/40 backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:bg-black/60 rounded-full px-8 py-7"
+            variant="flat"
           >
             <Link
               rel="noopener noreferrer"
               target="_blank"
               href="https://photos.app.goo.gl/dHTHswR3DJk3UzQt8"
+              className="flex items-center gap-2 text-white font-bold tracking-widest uppercase text-sm"
             >
-              Show more
+              Show More <ExternalLink size={18} />
             </Link>
           </Button>
         </div>

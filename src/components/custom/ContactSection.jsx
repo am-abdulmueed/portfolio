@@ -144,7 +144,7 @@ const ContactSection = () => {
                 <div className="rounded-2xl bg-default-100/50 p-4 border border-default-200/50">
                     <p className="text-center text-sm text-default-500">
                         Prefer email? Reach out at <br/>
-                        <Link href="mailto:am.abdulmueed3@gmail.com" className="text-primary font-semibold hover:underline">
+                        <Link href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fmuxioo.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20" className="text-primary font-semibold hover:underline">
                             am.abdulmueed3@gmail.com
                         </Link>
                     </p>

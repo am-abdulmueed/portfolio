@@ -84,7 +84,7 @@ const Footer = () => {
         ))}
       </div>
       <div className="pt-20 grid grid-cols-1 justify-items-center gap-2">
-        <p className="text-center text-default-500 text-md">
+        <p className="text-center text-default-500 text-lg tracking-[0.2em] font-bold hover:text-foreground transition-colors cursor-default">
           Muxio
         </p>
         <div className="flex gap-4 items-center">
@@ -105,7 +105,7 @@ const Footer = () => {
         <p className="text-center text-default-500 text-lg mt-2 tracking-[0.2em] font-bold hover:text-foreground transition-colors cursor-default">
           a·b·d·u·l·m·u·e·e·d
         </p>
-        <p className="text-center text-default-500 text-md mt-4">
+        <p className="text-center text-default-500 text-sm mt-4 tracking-[0.2em] font-bold hover:text-foreground transition-colors cursor-default">
           © {new Date().getFullYear()}
         </p>
       </div>
