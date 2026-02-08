@@ -37,6 +37,7 @@ const CustomCursor = () => {
   const [isPointer, setIsPointer] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [cursorText, setCursorText] = useState("");
+  const [clicks, setClicks] = useState([]);
 
   // Calculate tail positions based on head position and rotation
   // Each tail dot aims for a spot "behind" the head
@@ -111,20 +112,56 @@ const CustomCursor = () => {
 
     const handleMouseDown = () => setIsClicking(true);
     const handleMouseUp = () => setIsClicking(false);
+    
+    const handleClick = (e) => {
+      const newClick = { id: Date.now(), x: e.clientX, y: e.clientY };
+      setClicks(prev => [...prev, newClick]);
+    };
 
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("click", handleClick);
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("click", handleClick);
     }
   }, [cursorX, cursorY]);
 
+  const removeClick = (id) => {
+    setClicks(prev => prev.filter(c => c.id !== id));
+  };
+
   return (
     <>
+      {/* Click Ripples */}
+      {clicks.map((click) => (
+        <motion.div
+          key={click.id}
+          className="fixed pointer-events-none z-[9996] rounded-full border border-white/50 mix-blend-difference"
+          initial={{ 
+            width: 0, 
+            height: 0, 
+            opacity: 1,
+            x: click.x,
+            y: click.y,
+            translateX: "-50%",
+            translateY: "-50%"
+          }}
+          animate={{ 
+            width: 100, 
+            height: 100, 
+            opacity: 0,
+            borderWidth: 0
+          }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          onAnimationComplete={() => removeClick(click.id)}
+        />
+      ))}
+
       {/* The Head: A Chevron '>' Shape */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center text-white drop-shadow-[0_0_2px_rgba(255,255,255,0.8)]"
