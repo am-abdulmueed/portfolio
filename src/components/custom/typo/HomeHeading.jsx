@@ -2,12 +2,14 @@
 
 import { Button, Chip } from "@nextui-org/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { MdDownload } from "react-icons/md";
 import Announcement from "../Announcement";
 
 const HomeHeading = () => {
   const version = "1.01";
+  const router = useRouter();
 
   return (
     <div className="flex flex-col gap-4">
@@ -25,10 +27,9 @@ const HomeHeading = () => {
             color="primary"
             size="lg"
             radius="full"
-            className="font-semibold shadow-lg shadow-primary/40 hover:scale-105 transition-transform"
+            className="font-semibold shadow-lg shadow-primary/40 hover:scale-105 transition-transform cursor-pointer"
             endContent={<MdDownload size={20} />}
-            as={Link}
-            href="/download"
+            onPress={() => router.push("/download")}
           >
             Download Now
           </Button>
