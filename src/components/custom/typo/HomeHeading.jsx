@@ -22,14 +22,14 @@ const HomeHeading = () => {
         YouTube Music with muxio for free.
       </h4>
       <div className="flex flex-col items-start gap-6 mt-6">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 relative z-[100]">
           <Button
             color="primary"
             size="lg"
             radius="full"
-            className="font-semibold shadow-lg shadow-primary/40 hover:scale-105 transition-transform cursor-pointer"
+            className="font-semibold shadow-lg shadow-primary/40 hover:scale-105 transition-transform cursor-pointer relative z-[100] pointer-events-auto"
             endContent={<MdDownload size={20} />}
-            onPress={() => router.push("/download")}
+            onPress={() => router.push('/download')}
           >
             Download Now
           </Button>

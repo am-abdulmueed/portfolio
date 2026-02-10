@@ -177,7 +177,12 @@ const CustomCursor = () => {
           opacity: isPointer ? 0 : 1 // Hide when hovering link
         }}
       >
-        <ChevronRight size={24} strokeWidth={3} />
+        <div className="relative">
+          <ChevronRight size={24} strokeWidth={3} />
+          {/* Eyes */}
+          <div className="absolute top-[5px] left-[5px] w-[3px] h-[3px] bg-white rounded-full shadow-[0_0_2px_rgba(255,255,255,0.8)]" />
+          <div className="absolute bottom-[5px] left-[5px] w-[3px] h-[3px] bg-white rounded-full shadow-[0_0_2px_rgba(255,255,255,0.8)]" />
+        </div>
       </motion.div>
       
       {/* The Tail: Dotted Trail with Tapering */}

@@ -6,7 +6,7 @@ const IntroSection = () => {
   return (
     <section className="intro-section relative overflow-hidden">
       <div
-        className="absolute inset-0 -z-10 transform-gpu overflow-hidden blur-3xl"
+        className="absolute inset-0 -z-10 transform-gpu overflow-hidden blur-3xl pointer-events-none"
         aria-hidden="true"
       >
         <div
