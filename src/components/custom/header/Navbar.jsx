@@ -49,6 +49,7 @@ export default function Navbar() {
   }, []);
   const menus = [
     { title: "Home", path: "/" },
+    { title: "Projects", path: "/projects" },
     { title: "Download", path: "/download" },
     { title: "About Us", path: "/about" },
     { title: "Contact", path: "/contact" },
@@ -151,12 +152,12 @@ export default function Navbar() {
                   setIsMenuOpen(false);
                 }
               }}
-              className="fixed bottom-0 left-0 right-0 z-[100] h-[65vh] bg-background/95 backdrop-blur-xl rounded-t-3xl border-t border-default-200 shadow-2xl p-6 md:hidden flex flex-col overflow-y-auto pb-2"
+              className="fixed bottom-0 left-0 right-0 z-[100] h-auto max-h-[85vh] bg-background/95 backdrop-blur-xl rounded-t-3xl border-t border-default-200 shadow-2xl p-6 md:hidden flex flex-col overflow-y-auto pb-10"
             >
               <div className="flex justify-center mb-4">
                 <div className="w-12 h-1.5 rounded-full bg-default-300" />
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
                 {menus.map((item, index) => (
                   <Link
                     key={`${item}-${index}`}
@@ -172,8 +173,8 @@ export default function Navbar() {
                     <p
                       className={
                         (item.path === '/blogs' && isBlogPage) || pathName === item.path
-                          ? "font-bold text-2xl text-primary w-full text-center py-2"
-                          : "font-bold text-2xl w-full text-center py-2"
+                          ? "font-bold text-lg text-primary w-full text-center py-2"
+                          : "font-bold text-lg w-full text-center py-2"
                       }
                     >
                       {item.title}

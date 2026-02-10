@@ -57,7 +57,7 @@ const Footer = () => {
             isBlurred
             isPressable
             onPress={() => window.open(item.url, "_blank")}
-            className="text-center shrink py-7 px-10 border-small border-default-200/50 bg-background/60 backdrop-blur-md hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out w-96 rounded-3xl"
+            className="text-center shrink py-7 px-10 border-small border-default-200/50 bg-background/60 backdrop-blur-md hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out w-96 rounded-3xl cursor-pointer"
           >
             <CardHeader className="flex gap-3">
               {item.icon ? (

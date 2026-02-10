@@ -1,0 +1,109 @@
+PROJECTS LIST
+=============
+
+1. AI Base
+   Status: Live
+   Description: Discover & Explore AI Tools & Prompts. Find the best AI chatbots, image generators, and prompts—all in one place.
+   Link: https://am-aibase.vercel.app/
+   GitHub: https://github.com/am-abdulmueed/ai-base/
+   Technology: AI, Next.js, Directory
+
+2. Supercharged URL Shortener
+   Status: Live
+   Description: Supercharged URL Shortener Built with Next.js 14 & MongoDB.
+   Link: https://url-shs.vercel.app/
+   GitHub: https://github.com/am-abdulmueed/url-shortener
+   Technology: Next.js 14, MongoDB, Shadcn
+
+3. Drawir
+   Status: Live
+   Description: A online web based drawing/presentation app made with nextjs!
+   Link: https://drawir.vercel.app
+   GitHub: https://github.com/am-abdulmueed/drawir
+   Technology: Next.js, Canvas, Drawing
+
+4. MySocials
+   Status: Live
+   Description: An open-source link-in-bio tool designed to simplify the management of social media links. Built with Next.js, Shadcn, and MongoDB (updated).
+   Link: https://msocials.vercel.app
+   GitHub: https://github.com/am-abdulmueed/MySocials
+   Technology: Next.js, Shadcn, MongoDB
+
+5. Cookie Consent
+   Status: Live
+   Description: Beautifully designed, customizable cookie consent for web built on top of shadcn-ui and tailwind-css!
+   Link: https://am-scc.vercel.app/
+   GitHub: https://github.com/am-abdulmueed/cookie-consent
+   Technology: Shadcn-ui, TailwindCSS, Component
+
+6. IDE Alpha
+   Status: Live
+   Description: A lightweight online html, css, and javascript editor and compiler built using nextjs, tailwindcss and shadcn-ui.
+   Link: https://ide-alpha.vercel.app
+   GitHub: https://github.com/am-abdulmueed/IDE
+   Technology: Next.js, TailwindCSS, Shadcn-ui
+
+7. CodeBin
+   Status: Live
+   Description: An snippets sharing web app with output for developers & non-developers.
+   Link: https://am-codebin.vercel.app/
+   GitHub: https://github.com/am-abdulmueed/codebin
+   Technology: Web App, Sharing, Dev Tool
+
+8. p2p-share
+   Status: Open Source
+   Description: A realtime P2P file sharing web app.
+   Link: https://github.com/am-abdulmueed/p2p-share
+   GitHub: https://github.com/am-abdulmueed/p2p-share
+   Technology: P2P, WebRTC, File Sharing
+
+9. ai_agent
+   Status: Open Source
+   Description: An AI agent for coding & chat via terminal.
+   Link: https://github.com/am-abdulmueed/ai_agent
+   GitHub: https://github.com/am-abdulmueed/ai_agent
+   Technology: AI, Terminal, CLI
+
+10. passbit
+    Status: Open Source
+    Description: An end-to-end password manager's backend using nitro.build!
+    Link: https://github.com/am-abdulmueed/passbit
+    GitHub: https://github.com/am-abdulmueed/passbit
+    Technology: Nitro.build, Backend, Security
+
+11. bonsai
+    Status: Open Source
+    Description: A flexible state management library with tree and flat state support.
+    Link: https://github.com/am-abdulmueed/bonsai
+    GitHub: https://github.com/am-abdulmueed/bonsai
+    Technology: Library, State Management, DevTools
+
+12. Tailwind CSS Bg Gradient
+    Status: Closed Source
+    Description: A plugin for Tailwind CSS to create background gradients.
+    Link: https://tailwind-background.vercel.app/
+    Technology: Tailwind CSS, Plugin, CSS
+
+13. MusicHub
+    Status: Closed Source
+    Description: A responsive music app built with React and Node.js. Features include playlist management and a recommendation system.
+    Link: https://music-hubs.vercel.app/
+    Technology: React, Node.js, Music API
+
+14. Cloud Storage WebApp
+    Status: Closed Source
+    Description: An app to upload and access files from anywhere.
+    Link: https://github.com/am-abdulmueed/cloud-storage
+    Technology: Cloud Storage, File Upload, WebApp
+
+15. Cloudup
+    Status: Closed Source
+    Description: An AI-powered entertainment platform for movies, dramas, and web series. Features real-time subtitles and multilingual AI voice dubbing.
+    Link: https://github.com/BetaAE/cloudupprot
+    Technology: AI, React Native, Streaming, Subtitles
+
+16. Aurio
+    Status: Closed Source
+    Description: A futuristic music streaming app inspired by Spotify and YouTube Music. Smart, responsive UI and latest tracks.
+    Link: https://github.com/BetaAE/aurioappprot
+    Technology: AI, Flutter, Music, Streaming

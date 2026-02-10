@@ -4,7 +4,6 @@ import {
   CardHeader,
   CardBody,
   Link,
-  Avatar,
   Button,
   Chip,
   Divider,
@@ -23,7 +22,7 @@ const skills = [
   {
     category: "Web Frontend",
     icon: <Globe size={16} />,
-    items: ["HTML", "CSS", "JavaScript", "React", "Next.js", "TailwindCSS"],
+    items: ["HTML/CSS", "JavaScript", "React", "Next.js", "TailwindCSS"],
     color: "secondary",
   },
   {
@@ -53,7 +52,7 @@ const skills = [
   {
     category: "Tools & Others",
     icon: <Wrench size={16} />,
-    items: ["Bash", "Git", "GitHub", "GitLab", "REST APIs", "JSON"],
+    items: ["Bash", "Git/GitHub", "Docker", "REST APIs", "JSON"],
     color: "default",
   },
 ];
@@ -83,12 +82,13 @@ const AboutSection = () => {
               <CardBody className="flex flex-col items-center text-center gap-4 py-8">
                 <div className="relative group">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 blur"></div>
-                    <Avatar 
-                        src="dev.jpg" 
-                        className="w-32 h-32 text-large relative bg-background" 
-                        isBordered 
-                        color="primary"
-                    />
+                    <div className="w-32 h-32 relative rounded-full border-2 border-primary bg-background p-1 z-10">
+                      <img 
+                          src="/dev.jpg" 
+                          alt="Abdul Mueed"
+                          className="w-full h-full rounded-full object-cover" 
+                      />
+                    </div>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend">
