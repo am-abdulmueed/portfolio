@@ -115,6 +115,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en" className="dark">
       <head>
+        <meta name="google-site-verification" content="qLRjnYPkkip8LaAY6lScBacvL7YTnVJJEBvSrVhtPrw" />
         <Script id="ld-website" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify({
             "@context": "https://schema.org",
