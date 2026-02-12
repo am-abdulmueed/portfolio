@@ -4,6 +4,9 @@ import React from "react";
 export const metadata = {
   title: "Contact muxio",
   description: "Get in touch with muxio team - Muxio: Discover, trend & stream from top platforms",
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
     title: "Contact muxio",
     description: "Get in touch with muxio team - Muxio: Discover, trend & stream from top platforms",

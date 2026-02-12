@@ -2,24 +2,27 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "Privacy Policy - muxio",
-  description: "Privacy Policy for muxio - Muxio: Discover, trend & stream from top platforms",
+  title: "Privacy Policy - Muxio Music",
+  description: "Privacy Policy for Muxio Music app — Discover, stream & download from top platforms",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
   openGraph: {
-    title: "Privacy Policy - muxio",
-    description: "Privacy Policy for muxio - Muxio: Discover, trend & stream from top platforms",
+    title: "Privacy Policy - Muxio Music",
+    description: "Privacy Policy for Muxio Music app — Discover, stream & download from top platforms",
     images: [
       {
         url: "/images/blog/feature.jpg",
         width: 1200,
         height: 630,
-        alt: "muxio - Feel free when playing music",
+        alt: "Muxio Music - Feel free when playing music",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy - muxio",
-    description: "Privacy Policy for muxio - Muxio: Discover, trend & stream from top platforms",
+    title: "Privacy Policy - Muxio Music",
+    description: "Privacy Policy for Muxio Music app — Discover, stream & download from top platforms",
     images: ["/images/blog/feature.jpg"],
   },
 };

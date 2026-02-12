@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Placeholder publisher ID since environment variable is removed
-const publisherId = "pub-0000000000000000";
+const publisherId = "ca-pub-2927681167600861";
 
 // Create the content for ads.txt
 let adsContent = `google.com, ${publisherId}, DIRECT, f08c47fec0942fa0`;

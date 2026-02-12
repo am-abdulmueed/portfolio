@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   
   if (!blog) {
     return {
-      title: "Blog Post Not Found - muxio",
+      title: "Blog Post Not Found - Muxio Music",
       description: "The blog post you are looking for does not exist.",
     };
   }
@@ -28,10 +28,13 @@ export async function generateMetadata({ params }) {
     : (blog.description || "Read more about muxio - Muxio: Discover, trend & stream from top platforms");
   
   return {
-    title: `${title} - muxio Blog`,
+    title: `${title} - Muxio Music Blog`,
     description: description,
+    alternates: {
+      canonical: `/blogs/${params.slug[0]}/${params.slug[1]}`,
+    },
     openGraph: {
-      title: `${title} - muxio Blog`,
+      title: `${title} - Muxio Music Blog`,
       description: description,
       images: [
         {
@@ -44,7 +47,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} - muxio Blog`,
+      title: `${title} - Muxio Music Blog`,
       description: description,
       images: [blog.imageUrl || "/images/blog/feature.jpg"],
     },

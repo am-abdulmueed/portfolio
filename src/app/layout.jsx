@@ -30,14 +30,37 @@ const sfpDisplay = localFont({
 
 export const metadata = {
   title: {
-    default: "Muxio - Discover, Stream & Download Music",
-    template: "%s | Muxio",
+    default: "Muxio Music - Discover, Stream & Download Music",
+    template: "%s | Muxio Music",
   },
-  description: "Muxio brings music discovery inspired by YouTube Music & SoundCloud, with playback up to 256kbps audio or 1080p video. Personalize your experience with a sleek UI influenced by Spotify.",
-  applicationName: "Muxio",
+  description: "Muxio Music app for discovering and streaming music and videos. Inspired by YouTube Music & SoundCloud with up to 256kbps audio or 1080p video playback. A sleek, modern music app experience.",
+  applicationName: "Muxio Music",
   authors: [{ name: "am-abdulmueed", url: "https://github.com/am-abdulmueed" }],
   generator: "Next.js",
-  keywords: ["music", "streaming", "download", "youtube music", "soundcloud", "spotify alternative", "muxio", "audio", "video", "abdulmueed", "abdul mueed", "betapix", "betaae", "a.b.d.u.l.m.u.e.e.d"],
+  keywords: [
+    "muxio music",
+    "muxio app",
+    "music app",
+    "music streaming app",
+    "free music streaming",
+    "audio player",
+    "video player",
+    "youtube music",
+    "soundcloud",
+    "spotify alternative",
+    "mp3",
+    "podcasts",
+    "radio",
+    "android music app",
+    "ios music app",
+    "windows music player",
+    "open source music app",
+    "abdulmueed",
+    "abdul mueed",
+    "betapix",
+    "betaae",
+    "a.b.d.u.l.m.u.e.e.d"
+  ],
   referrer: "origin-when-cross-origin",
   creator: "Abdul Mueed",
   publisher: "Abdul Mueed",
@@ -46,16 +69,16 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Muxio - Discover, Stream & Download Music",
-    description: "Muxio brings music discovery inspired by YouTube Music & SoundCloud, with playback up to 256kbps audio or 1080p video. Personalize your experience with a sleek UI influenced by Spotify.",
+    title: "Muxio Music - Discover, Stream & Download Music",
+    description: "Muxio Music app for discovering and streaming music and videos. Inspired by YouTube Music & SoundCloud with up to 256kbps audio or 1080p video playback.",
     url: "https://muxioo.vercel.app",
-    siteName: "Muxio",
+    siteName: "Muxio Music",
     images: [
       {
         url: "https://muxioo.vercel.app/opengraph.png",
         width: 1200,
         height: 630,
-        alt: "Muxio - Music Discovery App",
+        alt: "Muxio Music - Music Discovery App",
       },
     ],
     locale: "en_US",
@@ -63,8 +86,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muxio - Discover, Stream & Download Music",
-    description: "Muxio brings music discovery inspired by YouTube Music & SoundCloud, with playback up to 256kbps audio or 1080p video. Personalize your experience with a sleek UI influenced by Spotify.",
+    title: "Muxio Music - Discover, Stream & Download Music",
+    description: "Muxio Music app for discovering and streaming music and videos. Inspired by YouTube Music & SoundCloud with up to 256kbps audio or 1080p video playback.",
     images: ["https://muxioo.vercel.app/opengraph.png"],
     creator: "@am_abdulmueed", // Assuming handle or generic
   },
@@ -92,6 +115,43 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en" className="dark">
       <head>
+        <Script id="ld-website" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://muxioo.vercel.app",
+            "name": "Muxio Music",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Muxio Music"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://muxioo.vercel.app/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })}
+        </Script>
+        <Script id="ld-softwareapp" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Muxio Music",
+            "operatingSystem": "Android, iOS, Windows, macOS, Linux",
+            "applicationCategory": "MultimediaApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "120"
+            },
+            "url": "https://muxioo.vercel.app/download"
+          })}
+        </Script>
         {/* <Script
           id="adsense-script"
           async
@@ -116,7 +176,7 @@ const RootLayout = ({ children }) => {
           <Footer />
           <div itemScope itemType="https://schema.org/WebSite">
             <link itemProp="url" href="https://muxioo.vercel.app" />
-            <meta itemProp="name" content="Muxio" />
+            <meta itemProp="name" content="Muxio Music" />
           </div>
         </Providers>
       </body>

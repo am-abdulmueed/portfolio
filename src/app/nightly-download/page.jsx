@@ -5,6 +5,14 @@ import { Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@
 import { TbDownload, TbChevronDown } from "react-icons/tb"
 import { FaAndroid, FaWindows, FaLinux, FaApple } from "react-icons/fa"
 
+export const metadata = {
+  title: "Muxio Music Nightly Download",
+  description: "Download nightly builds of Muxio Music app.",
+  alternates: {
+    canonical: "/nightly-download",
+  },
+}
+
 export default function NightlyDownload() {
     const [countdown, setCountdown] = useState(10)
     const [isButtonEnabled, setIsButtonEnabled] = useState(false)

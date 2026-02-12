@@ -3,24 +3,27 @@ import { databases, COLLECTION_ID, DATABASE_ID, Query } from '@/lib/appwrite';
 import BlogsFilter from '@/components/custom/BlogsFilter';
 
 export const metadata = {
-  title: "Blog - muxio",
-  description: "Read the latest news and updates about muxio - Muxio: Discover, trend & stream from top platforms",
+  title: "Muxio Music Blog",
+  description: "Read the latest news and updates about Muxio Music app — Discover, stream & download from top platforms",
+  alternates: {
+    canonical: "/blogs",
+  },
   openGraph: {
-    title: "Blog - muxio",
-    description: "Read the latest news and updates about muxio - Muxio: Discover, trend & stream from top platforms",
+    title: "Muxio Music Blog",
+    description: "Read the latest news and updates about Muxio Music app — Discover, stream & download from top platforms",
     images: [
       {
         url: "/images/blog/feature.jpg",
         width: 1200,
         height: 630,
-        alt: "muxio - Feel free when playing music",
+        alt: "Muxio Music - Feel free when playing music",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog - muxio",
-    description: "Read the latest news and updates about muxio - Muxio: Discover, trend & stream from top platforms",
+    title: "Muxio Music Blog",
+    description: "Read the latest news and updates about Muxio Music app — Discover, stream & download from top platforms",
     images: ["/images/blog/feature.jpg"],
   },
 };

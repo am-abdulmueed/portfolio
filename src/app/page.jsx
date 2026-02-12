@@ -8,24 +8,27 @@ import DownloadInfoSection from "@/components/custom/DownloadInfoSection";
 import AdSense from "@/components/custom/AdSense";
 
 export const metadata = {
-  title: "muxio",
-  description: "muxio is Muxio: Discover, trend & stream from top platforms. Free, no ads, and open source.",
+  title: "Muxio Music",
+  description: "Muxio Music app: Discover, stream & download from top platforms. Free, fast, and open-source.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "muxio",
-    description: "muxio is Muxio: Discover, trend & stream from top platforms. Free, no ads, and open source.",
+    title: "Muxio Music",
+    description: "Muxio Music app: Discover, stream & download from top platforms.",
     images: [
       {
         url: "/images/blog/feature.jpg",
         width: 1200,
         height: 630,
-        alt: "muxio - Feel free when playing music",
+        alt: "Muxio Music - Feel free when playing music",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "muxio",
-    description: "muxio is Muxio: Discover, trend & stream from top platforms. Free, no ads, and open source.",
+    title: "Muxio Music",
+    description: "Muxio Music app: Discover, stream & download from top platforms. Free, fast, and open-source.",
     images: ["/images/blog/feature.jpg"],
   },
 };

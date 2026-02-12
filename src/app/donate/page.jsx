@@ -4,6 +4,9 @@ import React from "react";
 export const metadata = {
   title: "Donate to muxio",
   description: "Support the development of muxio - Muxio: Discover, trend & stream from top platforms",
+  alternates: {
+    canonical: "/donate",
+  },
   openGraph: {
     title: "Donate to muxio",
     description: "Support the development of muxio - Muxio: Discover, trend & stream from top platforms",

@@ -4,6 +4,9 @@ import AdSense from "@/components/custom/AdSense";
 export const metadata = {
   title: "Projects - muxio",
   description: "Explore our featured projects, tools, and open-source contributions.",
+  alternates: {
+    canonical: "/projects",
+  },
 };
 
 export default function ProjectsPage() {
