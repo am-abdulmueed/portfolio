@@ -19,6 +19,8 @@ const CustomCursor = () => {
   // Persist rotation even when stopped
   const rotate = useMotionValue(0);
   const wavePhase = useMotionValue(0); // For the "alive" wave animation
+  const speedMV = useMotionValue(0);
+  const [speed, setSpeed] = useState(0);
   
   useAnimationFrame((t) => {
     const vx = velocityX.get();
@@ -32,6 +34,9 @@ const CustomCursor = () => {
 
     // Increment wave phase for idle animation (speed = 0.005)
     wavePhase.set(t * 0.005);
+    const sp = Math.sqrt(vx * vx + vy * vy);
+    speedMV.set(sp);
+    setSpeed(sp);
   });
 
   const [isPointer, setIsPointer] = useState(false);
@@ -189,12 +194,24 @@ const CustomCursor = () => {
       {tails.map((tail, index) => (
         <motion.div
           key={index}
-          className="fixed top-0 left-0 bg-white rounded-full pointer-events-none z-[9998] mix-blend-difference drop-shadow-[0_0_1px_rgba(255,255,255,0.5)]"
+          className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] mix-blend-difference"
           style={{
             x: tail.x,
             y: tail.y,
             translateX: "-50%",
             translateY: "-50%",
+            backgroundColor: isPointer ? "transparent" : (() => {
+              const n = Math.min(speed / 1200, 1);
+              const hue = Math.max(0, 40 - 25 * n - index * 2); // 40 (yellow) -> 15 (orange/red)
+              const light = Math.max(35, 60 - index * 4 - n * 10);
+              return `hsl(${hue}, 100%, ${light}%)`;
+            })(),
+            boxShadow: isPointer ? "none" : (() => {
+              const n = Math.min(speed / 1200, 1);
+              const hue = Math.max(0, 40 - 25 * n - index * 2);
+              const light = Math.max(30, 55 - index * 4 - n * 10);
+              return `0 0 ${Math.max(1, 6 - index)}px hsl(${hue}, 100%, ${light}%)`;
+            })()
           }}
           animate={{
             width: isPointer ? 0 : Math.max(2, 10 - index * 1.2), // Tapering size

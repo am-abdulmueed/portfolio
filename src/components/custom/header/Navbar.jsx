@@ -16,7 +16,7 @@ import {
 import ThemeSwitcher from "../ThemeSwitcher";
 import { usePathname } from "next/navigation";
 import { Github, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -40,6 +40,12 @@ let formatter = Intl.NumberFormat('en', { notation: 'compact' });
 
 export default function Navbar() {
   const [starCount, setStarCount] = useState(null);
+  const [progress, setProgress] = useState(0);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollRef = useRef(0);
+  const containerRef = useRef(null);
+  const menuRefs = useRef([]);
+  const [indicator, setIndicator] = useState({ left: 0, width: 0, visible: false });
   useEffect(() => {
     fetcher().then((data) => {
       if (data && data.stargazers_count) {
@@ -49,6 +55,7 @@ export default function Navbar() {
   }, []);
   const menus = [
     { title: "Home", path: "/" },
+    { title: "Architecture", path: "/architecture" },
     { title: "Projects", path: "/projects" },
     { title: "Download", path: "/download" },
     { title: "About Us", path: "/about" },
@@ -63,17 +70,47 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScroll(window.scrollY > 50);
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(total > 0 ? Math.min(1, window.scrollY / total) : 0);
+      const last = lastScrollRef.current;
+      if (window.scrollY > last + 10 && window.scrollY > 100) {
+        setHidden(true);
+      } else if (window.scrollY < last - 10 || window.scrollY <= 100) {
+        setHidden(false);
+      }
+      lastScrollRef.current = window.scrollY;
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const idx = menus.findIndex((m) => ((m.path === '/blogs' && isBlogPage) || pathName === m.path));
+    if (idx >= 0 && containerRef.current && menuRefs.current[idx]) {
+      const cRect = containerRef.current.getBoundingClientRect();
+      const rRect = menuRefs.current[idx].getBoundingClientRect();
+      setIndicator({
+        left: rRect.left - cRect.left,
+        width: rRect.width,
+        visible: true,
+      });
+    } else {
+      setIndicator((prev) => ({ ...prev, visible: false }));
+    }
+  }, [pathName, isBlogPage, isMenuOpen]);
+
   return (
     <>
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: hidden ? -80 : 0 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+        className="fixed top-0 left-0 right-0 z-50"
+      >
       <NavbarNext
         isBordered={false}
         maxWidth="2xl"
-        className={`z-50 pt-2 ${scroll ? "bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60" : "bg-transparent"}`}
+        className={`pt-2 ${scroll ? "bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 border-b border-default-200/40 shadow-sm" : "bg-transparent"}`}
         position="fixed"
         disableScrollHandler
         onMenuOpenChange={setIsMenuOpen}
@@ -108,26 +145,45 @@ export default function Navbar() {
         </NavbarContent>
 
         <NavbarContent className="hidden md:flex gap-4" justify="end">
-          {menus.map((menu, index) => (
-            <NavbarItem key={index} isActive={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path}>
-              <Button
-                color="default"
-                variant={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path ? "solid" : "light"}
-                as={menu.isExternal ? Link : NextLink}
-                size="md"
-                href={menu.path}
-                isExternal={menu.isExternal}
-                showAnchorIcon={menu.isExternal}
-              >
-                <p className="font-bold">{menu.title}</p>
-              </Button>
-            </NavbarItem>
-          ))}
+          <div ref={containerRef} className="relative flex items-center gap-4">
+            {menus.map((menu, index) => (
+              <NavbarItem key={index} isActive={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path}>
+                <Button
+                  ref={(el) => (menuRefs.current[index] = el)}
+                  color="default"
+                  variant={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path ? "solid" : "light"}
+                  as={menu.isExternal ? Link : NextLink}
+                  size="md"
+                  href={menu.path}
+                  isExternal={menu.isExternal}
+                  showAnchorIcon={menu.isExternal}
+                  className="data-[active=true]:shadow-md"
+                >
+                  <p className="font-bold">{menu.title}</p>
+                </Button>
+              </NavbarItem>
+            ))}
+            {indicator.visible && (
+              <motion.div
+                className="absolute -bottom-2 h-1 rounded-full bg-gradient-to-r from-gradientstart to-gradientend"
+                initial={false}
+                animate={{ left: indicator.left, width: indicator.width }}
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              />
+            )}
+          </div>
           <NavbarItem>
             <ThemeSwitcher></ThemeSwitcher>
           </NavbarItem>
         </NavbarContent>
       </NavbarNext>
+      </motion.div>
+      <motion.div
+        className="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-gradientstart to-gradientend z-[60]"
+        initial={{ width: "0%" }}
+        animate={{ width: `${Math.round(progress * 100)}%` }}
+        transition={{ duration: 0.1 }}
+      />
 
       <AnimatePresence>
         {isMenuOpen && (

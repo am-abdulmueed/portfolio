@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Terminal, Code2, Layers, Globe, Shield, Zap, Music, Cloud, Film, Search, SlidersHorizontal, X } from 'lucide-react';
 import Link from 'next/link';
@@ -175,6 +175,7 @@ const ProjectSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [showFilters, setShowFilters] = useState(false);
+  const inputRef = useRef(null);
 
   const filteredProjects = projects.filter(project => {
     const matchesCategory = selectedCategory === "All" || project.category === selectedCategory;
@@ -213,7 +214,7 @@ const ProjectSection = () => {
             <div className="relative flex items-center w-full gap-3">
               {/* Search Bar */}
               <div className="relative flex-grow group">
-                <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-muted-foreground group-focus-within:text-primary transition-colors">
+                <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-muted-foreground group-focus-within:text-primary transition-colors z-10">
                   <Search size={22} />
                 </div>
                 <input
@@ -222,6 +223,7 @@ const ProjectSection = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search projects..."
                   className="w-full h-14 pl-14 pr-4 bg-secondary/30 backdrop-blur-md border border-border/50 rounded-2xl focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all duration-300 text-lg placeholder:text-muted-foreground/50 shadow-sm"
+                  ref={inputRef}
                 />
               </div>
 

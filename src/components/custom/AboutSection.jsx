@@ -94,7 +94,7 @@ const AboutSection = () => {
                   <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend">
                     Abdul Mueed
                   </h3>
-                  <p className="text-default-500 font-bold mt-1">Software Engineer</p>
+                  <p className="text-default-500 font-bold mt-1">Full Stack Developer</p>
                 </div>
                 
                 <p className="text-sm text-default-400 px-4">
@@ -175,7 +175,7 @@ const AboutSection = () => {
               </CardHeader>
               <CardBody className="px-6 py-4 gap-6">
                 <p className="text-default-500 leading-relaxed">
-                  I am a student at <span className="font-semibold text-foreground">Virtual University, Pakistan</span> majoring in Software Engineering. 
+                  I am a <span className="font-semibold text-foreground">Full Stack Developer</span>. 
                   With intermediate knowledge in <span className="text-gradientstart font-medium">Mobile App Development</span> (Android & iOS), <span className="text-gradientend font-medium">Web Development</span>, and <span className="text-primary font-medium">Desktop Development</span> (alpha), 
                   I am constantly learning and refining my skills to build high-performing applications across multiple platforms.
                 </p>

@@ -7,6 +7,7 @@ import Footer from "@/components/custom/footer/Footer";
 import CustomCursor from "@/components/custom/CustomCursor";
 import BubbleBlast from "@/components/custom/BubbleBlast";
 import RightClickDisable from "@/components/custom/RightClickDisable";
+import BackToTop from "@/components/custom/BackToTop";
 import Script from "next/script";
 import localFont from 'next/font/local'
 
@@ -57,6 +58,11 @@ export const metadata = {
     "open source music app",
     "abdulmueed",
     "abdul mueed",
+    "abdul mueed dev",
+    "abdul mueed freelancer",
+    "abdul mueed devops",
+    "abdul mueed freelancer devops",
+    "abdul mueed engineer",
     "betapix",
     "betaae",
     "a.b.d.u.l.m.u.e.e.d"
@@ -175,6 +181,7 @@ const RootLayout = ({ children }) => {
           <Header />
           {children}
           <Footer />
+          <BackToTop />
           <div itemScope itemType="https://schema.org/WebSite">
             <link itemProp="url" href="https://muxioo.vercel.app" />
             <meta itemProp="name" content="Muxio Music" />

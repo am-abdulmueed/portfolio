@@ -107,7 +107,7 @@ export default function PrivacyPolicy() {
             <li><strong>The right to data portability:</strong> You have the right to request that we transfer the data that we have collected to another organization, or directly to you.</li>
           </ul>
 
-          <p>To exercise any of these rights, please contact us via email: ndtminh2608@gmail.com.</p>
+          <p>To exercise any of these rights, please contact us via email: am.abdulmueed3@gmail.com.</p>
 
           <h2>6. Data Security</h2>
           <p>The security of your data is important to us. We use reasonable administrative, technical, and physical security measures to help protect your personal information. However, please be aware that no method of transmission over the Internet or method of electronic storage is 100% secure.</p>

@@ -108,7 +108,7 @@ const ContactSection = () => {
           </div>
 
           {/* Right Column: Social Grid */}
-          <Card className="bg-background/40 backdrop-blur-xl border-small border-default-200/50 shadow-2xl rounded-3xl overflow-visible">
+          <Card className="bg-background/40 backdrop-blur-xl border-small border-default-200/50 shadow-2xl rounded-3xl overflow-visible mt-8 md:mt-16">
             <CardBody className="p-8">
               <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-3">
@@ -144,10 +144,15 @@ const ContactSection = () => {
                 <div className="rounded-2xl bg-default-100/50 p-4 border border-default-200/50">
                     <p className="text-center text-sm text-default-500">
                         Prefer email? Reach out at <br/>
-                        <Link href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fmuxioo.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20" className="text-primary font-semibold hover:underline">
+                        <Link 
+                          href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fmuxioo.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20" 
+                          className="text-primary font-semibold"
+                          aria-label="Send email to am.abdulmueed3@gmail.com"
+                        >
                             am.abdulmueed3@gmail.com
                         </Link>
                     </p>
+                    <div className="mt-2 h-[2px] w-40 mx-auto bg-blue-500 rounded-full" />
                 </div>
               </div>
             </CardBody>

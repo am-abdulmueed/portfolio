@@ -46,7 +46,7 @@ const DonateSection = () => {
             <Button
               rel="noopener noreferrer"
               target="_blank"
-              href="https://www.buymeacoffee.com/maxrave"
+              href="https://www.buymeacoffee.com/abdulmueed"
               as={Link}
               color="primary"
               size="lg"
