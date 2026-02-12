@@ -21,18 +21,26 @@ const ThemeSwitcher = () => {
     mounted && (
       <Dropdown>
         <DropdownTrigger>
-          <Button isIconOnly aria-label="Change Theme">
+          <Button 
+            isIconOnly 
+            aria-label="Change Theme"
+            variant="light"
+            className="rounded-xl border border-default-200/50 bg-background/40 backdrop-blur-md shadow-sm hover:shadow-md"
+          >
             {theme === "light" ? <Sun /> : <Moon />}
           </Button>
         </DropdownTrigger>
-        <DropdownMenu aria-label="Static Actions">
-          <DropdownItem key="dark" onClick={() => setTheme("dark")}>
+        <DropdownMenu 
+          aria-label="Static Actions"
+          className="bg-background/95 backdrop-blur-md border border-default-200/60 rounded-2xl shadow-2xl p-1"
+        >
+          <DropdownItem key="dark" onClick={() => setTheme("dark")} className="rounded-xl hover:bg-secondary/30">
             Dark
           </DropdownItem>
-          <DropdownItem key="light" onClick={() => setTheme("light")}>
+          <DropdownItem key="light" onClick={() => setTheme("light")} className="rounded-xl hover:bg-secondary/30">
             Light
           </DropdownItem>
-          <DropdownItem key="system" onClick={() => setTheme("system")}>
+          <DropdownItem key="system" onClick={() => setTheme("system")} className="rounded-xl hover:bg-secondary/30">
             System
           </DropdownItem>
         </DropdownMenu>

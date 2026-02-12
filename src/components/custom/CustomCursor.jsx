@@ -6,6 +6,7 @@ import { ArrowUpRight, ChevronRight } from 'lucide-react';
 const CustomCursor = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
+  const [isCoarse, setIsCoarse] = useState(false);
   
   // Physics for the Head (The '>')
   const springConfig = { damping: 25, stiffness: 700 };
@@ -103,17 +104,30 @@ const CustomCursor = () => {
       cursorY.set(e.clientY);
       
       const target = e.target;
+      let clickable = null;
       
       // Check for clickable elements
-      const clickable = target.closest('a, button, [role="button"], input, select, textarea');
-      const isClickable = !!clickable || window.getComputedStyle(target).cursor === 'pointer';
-      
-      setIsPointer(isClickable);
+      if (!isCoarse) {
+        clickable = target.closest('a, button, [role="button"], input, select, textarea');
+        const isClickable = !!clickable || window.getComputedStyle(target).cursor === 'pointer';
+        setIsPointer(isClickable);
+      } else {
+        setIsPointer(false);
+      }
 
       // Check for custom cursor text
-      const text = target.getAttribute('data-cursor-text') || clickable?.getAttribute('data-cursor-text');
+      const text = target.getAttribute('data-cursor-text') || (clickable ? clickable.getAttribute('data-cursor-text') : null);
       setCursorText(text || "");
     }
+
+    const moveTouch = (e) => {
+      const t = e.touches?.[0];
+      if (!t) return;
+      cursorX.set(t.clientX);
+      cursorY.set(t.clientY);
+      setIsPointer(false);
+      setCursorText("");
+    };
 
     const handleMouseDown = () => setIsClicking(true);
     const handleMouseUp = () => setIsClicking(false);
@@ -127,12 +141,27 @@ const CustomCursor = () => {
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
     window.addEventListener("click", handleClick);
+    window.addEventListener("touchmove", moveTouch, { passive: true });
+    window.addEventListener("touchstart", moveTouch, { passive: true });
+    window.addEventListener("touchend", () => setIsClicking(false), { passive: true });
+
+    const mq = window.matchMedia("(pointer: coarse)");
+    const updateCoarse = () => setIsCoarse(mq.matches || window.innerWidth <= 768);
+    updateCoarse();
+    mq.addEventListener("change", updateCoarse);
+    const onResize = () => updateCoarse();
+    window.addEventListener("resize", onResize);
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("click", handleClick);
+      window.removeEventListener("touchmove", moveTouch);
+      window.removeEventListener("touchstart", moveTouch);
+      window.removeEventListener("touchend", () => setIsClicking(false));
+      mq.removeEventListener("change", updateCoarse);
+      window.removeEventListener("resize", onResize);
     }
   }, [cursorX, cursorY]);
 
@@ -146,7 +175,7 @@ const CustomCursor = () => {
       {clicks.map((click) => (
         <motion.div
           key={click.id}
-          className="fixed pointer-events-none z-[9996] rounded-full border border-white/50 mix-blend-difference"
+          className="fixed pointer-events-none z-[999999] rounded-full border border-white/50 mix-blend-difference"
           initial={{ 
             width: 0, 
             height: 0, 
@@ -169,7 +198,7 @@ const CustomCursor = () => {
 
       {/* The Head: A Chevron '>' Shape */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center text-white drop-shadow-[0_0_2px_rgba(255,255,255,0.8)]"
+        className="fixed top-0 left-0 pointer-events-none z-[999999] mix-blend-difference flex items-center justify-center text-white drop-shadow-[0_0_2px_rgba(255,255,255,0.8)]"
         style={{
           x: headX,
           y: headY,
@@ -178,8 +207,8 @@ const CustomCursor = () => {
           rotate: rotate,
         }}
         animate={{ 
-          scale: isClicking ? 0.8 : (isPointer ? 0 : 1.2), // Hide when hovering link
-          opacity: isPointer ? 0 : 1 // Hide when hovering link
+          scale: isCoarse ? 0 : (isClicking ? 0.8 : (isPointer ? 0 : 1.2)), // Hide on mobile and when hovering link
+          opacity: isCoarse ? 0 : (isPointer ? 0 : 1)
         }}
       >
         <div className="relative">
@@ -194,7 +223,7 @@ const CustomCursor = () => {
       {tails.map((tail, index) => (
         <motion.div
           key={index}
-          className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] mix-blend-difference"
+          className="fixed top-0 left-0 rounded-full pointer-events-none z-[999999] mix-blend-difference"
           style={{
             x: tail.x,
             y: tail.y,
@@ -214,16 +243,16 @@ const CustomCursor = () => {
             })()
           }}
           animate={{
-            width: isPointer ? 0 : Math.max(2, 10 - index * 1.2), // Tapering size
-            height: isPointer ? 0 : Math.max(2, 10 - index * 1.2),
-            opacity: isPointer ? 0 : 0.8 - (index * 0.1), // Tapering opacity
+            width: isCoarse ? Math.max(2, 10 - index * 1.2) : (isPointer ? 0 : Math.max(2, 10 - index * 1.2)), // keep tail on mobile
+            height: isCoarse ? Math.max(2, 10 - index * 1.2) : (isPointer ? 0 : Math.max(2, 10 - index * 1.2)),
+            opacity: isCoarse ? 0.7 - (index * 0.08) : (isPointer ? 0 : 0.8 - (index * 0.1)),
           }}
         />
       ))}
 
       {/* Expanded Hover State (Ring) */}
       <motion.div
-         className="fixed top-0 left-0 flex items-center justify-center pointer-events-none z-[9997] mix-blend-difference"
+         className="fixed top-0 left-0 flex items-center justify-center pointer-events-none z-[999999] mix-blend-difference"
          style={{
             x: headX,
             y: headY,
@@ -231,9 +260,9 @@ const CustomCursor = () => {
             translateY: "-50%",
          }}
          animate={{ 
-            width: isPointer ? 32 : 0,
-            height: isPointer ? 32 : 0,
-            opacity: isPointer ? 1 : 0,
+            width: isCoarse ? 0 : (isPointer ? 32 : 0),
+            height: isCoarse ? 0 : (isPointer ? 32 : 0),
+            opacity: isCoarse ? 0 : (isPointer ? 1 : 0),
             border: "1.5px solid white",
             borderRadius: isPointer ? "8px" : "50%", // Diamond/Squircle shape
             rotate: isPointer ? 45 : 0,

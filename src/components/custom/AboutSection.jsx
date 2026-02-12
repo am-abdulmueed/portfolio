@@ -94,7 +94,7 @@ const AboutSection = () => {
                   <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend">
                     Abdul Mueed
                   </h3>
-                  <p className="text-default-500 font-bold mt-1">Full Stack Developer</p>
+                  <p className="text-default-500 font-bold mt-1 text-sm">Full Stack Developer</p>
                 </div>
                 
                 <p className="text-sm text-default-400 px-4">

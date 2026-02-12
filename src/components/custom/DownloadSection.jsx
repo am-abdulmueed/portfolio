@@ -1,7 +1,8 @@
-import { Image, Link, Button, Card, CardBody, CardHeader } from "@nextui-org/react";
+import { Image, Link, Button, Card, CardBody, CardHeader, Chip } from "@nextui-org/react";
 import React from "react";
 import Announcement from "./Announcement";
 import { FaAndroid, FaWindows, FaApple, FaLinux, FaGooglePlay, FaAppStoreIos, FaMobileAlt, FaDesktop } from "react-icons/fa";
+import RatingCard from "./RatingCard";
 
 const mobilePlatforms = [
   {
@@ -47,6 +48,7 @@ const DownloadSection = () => {
        {/* Background decorative elements */}
        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -z-10"></div>
        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] -z-10"></div>
+       <div className="absolute inset-0 -z-10 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 15% 20%, rgba(59,130,246,0.08), transparent 40%), radial-gradient(circle at 85% 70%, rgba(168,85,247,0.08), transparent 40%), repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 22px)" }}></div>
 
       <div className="relative isolate px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -58,6 +60,16 @@ const DownloadSection = () => {
             <h4 className="mt-4 scroll-m-20 text-xl font-medium tracking-tight text-default-500 max-w-2xl mx-auto">
               Choose your platform and start streaming high-quality music for free.
             </h4>
+            <div className="mt-6 flex justify-center">
+              <RatingCard rating={4.8} users="20k+" />
+            </div>
+            <div className="mt-6 flex flex-wrap justify-center gap-2">
+              <Chip size="sm" variant="flat" color="success">Android</Chip>
+              <Chip size="sm" variant="flat" color="warning">iOS</Chip>
+              <Chip size="sm" variant="flat" color="primary">Windows</Chip>
+              <Chip size="sm" variant="flat" color="default">macOS</Chip>
+              <Chip size="sm" variant="flat" color="secondary">Linux</Chip>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -78,10 +90,10 @@ const DownloadSection = () => {
                     as={Link} 
                     href={item.url} 
                     isExternal
-                    className="border-small border-default-200/50 bg-background/40 backdrop-blur-md hover:scale-[1.02] transition-transform rounded-3xl"
+                    className="border-small border-default-200/50 bg-background/40 backdrop-blur-md hover:scale-[1.03] transition-transform rounded-3xl ring-1 ring-transparent hover:ring-primary/30"
                   >
                     <CardBody className="flex flex-row items-center gap-4 p-4">
-                      <div className={`p-3 rounded-xl ${item.color} flex items-center justify-center w-16 h-16`}>
+                      <div className={`p-3 rounded-xl ${item.color} flex items-center justify-center w-16 h-16 shadow-inner`}>
                          {item.icon ? item.icon : <Image src={item.thumbnail} alt={item.name} width={40} height={40} className="object-contain" />}
                       </div>
                       <div className="flex flex-col items-start">
@@ -111,7 +123,7 @@ const DownloadSection = () => {
                     as={Link}
                     href={platform.url}
                     isExternal
-                    className="border-small border-default-200/50 bg-background/40 backdrop-blur-md hover:scale-[1.02] transition-transform rounded-3xl"
+                    className="border-small border-default-200/50 bg-background/40 backdrop-blur-md hover:scale-[1.03] transition-transform rounded-3xl ring-1 ring-transparent hover:ring-primary/30"
                   >
                      <CardBody className="flex flex-row items-center gap-6 p-6">
                         <div className="p-2">
@@ -122,7 +134,7 @@ const DownloadSection = () => {
                           <span className="text-medium text-default-500">{platform.description}</span>
                         </div>
                         <div className="ml-auto">
-                          <Button color="primary" variant="flat" radius="full">
+                          <Button color="primary" variant="shadow" radius="full" className="hover:scale-105">
                             Download
                           </Button>
                         </div>
