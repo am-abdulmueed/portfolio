@@ -207,8 +207,8 @@ const CustomCursor = () => {
           rotate: rotate,
         }}
         animate={{ 
-          scale: isCoarse ? 0 : (isClicking ? 0.8 : (isPointer ? 0 : 1.2)), // Hide on mobile and when hovering link
-          opacity: isCoarse ? 0 : (isPointer ? 0 : 1)
+          scale: isCoarse ? (isClicking ? 0.9 : 1.2) : (isClicking ? 0.8 : (isPointer ? 0 : 1.2)), // Show head on mobile, hide on desktop link hover
+          opacity: isCoarse ? 1 : (isPointer ? 0 : 1)
         }}
       >
         <div className="relative">
