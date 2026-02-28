@@ -55,7 +55,7 @@ const DescriptionSection = () => {
                     <p className="text-default-500 text-lg leading-relaxed font-medium">
                       Muxio brings music discovery inspired by top platforms like YouTube Music & SoundCloud.
                       With playback up to 256kbps audio or 1080p video, we ensure every beat is crystal clear.
-                      Plus, it's open-source and privacy-first.
+                      Plus, it&apos;s open-source and privacy-first.
                     </p>
                   </div>
                 </div>

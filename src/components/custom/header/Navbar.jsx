@@ -98,6 +98,7 @@ export default function Navbar() {
     } else {
       setIndicator((prev) => ({ ...prev, visible: false }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathName, isBlogPage, isMenuOpen]);
 
   return (
@@ -233,8 +234,8 @@ export default function Navbar() {
                         className="group flex items-center gap-4 py-2 w-full"
                       >
                         <div className={`p-3 rounded-2xl transition-all duration-300 ${(item.path === '/blogs' && isBlogPage) || pathName === item.path
-                            ? "bg-gradient-to-br from-primary to-primary-600 text-white shadow-lg shadow-primary/30 scale-110"
-                            : "bg-default-100 text-default-500 group-hover:bg-primary/10 group-hover:text-primary group-hover:scale-105"
+                          ? "bg-gradient-to-br from-primary to-primary-600 text-white shadow-lg shadow-primary/30 scale-110"
+                          : "bg-default-100 text-default-500 group-hover:bg-primary/10 group-hover:text-primary group-hover:scale-105"
                           }`}>
                           {React.cloneElement(item.icon, {
                             className: (item.path === '/blogs' && isBlogPage) || pathName === item.path

@@ -106,6 +106,7 @@ const AboutSection = () => {
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-0 group-hover:opacity-100 transition duration-500 blur-xl"></div>
                   <div className="w-44 h-44 relative rounded-full border-2 border-white/10 p-1 group-hover:border-primary/50 transition-colors bg-default-100 overflow-hidden shadow-2xl">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/dev.jpg"
                       alt="Abdul Mueed"

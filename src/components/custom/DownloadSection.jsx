@@ -87,7 +87,7 @@ const DownloadSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Choose your device and get started with the world's most versatile music discovery platform.
+            Choose your device and get started with the world&apos;s most versatile music discovery platform.
           </motion.p>
 
           <motion.div
