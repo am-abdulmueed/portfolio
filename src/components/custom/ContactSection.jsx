@@ -51,7 +51,7 @@ const ContactSection = () => {
     {
       name: "Email",
       icon: <FaEnvelope size={24} />,
-      url: "mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fmuxioo.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20",
+      url: "mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fam-abdulmueed.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20",
       color: "default",
       variant: "flat",
     },
@@ -145,7 +145,7 @@ const ContactSection = () => {
                     <p className="text-center text-sm text-default-500">
                         Prefer email? Reach out at <br/>
                         <Link 
-                          href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fmuxioo.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20" 
+                          href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fam-abdulmueed.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20" 
                           className="text-primary font-semibold"
                           aria-label="Send email to am.abdulmueed3@gmail.com"
                         >

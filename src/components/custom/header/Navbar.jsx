@@ -268,7 +268,7 @@ export default function Navbar() {
                   </Link>
                   <Link
                     isExternal
-                    href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fmuxioo.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20"
+                    href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fam-abdulmueed.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20"
                     aria-label="Email"
                     className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
                   >

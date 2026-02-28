@@ -2,28 +2,28 @@ import AboutSection from "@/components/custom/AboutSection";
 import React from "react";
 
 export const metadata = {
-  title: "About Muxio Music",
-  description: "Learn more about Muxio Music app — Discover, stream & download from top platforms.",
+  title: "About | Abdul Mueed",
+  description: "Learn more about Abdul Mueed — full-stack developer, designer, and creator.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Muxio Music",
-    description: "Learn more about Muxio Music app — Discover, stream & download from top platforms.",
+    title: "About | Abdul Mueed",
+    description: "Learn more about Abdul Mueed — full-stack developer, designer, and creator.",
     images: [
       {
-        url: "/images/blog/feature.jpg",
+        url: "https://am-abdulmueed.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Muxio Music - Feel free when playing music",
+        alt: "Abdul Mueed Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Muxio Music",
-    description: "Learn more about Muxio Music app — Discover, stream & download from top platforms.",
-    images: ["/images/blog/feature.jpg"],
+    title: "About | Abdul Mueed",
+    description: "Learn more about Abdul Mueed — full-stack developer, designer, and creator.",
+    images: ["https://am-abdulmueed.vercel.app/og-image.jpg"],
   },
 };
 

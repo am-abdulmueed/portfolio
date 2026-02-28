@@ -8,28 +8,28 @@ import DownloadInfoSection from "@/components/custom/DownloadInfoSection";
 import AdSense from "@/components/custom/AdSense";
 
 export const metadata = {
-  title: "Muxio Music",
-  description: "Muxio Music app: Discover, stream & download from top platforms. Free, fast, and open-source.",
+  title: "Abdul Mueed | Full-stack Developer",
+  description: "Explore the portfolio of Abdul Mueed — full-stack developer, designer, and creator. Discover projects, skills, and experience.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Muxio Music",
-    description: "Muxio Music app: Discover, stream & download from top platforms.",
+    title: "Abdul Mueed | Full-stack Developer",
+    description: "Explore the portfolio of Abdul Mueed — full-stack developer, designer, and creator. Discover projects, skills, and experience.",
     images: [
       {
-        url: "/images/blog/feature.jpg",
+        url: "https://am-abdulmueed.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Muxio Music - Feel free when playing music",
+        alt: "Abdul Mueed Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muxio Music",
-    description: "Muxio Music app: Discover, stream & download from top platforms. Free, fast, and open-source.",
-    images: ["/images/blog/feature.jpg"],
+    title: "Abdul Mueed | Full-stack Developer",
+    description: "Explore the portfolio of Abdul Mueed — full-stack developer, designer, and creator. Discover projects, skills, and experience.",
+    images: ["https://am-abdulmueed.vercel.app/og-image.jpg"],
   },
 };
 

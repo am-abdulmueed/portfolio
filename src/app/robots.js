@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const baseUrl = "https://muxioo.vercel.app";
+const baseUrl = "https://am-abdulmueed.vercel.app";
 
 export default function robots() {
   return {

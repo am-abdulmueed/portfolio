@@ -151,7 +151,7 @@ const AboutSection = () => {
                     <FaXTwitter size={22} />
                   </Button>
                   <Button
-                    href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fmuxioo.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20"
+                    href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fam-abdulmueed.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20"
                     as={Link}
                     isExternal
                     isIconOnly

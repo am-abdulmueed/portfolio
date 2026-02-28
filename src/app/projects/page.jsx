@@ -2,8 +2,8 @@ import ProjectSection from "@/components/custom/ProjectSection";
 import AdSense from "@/components/custom/AdSense";
 
 export const metadata = {
-  title: "Projects - muxio",
-  description: "Explore our featured projects, tools, and open-source contributions.",
+  title: "Projects | Abdul Mueed",
+  description: "Explore the projects and open-source contributions of Abdul Mueed.",
   alternates: {
     canonical: "/projects",
   },

@@ -31,60 +31,47 @@ const sfpDisplay = localFont({
 
 export const metadata = {
   title: {
-    default: "Muxio Music - Discover, Stream & Download Music",
-    template: "%s | Muxio Music",
+    default: "Abdul Mueed",
+    template: "%s | Abdul Mueed",
   },
-  description: "Muxio Music app for discovering and streaming music and videos. Inspired by YouTube Music & SoundCloud with up to 256kbps audio or 1080p video playback. A sleek, modern music app experience.",
-  applicationName: "Muxio Music",
-  authors: [{ name: "am-abdulmueed", url: "https://github.com/am-abdulmueed" }],
+  description: "Developer Portfolio of Abdul Mueed. Full-stack developer, designer, and creator. Explore projects, skills, and experience.",
+  applicationName: "Abdul Mueed Portfolio",
+  authors: [{ name: "Abdul Mueed", url: "https://am-abdulmueed.vercel.app" }],
   generator: "Next.js",
   keywords: [
-    "muxio music",
-    "muxio app",
-    "music app",
-    "music streaming app",
-    "free music streaming",
-    "audio player",
-    "video player",
-    "youtube music",
-    "soundcloud",
-    "spotify alternative",
-    "mp3",
-    "podcasts",
-    "radio",
-    "android music app",
-    "ios music app",
-    "windows music player",
-    "open source music app",
-    "abdulmueed",
-    "abdul mueed",
-    "abdul mueed dev",
-    "abdul mueed freelancer",
-    "abdul mueed devops",
-    "abdul mueed freelancer devops",
-    "abdul mueed engineer",
+    "Abdul Mueed",
+    "Abdul Mueed Portfolio",
+    "Full-stack Developer",
+    "Web Designer",
+    "Muxio Music",
+    "Muxio",
     "betapix",
     "betaae",
-    "a.b.d.u.l.m.u.e.e.d"
+    "freelance developer",
+    "frontend developer",
+    "backend developer"
   ],
+  icons: {
+    icon: ["/abdul.webp"],
+  },
   referrer: "origin-when-cross-origin",
   creator: "Abdul Mueed",
   publisher: "Abdul Mueed",
-  metadataBase: new URL("https://muxioo.vercel.app"),
+  metadataBase: new URL("https://am-abdulmueed.vercel.app"),
   alternates: {
-    canonical: "/",
+    canonical: "https://am-abdulmueed.vercel.app",
   },
   openGraph: {
-    title: "Muxio Music - Discover, Stream & Download Music",
-    description: "Muxio Music app for discovering and streaming music and videos. Inspired by YouTube Music & SoundCloud with up to 256kbps audio or 1080p video playback.",
-    url: "https://muxioo.vercel.app",
-    siteName: "Muxio Music",
+    title: "Abdul Mueed | Full-stack Developer",
+    description: "Explore the portfolio of Abdul Mueed — full-stack developer, designer, and creator. Discover projects, skills, and experience.",
+    url: "https://am-abdulmueed.vercel.app",
+    siteName: "Abdul Mueed",
     images: [
       {
-        url: "https://muxioo.vercel.app/opengraph.png",
+        url: "https://am-abdulmueed.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Muxio Music - Music Discovery App",
+        alt: "Abdul Mueed Portfolio",
       },
     ],
     locale: "en_US",
@@ -92,10 +79,11 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muxio Music - Discover, Stream & Download Music",
-    description: "Muxio Music app for discovering and streaming music and videos. Inspired by YouTube Music & SoundCloud with up to 256kbps audio or 1080p video playback.",
-    images: ["https://muxioo.vercel.app/opengraph.png"],
-    creator: "@am_abdulmueed", // Assuming handle or generic
+    title: "Abdul Mueed | Full-stack Developer",
+    description: "Explore the portfolio of Abdul Mueed — full-stack developer, designer, and creator. Discover projects, skills, and experience.",
+    images: ["https://am-abdulmueed.vercel.app/og-image.jpg"],
+    site: "@amabdulmueed",
+    creator: "@amabdulmueed",
   },
   robots: {
     index: true,
@@ -108,13 +96,6 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  appleWebApp: {
-    title: "Muxio",
-    statusBarStyle: "default",
-    startupImage: [
-      "/opengraph.png",
-    ],
-  },
 };
 
 const RootLayout = ({ children }) => {
@@ -126,37 +107,30 @@ const RootLayout = ({ children }) => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "url": "https://muxioo.vercel.app",
-            "name": "Muxio Music",
+            "url": "https://am-abdulmueed.vercel.app",
+            "name": "Abdul Mueed",
             "publisher": {
-              "@type": "Organization",
-              "name": "Muxio Music"
+              "@type": "Person",
+              "name": "Abdul Mueed"
             },
             "potentialAction": {
               "@type": "SearchAction",
-              "target": "https://muxioo.vercel.app/search?q={search_term_string}",
+              "target": "https://am-abdulmueed.vercel.app/search?q={search_term_string}",
               "query-input": "required name=search_term_string"
             }
           })}
         </Script>
-        <Script id="ld-softwareapp" type="application/ld+json" strategy="beforeInteractive">
+        <Script id="ld-person" type="application/ld+json" strategy="beforeInteractive">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            "name": "Muxio Music",
-            "operatingSystem": "Android, iOS, Windows, macOS, Linux",
-            "applicationCategory": "MultimediaApplication",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "ratingCount": "120"
-            },
-            "url": "https://muxioo.vercel.app/download"
+            "@type": "Person",
+            "name": "Abdul Mueed",
+            "url": "https://am-abdulmueed.vercel.app",
+            "jobTitle": "Full-stack Developer",
+            "sameAs": [
+              "https://github.com/am-abdulmueed",
+              "https://twitter.com/amabdulmueed"
+            ]
           })}
         </Script>
         {/* <Script
@@ -183,8 +157,8 @@ const RootLayout = ({ children }) => {
           <Footer />
           <BackToTop />
           <div itemScope itemType="https://schema.org/WebSite">
-            <link itemProp="url" href="https://muxioo.vercel.app" />
-            <meta itemProp="name" content="Muxio Music" />
+            <link itemProp="url" href="https://am-abdulmueed.vercel.app" />
+            <meta itemProp="name" content="Abdul Mueed" />
           </div>
         </Providers>
       </body>
