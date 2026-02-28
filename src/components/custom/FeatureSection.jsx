@@ -1,73 +1,73 @@
- "use client";
- import React, { useState } from "react";
-import { 
-  MdLibraryMusic, 
-  MdLyrics, 
-  MdFeaturedPlayList, 
-  MdExplore, 
-  MdInsights, 
-  MdOfflinePin 
+"use client";
+import React, { useState } from "react";
+import {
+  MdLibraryMusic,
+  MdLyrics,
+  MdFeaturedPlayList,
+  MdExplore,
+  MdInsights,
+  MdOfflinePin
 } from "react-icons/md";
- import { Card, CardBody, CardHeader, Button } from "@nextui-org/react";
- import { motion } from "framer-motion";
+import { Card, CardBody, CardHeader, Button } from "@nextui-org/react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const features = [
   {
-    title: "Streaming Music",
+    title: "Seamless Streaming",
     descriptions:
-      "Play music from YouTube Music or YouTube free without ads in the background",
+      "Play music from YouTube Music & YouTube without interruptions or ads. Smooth background playback included.",
     image: MdLibraryMusic,
-    color: "from-blue-500/20 to-blue-500/10 text-blue-500",
-    iconColor: "text-blue-500",
+    color: "from-blue-600 to-cyan-500",
+    iconColor: "text-white",
     borderColor: "group-hover:border-blue-500/50",
     category: "Playback",
   },
   {
-    title: "Browsing",
+    title: "Smart Browsing",
     descriptions:
-      "Browsing Home, Charts, Podcast, Moods & Genre with YouTube Music data at high speed",
+      "Explore Home, Charts, Moods & Genres with lightning-fast YouTube Music integration.",
     image: MdExplore,
-    color: "from-purple-500/20 to-purple-500/10 text-purple-500",
-    iconColor: "text-purple-500",
+    color: "from-purple-600 to-pink-500",
+    iconColor: "text-white",
     borderColor: "group-hover:border-purple-500/50",
     category: "Browse",
   },
   {
-    title: "Personalized",
+    title: "Personalized Insights",
     descriptions:
-      "Analyze your playing data, create custom playlists, and sync with YouTube Music",
+      "Sync with YouTube Music, analyze your listening habits, and curate custom playlists.",
     image: MdInsights,
-    color: "from-pink-500/20 to-pink-500/10 text-pink-500",
-    iconColor: "text-pink-500",
+    color: "from-rose-600 to-orange-500",
+    iconColor: "text-white",
     borderColor: "group-hover:border-pink-500/50",
     category: "Personalization",
   },
   {
-    title: "Offline Playing",
-    descriptions: "Caching and can save data for offline playback",
+    title: "Offline Freedom",
+    descriptions: "Save your favorite tracks for offline listening anytime, anywhere. Data efficiency at its best.",
     image: MdOfflinePin,
-    color: "from-green-500/20 to-green-500/10 text-green-500",
-    iconColor: "text-green-500",
+    color: "from-emerald-600 to-teal-500",
+    iconColor: "text-white",
     borderColor: "group-hover:border-green-500/50",
     category: "Playback",
   },
   {
-    title: "Synced lyrics",
+    title: "Synced Lyrics",
     descriptions:
-      "Synced lyrics from Musixmatch and YouTube Transcript and translated lyrics from Musixmatch",
+      "Follow every beat with synced lyrics from Musixmatch and YouTube Transcript. Multi-language support.",
     image: MdLyrics,
-    color: "from-yellow-500/20 to-yellow-500/10 text-yellow-500",
-    iconColor: "text-yellow-500",
+    color: "from-amber-500 to-yellow-400",
+    iconColor: "text-white",
     borderColor: "group-hover:border-yellow-500/50",
     category: "Playback",
   },
   {
-    title: "Many more",
+    title: "And Much More",
     descriptions:
-      "Many more features like SponsorBlock, Sleep Timer, Android Auto, Video Option, etc",
+      "SponsorBlock, Sleep Timer, Android Auto, and high-quality video options. Built for power users.",
     image: MdFeaturedPlayList,
-    color: "from-red-500/20 to-red-500/10 text-red-500",
-    iconColor: "text-red-500",
+    color: "from-red-600 to-rose-500",
+    iconColor: "text-white",
     borderColor: "group-hover:border-red-500/50",
     category: "Core",
   },
@@ -77,80 +77,101 @@ const FeatureSection = () => {
   const categories = ["All", "Playback", "Browse", "Personalization", "Core"];
   const [selectedCategory, setSelectedCategory] = useState("All");
   const visibleFeatures = features.filter(f => selectedCategory === "All" || f.category === selectedCategory);
-  return (
-    <div className="py-20 px-6 relative overflow-hidden">
-       {/* Background decorative elements */}
-       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px] -z-10"></div>
-       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] -z-10"></div>
-       <div className="absolute inset-0 -z-10 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 20% 15%, rgba(59,130,246,0.08), transparent 40%), radial-gradient(circle at 80% 75%, rgba(168,85,247,0.08), transparent 40%), repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 22px)" }}></div>
 
-      <h1 className="text-center scroll-m-20 text-3xl md:text-4xl font-bold tracking-tight lg:text-6xl bg-clip-text py-8 md:py-10 text-transparent bg-gradient-to-r from-gradientstart to-gradientend">
-        Features
-      </h1>
-      <div className="flex items-center justify-center gap-2 mb-6 md:mb-8 flex-wrap">
-        {categories.map(cat => (
-          <button
+  return (
+    <div className="py-24 px-6 relative overflow-hidden">
+      {/* Background Orbs */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] -z-10"></div>
+
+      <div className="text-center mb-16 space-y-4">
+        <motion.h4
+          className="text-primary font-bold uppercase tracking-widest text-sm"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Powerful Features
+        </motion.h4>
+        <motion.h1
+          className="text-4xl md:text-6xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-muted-foreground"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          Everything you need in a <br /> <span className="text-primary">Music App</span>
+        </motion.h1>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+        {categories.map((cat, i) => (
+          <motion.button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-3 md:px-4 py-1.5 md:py-2 rounded-lg md:rounded-xl text-xs md:text-sm font-medium transition-all duration-300 ${
-              selectedCategory === cat
-                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20 scale-105"
-                : "bg-background/50 border border-border/50 text-muted-foreground hover:bg-secondary hover:text-foreground hover:border-primary/30"
-            }`}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05 }}
+            className={`px-6 py-2.5 rounded-2xl text-sm font-bold transition-all duration-300 ${selectedCategory === cat
+                ? "bg-primary text-primary-foreground shadow-[0_0_20px_rgba(var(--primary),0.3)] scale-105"
+                : "bg-background/40 backdrop-blur-md border border-white/5 text-muted-foreground hover:bg-white/10"
+              }`}
           >
             {cat}
-          </button>
+          </motion.button>
         ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-7xl mx-auto">
-        {visibleFeatures.map((feature, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 24, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5, delay: index * 0.05 }}
-            whileHover={{ y: -6 }}
-          >
-            <Card
-              isBlurred
-              className={`py-6 sm:py-7 md:py-8 border-small border-default-200/50 bg-background/40 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-out group ${feature.borderColor} rounded-2xl md:rounded-3xl ring-1 ring-transparent hover:ring-primary/30 relative overflow-hidden`}
+
+      <motion.div
+        layout
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+      >
+        <AnimatePresence mode='popLayout'>
+          {visibleFeatures.map((feature, index) => (
+            <motion.div
+              layout
+              key={feature.title}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.4 }}
+              whileHover={{ y: -8 }}
+              className="group"
             >
-              <motion.div
-                className="absolute inset-0 pointer-events-none"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
+              <Card
+                isBlurred
+                className="h-full border border-white/5 bg-background/40 backdrop-blur-2xl shadow-xl rounded-[2.5rem] p-4 flex flex-col items-center group-hover:border-primary/20 transition-colors duration-500 overflow-hidden"
               >
-                <motion.div
-                  className="absolute -left-1/3 top-0 h-full w-1/3 bg-gradient-to-r from-white/10 to-transparent"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "250%" }}
-                  transition={{ duration: 0.8 }}
-                />
-              </motion.div>
-              <CardHeader className="flex justify-center pb-5 md:pb-6">
-                <div className={`p-4 sm:p-5 md:p-6 rounded-2xl bg-gradient-to-br ${feature.color} shadow-inner`}>
-                  <feature.image size={40} className={`drop-shadow-md ${feature.iconColor}`} />
+                <div className={`p-8 rounded-[2rem] bg-gradient-to-br ${feature.color} shadow-2xl mb-8 group-hover:scale-110 transition-transform duration-500`}>
+                  <feature.image size={48} className={feature.iconColor} />
                 </div>
-              </CardHeader>
-              <CardBody className="text-center gap-3 px-8">
-                <h1 className="text-xl md:text-2xl font-bold tracking-tight text-foreground group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-gradientstart group-hover:to-gradientend transition-all duration-300">
-                  {feature.title}
-                </h1>
-                <p className="text-default-500 leading-relaxed font-medium text-sm md:text-base">
-                  {feature.descriptions}
-                </p>
-                <div className="mt-4">
-                  <Button as="a" href="/download" color="default" variant="light" radius="full" className="hover:scale-105 transition-transform text-xs md:text-sm px-4 py-1.5">
-                    Learn more
+
+                <CardBody className="text-center p-0 gap-4">
+                  <h3 className="text-2xl font-black tracking-tight text-foreground">
+                    {feature.title}
+                  </h3>
+                  <p className="text-default-500 text-lg leading-relaxed font-medium px-4">
+                    {feature.descriptions}
+                  </p>
+                </CardBody>
+
+                <div className="mt-auto pt-8 pb-4">
+                  <Button
+                    as="a"
+                    href="/download"
+                    variant="light"
+                    radius="full"
+                    className="font-bold text-primary group-hover:bg-primary/10 transition-colors px-8"
+                  >
+                    Details
                   </Button>
                 </div>
-              </CardBody>
-            </Card>
-          </motion.div>
-        ))}
-      </div>
+              </Card>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 };

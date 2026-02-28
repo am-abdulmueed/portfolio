@@ -34,22 +34,19 @@ export const metadata = {
     default: "Abdul Mueed",
     template: "%s | Abdul Mueed",
   },
-  description: "Developer Portfolio of Abdul Mueed. Full-stack developer, designer, and creator. Explore projects, skills, and experience.",
+  description: "Official website of Abdul Mueed (also known as Betapix). Full-stack developer, designer, and creator.",
   applicationName: "Abdul Mueed Portfolio",
   authors: [{ name: "Abdul Mueed", url: "https://am-abdulmueed.vercel.app" }],
   generator: "Next.js",
   keywords: [
     "Abdul Mueed",
-    "Abdul Mueed Portfolio",
+    "am-abdulmueed",
+    "betapix",
+    "muxioo",
+    "web developer",
     "Full-stack Developer",
     "Web Designer",
-    "Muxio Music",
-    "Muxio",
-    "betapix",
-    "betaae",
-    "freelance developer",
-    "frontend developer",
-    "backend developer"
+    "freelance developer"
   ],
   icons: {
     icon: ["/abdul.webp"],
@@ -59,10 +56,10 @@ export const metadata = {
   publisher: "Abdul Mueed",
   metadataBase: new URL("https://am-abdulmueed.vercel.app"),
   alternates: {
-    canonical: "https://am-abdulmueed.vercel.app",
+    canonical: "/",
   },
   openGraph: {
-    title: "Abdul Mueed | Full-stack Developer",
+    title: "Abdul Mueed | Full-stack Developer | Muxio",
     description: "Explore the portfolio of Abdul Mueed — full-stack developer, designer, and creator. Discover projects, skills, and experience.",
     url: "https://am-abdulmueed.vercel.app",
     siteName: "Abdul Mueed",
@@ -79,7 +76,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdul Mueed | Full-stack Developer",
+    title: "Abdul Mueed | Full-stack Developer | Muxio",
     description: "Explore the portfolio of Abdul Mueed — full-stack developer, designer, and creator. Discover projects, skills, and experience.",
     images: ["https://am-abdulmueed.vercel.app/og-image.jpg"],
     site: "@amabdulmueed",

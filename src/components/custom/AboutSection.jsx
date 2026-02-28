@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Card,
@@ -8,208 +9,234 @@ import {
   Chip,
   Divider,
 } from "@nextui-org/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { Code2, Database, Globe, Smartphone, Terminal, Wrench, Monitor } from "lucide-react";
+import {
+  Code2,
+  Database,
+  Globe,
+  Smartphone,
+  Terminal,
+  Wrench,
+  Monitor,
+  Palette,
+  Search,
+  Zap,
+  ArrowRight
+} from "lucide-react";
 
 const skills = [
   {
-    category: "Mobile Development",
-    icon: <Smartphone size={16} />,
-    items: ["Java", "Kotlin", "Flutter", "Swift"],
+    category: "Mobile Systems",
+    icon: <Smartphone className="text-foreground" size={20} />,
+    items: ["Flutter", "React Native", "Kotlin Multiplatform", "Java"],
     color: "primary",
   },
   {
-    category: "Web Frontend",
-    icon: <Globe size={16} />,
-    items: ["HTML/CSS", "JavaScript", "React", "Next.js", "TailwindCSS"],
+    category: "Web Ecosystem",
+    icon: <Globe className="text-foreground" size={20} />,
+    items: ["Next.js", "React", "JavaScript", "TailwindCSS"],
     color: "secondary",
   },
   {
-    category: "Desktop Development",
-    icon: <Monitor size={16} />,
-    items: ["JavaFX", "Electron.js", ".NET", "Python Tkinter"],
+    category: "Visual Identity",
+    icon: <Palette className="text-foreground" size={20} />,
+    items: ["UI/UX", "Graphics Design", "Brand Identity"],
     color: "primary",
   },
   {
-    category: "Backend",
-    icon: <Code2 size={16} />,
-    items: ["Node.js", "Express.js", "Appwrite", "Firebase"],
+    category: "Strategy & SEO",
+    icon: <Search className="text-foreground" size={20} />,
+    items: ["Technical SEO", "Speed Optimization", "Growth"],
+    color: "secondary",
+  },
+  {
+    category: "Backend Infrastructure",
+    icon: <Database className="text-foreground" size={20} />,
+    items: ["Node.js", "Appwrite", "PostgreSQL", "Firebase"],
     color: "success",
   },
   {
-    category: "Databases",
-    icon: <Database size={16} />,
-    items: ["MongoDB", "MySQL", "PostgreSQL"],
-    color: "warning",
-  },
-  {
-    category: "General Programming",
-    icon: <Terminal size={16} />,
-    items: ["Python", "C++"],
+    category: "Core Engineering",
+    icon: <Terminal className="text-foreground" size={20} />,
+    items: ["Python", "C++", "System Architecture"],
     color: "danger",
-  },
-  {
-    category: "Tools & Others",
-    icon: <Wrench size={16} />,
-    items: ["Bash", "Git/GitHub", "Docker", "REST APIs", "JSON"],
-    color: "default",
   },
 ];
 
 const AboutSection = () => {
   return (
-    <section className="download-section relative overflow-hidden">
-       <div
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-          aria-hidden="true"
-        >
-          <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#80e6ff] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style={{
-              clipPath:
-                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-            }}
-          ></div>
+    <section className="relative pt-32 pb-20 overflow-hidden min-h-screen bg-background">
+      {/* Dynamic Background */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1400px] -z-10 opacity-30 pointer-events-none">
+        <div className="absolute top-[10%] left-[10%] w-72 h-72 bg-primary/20 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-secondary/20 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="container mx-auto px-6 max-w-7xl">
+        {/* Cinematic Header */}
+        <div className="flex flex-col items-center text-center space-y-6 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="px-6 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-xl"
+          >
+            <span className="text-xs font-black uppercase tracking-[0.4em] text-primary">Behind The Code</span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="text-5xl md:text-8xl font-black tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground/90 to-muted-foreground"
+          >
+            A Journey of <br /> <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary italic">Digital Creation</span>
+          </motion.h1>
         </div>
-      
-      <div className="mx-auto px-6 py-24 lg:px-8 max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          {/* Profile Card */}
-          <div className="md:col-span-1">
-            <Card className="h-full bg-background/60 backdrop-blur-md border-small border-default-200/50 shadow-sm hover:shadow-md transition-shadow rounded-3xl">
-              <CardBody className="flex flex-col items-center text-center gap-4 py-8">
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          {/* Profile Card (4 cols) */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="lg:col-span-4"
+          >
+            <Card className="bg-content1/50 dark:bg-white/[0.03] backdrop-blur-3xl border-default-200 dark:border-white/5 rounded-[3rem] p-8 shadow-2xl h-full">
+              <CardBody className="p-0 flex flex-col items-center gap-8 py-4">
                 <div className="relative group">
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 blur"></div>
-                    <div className="w-32 h-32 relative rounded-full border-2 border-primary bg-background p-1 z-10">
-                      <img 
-                          src="/dev.jpg" 
-                          alt="Abdul Mueed"
-                          className="w-full h-full rounded-full object-cover" 
-                      />
-                    </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend">
-                    Abdul Mueed
-                  </h3>
-                  <p className="text-default-500 font-bold mt-1 text-sm">Full Stack Developer</p>
-                </div>
-                
-                <p className="text-sm text-default-400 px-4">
-                  Passionate about building high-quality mobile and web applications.
-                </p>
-
-                <div className="flex gap-4 mt-4">
-                  <Button
-                    href="https://github.com/am-abdulmueed"
-                    as={Link}
-                    isExternal
-                    isIconOnly
-                    variant="flat"
-                    color="default"
-                    aria-label="GitHub"
-                    className="hover:scale-110 transition-transform"
-                  >
-                    <FaGithub size={22} />
-                  </Button>
-                  <Button
-                    href="https://www.linkedin.com/in/abdulmueed/"
-                    as={Link}
-                    isExternal
-                    isIconOnly
-                    variant="flat"
-                    color="default"
-                    aria-label="LinkedIn"
-                    className="hover:scale-110 transition-transform"
-                  >
-                    <FaLinkedin size={22} />
-                  </Button>
-                  <Button
-                    href="https://www.instagram.com/a.b.d.u.l.m.u.e.e.d/"
-                    as={Link}
-                    isExternal
-                    isIconOnly
-                    variant="flat"
-                    color="danger"
-                    aria-label="Instagram"
-                    className="hover:scale-110 transition-transform"
-                  >
-                    <FaInstagram size={22} />
-                  </Button>
-                  <Button
-                    href="https://x.com/a.b.d.u.l.m.u.e.e.d"
-                    as={Link}
-                    isExternal
-                    isIconOnly
-                    variant="flat"
-                    color="default"
-                    aria-label="X (Twitter)"
-                    className="hover:scale-110 transition-transform"
-                  >
-                    <FaXTwitter size={22} />
-                  </Button>
-                  <Button
-                    href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fam-abdulmueed.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20"
-                    as={Link}
-                    isExternal
-                    isIconOnly
-                    variant="flat"
-                    color="warning"
-                    aria-label="Email"
-                    className="hover:scale-110 transition-transform"
-                  >
-                    <FaEnvelope size={22} />
-                  </Button>
-                </div>
-              </CardBody>
-            </Card>
-          </div>
-
-          {/* Details Card */}
-          <div className="md:col-span-2">
-            <Card className="h-full bg-background/60 backdrop-blur-md border-small border-default-200/50 shadow-sm rounded-3xl">
-              <CardHeader className="flex flex-col items-start px-6 pt-6 pb-0">
-                <h4 className="text-xl font-bold text-foreground">About Me</h4>
-              </CardHeader>
-              <CardBody className="px-6 py-4 gap-6">
-                <p className="text-default-500 leading-relaxed">
-                  I am a <span className="font-semibold text-foreground">Full Stack Developer</span>. 
-                  With intermediate knowledge in <span className="text-gradientstart font-medium">Mobile App Development</span> (Android & iOS), <span className="text-gradientend font-medium">Web Development</span>, and <span className="text-primary font-medium">Desktop Development</span> (alpha), 
-                  I am constantly learning and refining my skills to build high-performing applications across multiple platforms.
-                </p>
-
-                <Divider />
-
-                <div className="flex flex-col gap-4">
-                  <h4 className="text-lg font-semibold text-foreground">Skills & Technologies</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {skills.map((skillGroup, index) => (
-                      <div key={index} className="flex flex-col gap-2">
-                        <div className="flex items-center gap-2 text-default-600">
-                            {skillGroup.icon}
-                            <span className="text-sm font-medium">{skillGroup.category}</span>
-                        </div>
-                        <div className="flex flex-wrap gap-x-3 gap-y-1">
-                          {skillGroup.items.map((item, i) => (
-                            <span 
-                                key={i} 
-                                className="text-sm text-default-500 font-medium"
-                            >
-                              {item}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-0 group-hover:opacity-100 transition duration-500 blur-xl"></div>
+                  <div className="w-44 h-44 relative rounded-full border-2 border-white/10 p-1 group-hover:border-primary/50 transition-colors bg-default-100 overflow-hidden shadow-2xl">
+                    <img
+                      src="/dev.jpg"
+                      alt="Abdul Mueed"
+                      className="w-full h-full rounded-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-foreground rounded-full flex items-center justify-center border-4 border-background text-background shadow-xl">
+                    <Zap size={20} />
                   </div>
                 </div>
+
+                <div className="text-center space-y-2">
+                  <h3 className="text-3xl font-black tracking-tight text-foreground">
+                    Abdul Mueed
+                  </h3>
+                  <div className="inline-block px-4 py-1 rounded-full bg-default-100 dark:bg-white/5 border border-default-200 dark:border-white/10 text-[10px] font-black uppercase tracking-widest text-primary">
+                    Full Stack Strategist
+                  </div>
+                </div>
+
+                <p className="text-sm text-center text-default-500 font-medium px-4 leading-relaxed">
+                  Architecting digital experiences that merge aesthetic precision with technical excellence.
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-3">
+                  {[
+                    { icon: <FaGithub />, href: "https://github.com/am-abdulmueed", color: "bg-[#24292e]", iconColor: "text-white" },
+                    { icon: <FaLinkedin />, href: "https://www.linkedin.com/in/abdulmueed/", color: "bg-[#0077b5]", iconColor: "text-white" },
+                    { icon: <FaInstagram />, href: "https://www.instagram.com/a.b.d.u.l.m.u.e.e.d/", color: "bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]", iconColor: "text-white" },
+                    { icon: <FaXTwitter />, href: "https://x.com/a.b.d.u.l.m.u.e.e.d", color: "bg-foreground", iconColor: "text-background" },
+                    { icon: <FaEnvelope />, href: "mailto:am.abdulmueed3@gmail.com", color: "bg-warning", iconColor: "text-white" }
+                  ].map((social, idx) => (
+                    <motion.a
+                      key={idx}
+                      href={social.href}
+                      target="_blank"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.9 }}
+                      className={`w-12 h-12 rounded-2xl ${social.color} ${social.iconColor} flex items-center justify-center shadow-lg transition-all`}
+                    >
+                      {social.icon}
+                    </motion.a>
+                  ))}
+                </div>
               </CardBody>
             </Card>
-          </div>
-          
+          </motion.div>
+
+          {/* Bio & Skills (8 cols) */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="lg:col-span-8 flex flex-col gap-10"
+          >
+            {/* Story Card */}
+            <Card className="bg-content1/50 dark:bg-white/[0.03] backdrop-blur-3xl border-default-200 dark:border-white/5 rounded-[3rem] p-8 md:p-12 shadow-2xl">
+              <CardBody className="p-0 space-y-6">
+                <h4 className="text-2xl font-black tracking-tight text-foreground flex items-center gap-3">
+                  <Terminal className="text-primary" size={24} />
+                  The Mission
+                </h4>
+                <div className="space-y-4">
+                  <p className="text-lg text-default-500 leading-relaxed font-medium">
+                    I am a <span className="text-foreground font-black">Full Stack Developer</span> and designer who believes code is more than just instructions—it&apos;s a tool to solve human problems.
+                  </p>
+                  <p className="text-default-500 leading-relaxed font-medium">
+                    With a focus on <span className="text-primary font-bold">Cross-Platform Efficiency</span>, I build applications that bridge the gap between high-performance backends and visually stunning user interfaces. Whether it&apos;s a mobile app, a web platform, or a unified brand identity, my goal is always the same: <span className="italic">Excellence by Design.</span>
+                  </p>
+                </div>
+              </CardBody>
+            </Card>
+
+            {/* Skills Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {skills.map((skill, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Card className="bg-content1/50 dark:bg-white/[0.03] backdrop-blur-2xl border-default-100 dark:border-white/5 rounded-[2.5rem] p-6 hover:bg-content2 transition-colors duration-500 h-full shadow-lg">
+                    <CardBody className="p-0 space-y-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-default-100 dark:bg-white/5 flex items-center justify-center border border-default-200 dark:border-white/10">
+                          {skill.icon}
+                        </div>
+                        <h5 className="font-black text-xs uppercase tracking-widest text-foreground">{skill.category}</h5>
+                      </div>
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {skill.items.map((item, j) => (
+                          <Chip
+                            key={j}
+                            variant="flat"
+                            size="sm"
+                            className="bg-primary/10 border-none text-primary font-black uppercase text-[9px] tracking-widest px-2"
+                          >
+                            {item}
+                          </Chip>
+                        ))}
+                      </div>
+                    </CardBody>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
+
+        {/* Experience CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mt-10 md:mt-20 p-8 md:p-12 rounded-[2.5rem] md:rounded-[4rem] bg-gradient-to-r from-primary/10 to-transparent border border-primary/20 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10"
+        >
+          <div className="space-y-4 text-center md:text-left">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-tight">Elevating Ideas Through <br /> Technical Precision.</h2>
+            <p className="text-sm md:text-base text-default-500 font-medium max-w-lg">Ready to transform your vision into a world-class digital product? Let&apos;s discuss your next mission.</p>
+          </div>
+          <Button
+            as={Link}
+            href="/contact"
+            color="primary"
+            radius="full"
+            size="lg"
+            className="font-black uppercase tracking-[0.1em] md:tracking-[0.2em] h-14 md:h-20 px-8 md:px-12 text-sm md:text-lg shadow-2xl shadow-primary/30 w-full md:w-auto"
+            endContent={<ArrowRight size={20} />}
+          >
+            Start Transmission
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

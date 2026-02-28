@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import { animate } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import { Card, CardBody } from "@nextui-org/react";
 
 export default function Download() {
@@ -9,15 +9,15 @@ export default function Download() {
   useEffect(() => {
     const node = nodeRef.current;
     // Hardcoded download count
-    const sum = 1827561; 
-    
+    const sum = 1827561;
+
     if (node) {
       const controls = animate(0, sum, {
-        duration: 2,
-        ease: "easeOut",
+        duration: 2.5,
+        ease: [0.16, 1, 0.3, 1],
         onUpdate(value) {
           node.textContent = Intl.NumberFormat("en-US").format(
-            value.toFixed(0)
+            Math.floor(value)
           );
         },
       });
@@ -26,17 +26,34 @@ export default function Download() {
   }, []);
 
   return (
-    <Card className="bg-background/40 backdrop-blur-md border-small border-default-200/50 shadow-sm w-full rounded-3xl">
-      <CardBody className="py-12 flex flex-col items-center justify-center gap-2">
-          <h1
-          className="text-center text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend drop-shadow-sm"
-          ref={nodeRef}
+    <div className="relative group">
+      {/* Decorative Glow */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-[3rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+
+      <Card className="bg-background/60 backdrop-blur-2xl border border-white/10 shadow-2xl w-full rounded-[3rem] overflow-hidden">
+        <CardBody className="py-16 flex flex-col items-center justify-center gap-4 relative">
+          <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            className="absolute -top-10 -left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"
           />
-          <h1 className="text-center text-2xl font-semibold tracking-tight lg:text-3xl text-default-500 uppercase letter-spacing-widest">
-          Downloads
+
+          <h1
+            className="text-center text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-primary via-primary/80 to-secondary drop-shadow-2xl"
+            ref={nodeRef}
+          >
+            0
           </h1>
-      </CardBody>
-    </Card>
+          <div className="flex flex-col items-center">
+            <h2 className="text-center text-2xl font-black tracking-[0.2em] uppercase text-default-400">
+              Downloads
+            </h2>
+            <div className="w-12 h-1 bg-primary rounded-full mt-2" />
+          </div>
+        </CardBody>
+      </Card>
+    </div>
   );
 }
 function Counter({ from, to }) {

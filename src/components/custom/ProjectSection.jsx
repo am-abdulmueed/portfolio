@@ -1,7 +1,13 @@
 "use client";
+
 import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Terminal, Code2, Layers, Globe, Shield, Zap, Music, Cloud, Film, Search, SlidersHorizontal, X } from 'lucide-react';
+import {
+  ExternalLink, Github, Terminal, Code2, Layers, Globe,
+  Shield, Zap, Music, Cloud, Film, Search,
+  SlidersHorizontal, X, ArrowUpRight, Code
+} from 'lucide-react';
+import { Button, Input, Chip, Card, CardBody, Tooltip } from '@nextui-org/react';
 import Link from 'next/link';
 
 const projects = [
@@ -12,8 +18,9 @@ const projects = [
     link: "https://am-aibase.vercel.app/",
     github: "https://github.com/am-abdulmueed/ai-base/",
     tech: ["AI", "Next.js", "Directory"],
-    icon: <Globe size={20} />,
-    category: "AI"
+    icon: <Globe size={24} />,
+    category: "AI",
+    color: "from-blue-600 to-cyan-500"
   },
   {
     title: "Supercharged URL Shortener",
@@ -22,8 +29,9 @@ const projects = [
     link: "https://url-shs.vercel.app/",
     github: "https://github.com/am-abdulmueed/url-shortener",
     tech: ["Next.js 14", "MongoDB", "Shadcn"],
-    icon: <Zap size={20} />,
-    category: "Web App"
+    icon: <Zap size={24} />,
+    category: "Web App",
+    color: "from-yellow-500 to-orange-500"
   },
   {
     title: "Drawir",
@@ -32,8 +40,9 @@ const projects = [
     link: "https://drawir.vercel.app",
     github: "https://github.com/am-abdulmueed/drawir",
     tech: ["Next.js", "Canvas", "Drawing"],
-    icon: <Code2 size={20} />,
-    category: "Tool"
+    icon: <Code2 size={24} />,
+    category: "Tool",
+    color: "from-purple-600 to-fuchsia-500"
   },
   {
     title: "MySocials",
@@ -42,8 +51,9 @@ const projects = [
     link: "https://msocials.vercel.app",
     github: "https://github.com/am-abdulmueed/MySocials",
     tech: ["Next.js", "Shadcn", "MongoDB"],
-    icon: <Globe size={20} />,
-    category: "Web App"
+    icon: <Globe size={24} />,
+    category: "Web App",
+    color: "from-emerald-500 to-teal-500"
   },
   {
     title: "Cookie Consent",
@@ -52,8 +62,9 @@ const projects = [
     link: "https://am-scc.vercel.app/",
     github: "https://github.com/am-abdulmueed/cookie-consent",
     tech: ["Shadcn-ui", "TailwindCSS", "Component"],
-    icon: <Shield size={20} />,
-    category: "Component"
+    icon: <Shield size={24} />,
+    category: "Component",
+    color: "from-indigo-600 to-blue-500"
   },
   {
     title: "IDE Alpha",
@@ -62,8 +73,9 @@ const projects = [
     link: "https://ide-alpha.vercel.app",
     github: "https://github.com/am-abdulmueed/IDE",
     tech: ["Next.js", "TailwindCSS", "Shadcn-ui"],
-    icon: <Terminal size={20} />,
-    category: "Tool"
+    icon: <Terminal size={24} />,
+    category: "Tool",
+    color: "from-red-600 to-rose-500"
   },
   {
     title: "CodeBin",
@@ -72,8 +84,9 @@ const projects = [
     link: "https://am-codebin.vercel.app/",
     github: "https://github.com/am-abdulmueed/codebin",
     tech: ["Web App", "Sharing", "Dev Tool"],
-    icon: <Code2 size={20} />,
-    category: "Web App"
+    icon: <Code2 size={24} />,
+    category: "Web App",
+    color: "from-zinc-700 to-zinc-500"
   },
   {
     title: "p2p-share",
@@ -82,8 +95,9 @@ const projects = [
     link: "https://github.com/am-abdulmueed/p2p-share",
     github: "https://github.com/am-abdulmueed/p2p-share",
     tech: ["P2P", "WebRTC", "File Sharing"],
-    icon: <Layers size={20} />,
-    category: "Web App"
+    icon: <Layers size={24} />,
+    category: "Web App",
+    color: "from-cyan-600 to-blue-500"
   },
   {
     title: "ai_agent",
@@ -92,8 +106,9 @@ const projects = [
     link: "https://github.com/am-abdulmueed/ai_agent",
     github: "https://github.com/am-abdulmueed/ai_agent",
     tech: ["AI", "Terminal", "CLI"],
-    icon: <Terminal size={20} />,
-    category: "AI"
+    icon: <Terminal size={24} />,
+    category: "AI",
+    color: "from-blue-600 to-indigo-500"
   },
   {
     title: "passbit",
@@ -102,8 +117,9 @@ const projects = [
     link: "https://github.com/am-abdulmueed/passbit",
     github: "https://github.com/am-abdulmueed/passbit",
     tech: ["Nitro.build", "Backend", "Security"],
-    icon: <Shield size={20} />,
-    category: "Backend"
+    icon: <Shield size={24} />,
+    category: "Backend",
+    color: "from-rose-600 to-orange-500"
   },
   {
     title: "bonsai",
@@ -112,8 +128,9 @@ const projects = [
     link: "https://github.com/am-abdulmueed/bonsai",
     github: "https://github.com/am-abdulmueed/bonsai",
     tech: ["Library", "State Management", "DevTools"],
-    icon: <Layers size={20} />,
-    category: "Library"
+    icon: <Layers size={24} />,
+    category: "Library",
+    color: "from-emerald-600 to-green-400"
   },
   {
     title: "Tailwind CSS Bg Gradient",
@@ -122,8 +139,9 @@ const projects = [
     link: "https://tailwind-background.vercel.app/",
     github: "https://github.com/am-abdulmueed/tailwind-background",
     tech: ["Tailwind CSS", "Plugin", "CSS"],
-    icon: <Code2 size={20} />,
-    category: "Library"
+    icon: <Code2 size={24} />,
+    category: "Library",
+    color: "from-sky-500 to-blue-600"
   },
   {
     title: "MusicHub",
@@ -131,8 +149,9 @@ const projects = [
     description: "A responsive music app built with React and Node.js. Features include playlist management and a recommendation system.",
     link: "https://music-hubs.vercel.app/",
     tech: ["React", "Node.js", "Music API"],
-    icon: <Music size={20} />,
-    category: "Web App"
+    icon: <Music size={24} />,
+    category: "Web App",
+    color: "from-indigo-600 to-purple-600"
   },
   {
     title: "Cloud Storage WebApp",
@@ -140,8 +159,9 @@ const projects = [
     description: "An app to upload and access files from anywhere.",
     link: "https://github.com/am-abdulmueed/cloud-storage",
     tech: ["Cloud Storage", "File Upload", "WebApp"],
-    icon: <Cloud size={20} />,
-    category: "Web App"
+    icon: <Cloud size={24} />,
+    category: "Web App",
+    color: "from-blue-500 to-cyan-400"
   },
   {
     title: "Cloudup",
@@ -149,8 +169,9 @@ const projects = [
     description: "An AI-powered entertainment platform for movies, dramas, and web series.",
     link: "https://github.com/BetaAE/cloudupprot",
     tech: ["AI", "React Native", "Streaming", "Subtitles"],
-    icon: <Film size={20} />,
-    category: "AI"
+    icon: <Film size={24} />,
+    category: "AI",
+    color: "from-red-600 to-rose-700"
   },
   {
     title: "Aurio",
@@ -158,8 +179,9 @@ const projects = [
     description: "A futuristic music streaming app inspired by Spotify and YouTube Music.",
     link: "https://github.com/BetaAE/aurioappprot",
     tech: ["AI", "Flutter", "Music", "Streaming"],
-    icon: <Music size={20} />,
-    category: "App"
+    icon: <Music size={24} />,
+    category: "App",
+    color: "from-primary to-secondary"
   }
 ];
 
@@ -179,182 +201,196 @@ const ProjectSection = () => {
 
   const filteredProjects = projects.filter(project => {
     const matchesCategory = selectedCategory === "All" || project.category === selectedCategory;
-    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          project.status.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          project.tech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
+    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.tech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
   return (
-    <section className="py-20 relative overflow-hidden min-h-screen" id="projects">
-      {/* Background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[10%] right-[5%] w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-[10%] left-[5%] w-64 h-64 bg-secondary/5 rounded-full blur-3xl" />
-      </div>
+    <section className="project-section py-32 relative overflow-hidden bg-background" id="projects">
+      {/* Cinematic Background */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10 animate-pulse" />
+      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[120px] -z-10 animate-pulse delay-700" />
+      <div className="absolute inset-0 -z-20 opacity-[0.03] dark:opacity-[0.05]"
+        style={{
+          backgroundImage: `linear-gradient(to right, #888 1px, transparent 1px), linear-gradient(to bottom, #888 1px, transparent 1px)`,
+          backgroundSize: '80px 80px'
+        }}
+      />
 
-      <div className="container px-4 mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-            Featured <span className="text-primary">Projects</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            A showcase of my recent work, ranging from AI tools and developer utilities to web applications.
-          </p>
+      <div className="container px-6 mx-auto relative z-10 max-w-7xl">
+        <div className="flex flex-col items-center text-center mb-24 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md"
+          >
+            <Code size={16} className="text-primary" />
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">Portfolio Showcase</span>
+          </motion.div>
 
-          {/* Search and Filter Controls */}
-          <div className="flex flex-col items-center max-w-2xl mx-auto mb-16 w-full relative z-20">
-            <div className="relative flex items-center w-full gap-3">
-              {/* Search Bar */}
-              <div className="relative flex-grow group">
-                <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none text-muted-foreground group-focus-within:text-primary transition-colors z-10">
-                  <Search size={22} />
-                </div>
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search projects..."
-                  className="w-full h-14 pl-14 pr-4 bg-secondary/30 backdrop-blur-md border border-border/50 rounded-2xl focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all duration-300 text-lg placeholder:text-muted-foreground/50 shadow-sm"
-                  ref={inputRef}
-                />
-              </div>
+          <motion.h1
+            className="text-5xl md:text-7xl font-black tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground/90 to-muted-foreground"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+          >
+            Featured <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary italic">Projects</span>
+          </motion.h1>
 
-              {/* Filter Toggle Button */}
-              <button
-                onClick={() => setShowFilters(!showFilters)}
-                className={`h-14 w-14 flex-shrink-0 flex items-center justify-center rounded-2xl border transition-all duration-300 ${
-                  showFilters 
-                    ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20" 
-                    : "bg-secondary/30 border-border/50 text-muted-foreground hover:bg-secondary/50 hover:text-foreground hover:border-primary/30"
-                }`}
-                aria-label="Toggle filters"
-              >
-                {showFilters ? <X size={24} /> : <SlidersHorizontal size={24} />}
-              </button>
+          <motion.p
+            className="text-default-500 text-xl font-medium max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            A curated selection of my technical work, from AI modules to robust web platforms.
+          </motion.p>
+
+          <motion.div
+            className="w-full max-w-2xl mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-[2rem] blur opacity-0 group-focus-within:opacity-100 transition-opacity" />
+              <Input
+                variant="flat"
+                size="lg"
+                ref={inputRef}
+                placeholder="Search by title, tech or category..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                startContent={<Search className="text-default-400" size={20} />}
+                endContent={
+                  <Button
+                    isIconOnly
+                    size="sm"
+                    variant={showFilters ? "solid" : "light"}
+                    color={showFilters ? "primary" : "default"}
+                    onPress={() => setShowFilters(!showFilters)}
+                    className="rounded-xl"
+                  >
+                    <SlidersHorizontal size={18} />
+                  </Button>
+                }
+                classNames={{
+                  inputWrapper: "bg-background/40 backdrop-blur-2xl border-white/5 h-16 rounded-[1.5rem] shadow-xl group-hover:border-primary/20 transition-all",
+                  input: "text-lg font-medium"
+                }}
+              />
             </div>
 
-            {/* Collapsible Filter Section */}
             <AnimatePresence>
               {showFilters && (
                 <motion.div
-                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                  animate={{ height: 'auto', opacity: 1, marginTop: 16 }}
-                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden w-full"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="mt-6 flex flex-wrap justify-center gap-2 p-6 bg-white/5 backdrop-blur-3xl rounded-[2rem] border border-white/5"
                 >
-                  <div className="p-5 bg-secondary/20 rounded-2xl border border-border/50 backdrop-blur-sm">
-                    <div className="flex items-center justify-between mb-4">
-                      <p className="text-sm font-medium text-muted-foreground">Filter by category</p>
-                      {selectedCategory !== "All" && (
-                        <button 
-                          onClick={() => setSelectedCategory("All")}
-                          className="text-xs text-primary hover:underline"
-                        >
-                          Reset
-                        </button>
-                      )}
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {categories.map((category) => (
-                        <button
-                          key={category}
-                          onClick={() => setSelectedCategory(category)}
-                          className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
-                            selectedCategory === category
-                              ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20 scale-105"
-                              : "bg-background/50 border border-border/50 text-muted-foreground hover:bg-secondary hover:text-foreground hover:border-primary/30"
-                          }`}
-                        >
-                          {category}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+                  {categories.map((cat) => (
+                    <Chip
+                      key={cat}
+                      as="button"
+                      onPress={() => setSelectedCategory(cat)}
+                      variant={selectedCategory === cat ? "shadow" : "flat"}
+                      color={selectedCategory === cat ? "primary" : "default"}
+                      className="cursor-pointer font-black text-[10px] uppercase tracking-widest px-4 h-10 hover:scale-105 transition-transform"
+                    >
+                      {cat}
+                    </Chip>
+                  ))}
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
-        <motion.div 
+        <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8"
         >
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
               <motion.div
                 layout
                 key={project.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="group perspective-1000"
-                data-cursor-text="VIEW"
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <div className="relative h-full bg-background/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 overflow-hidden">
-                  {/* Hover Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="p-2.5 bg-secondary/50 rounded-xl group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300">
+                <Card
+                  isBlurred
+                  className="group relative h-full bg-background/40 backdrop-blur-3xl border border-white/5 rounded-[2.5rem] p-4 group overflow-hidden hover:border-primary/30 transition-all duration-500"
+                >
+                  <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 blur-[80px] transition-opacity duration-700`} />
+
+                  <CardBody className="p-4 flex flex-col items-start gap-8 relative z-10">
+                    <div className="w-full flex justify-between items-start">
+                      <div className={`p-4 rounded-3xl bg-gradient-to-br ${project.color} text-white shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
                         {project.icon}
                       </div>
-                      <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${statusColors[project.status] || "bg-secondary/50 text-muted-foreground"}`}>
+                      <Chip
+                        variant="dot"
+                        className={`font-black uppercase tracking-[0.2em] text-[9px] border-white/10 ${statusColors[project.status]}`}
+                      >
                         {project.status}
-                      </span>
+                      </Chip>
                     </div>
 
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground text-sm mb-6 line-clamp-3 flex-grow">
-                      {project.description}
-                    </p>
+                    <div className="space-y-3">
+                      <h3 className="text-2xl font-black tracking-tighter group-hover:text-primary transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      <p className="text-default-500 font-medium leading-relaxed line-clamp-3">
+                        {project.description}
+                      </p>
+                    </div>
 
-                    <div className="space-y-4">
+                    <div className="w-full mt-auto space-y-8">
                       <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, i) => (
-                          <span key={i} className="text-[10px] uppercase tracking-wider px-2 py-1 bg-secondary/30 rounded-md text-muted-foreground">
-                            {tech}
-                          </span>
+                        {project.tech.map((t, i) => (
+                          <Chip key={i} size="sm" variant="flat" className="bg-primary/5 text-primary/70 font-bold uppercase text-[9px] tracking-widest px-2 h-6">
+                            {t}
+                          </Chip>
                         ))}
                       </div>
 
-                      <div className="flex items-center gap-3 pt-4 border-t border-border/50">
-                        <Link 
-                          href={project.link} 
-                          target="_blank" 
-                          className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+                      <div className="flex items-center gap-4 pt-6 border-t border-white/5">
+                        <Button
+                          as={Link}
+                          href={project.link}
+                          target="_blank"
+                          variant="solid"
+                          color="primary"
+                          radius="full"
+                          className="font-black px-8 h-12 shadow-lg hover:shadow-primary/40 group-hover:scale-105 transition-all text-xs uppercase"
+                          endContent={<ArrowUpRight size={16} />}
                         >
-                          <ExternalLink size={16} />
-                          Live Demo
-                        </Link>
+                          Visit Showcase
+                        </Button>
                         {project.github && (
-                          <Link 
-                            href={project.github} 
-                            target="_blank" 
-                            className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors ml-auto"
-                          >
-                            <Github size={16} />
-                            Code
-                          </Link>
+                          <Tooltip content="Source Code" placement="bottom">
+                            <Button
+                              as={Link}
+                              href={project.github}
+                              target="_blank"
+                              isIconOnly
+                              variant="light"
+                              radius="full"
+                              className="text-default-400 hover:text-foreground hover:bg-white/5"
+                            >
+                              <Github size={24} />
+                            </Button>
+                          </Tooltip>
                         )}
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </CardBody>
+                </Card>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -364,15 +400,21 @@ const ProjectSection = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center py-20"
+            className="flex flex-col items-center justify-center py-32 space-y-6"
           >
-            <p className="text-muted-foreground text-lg">No projects found matching your criteria.</p>
-            <button 
-              onClick={() => {setSelectedCategory("All"); setSearchQuery("");}}
-              className="mt-4 text-primary hover:underline"
+            <div className="p-8 rounded-full bg-secondary/10 text-default-400">
+              <Search size={64} />
+            </div>
+            <p className="text-2xl font-black text-default-400 uppercase tracking-tighter">No masterpieces found</p>
+            <Button
+              onPress={() => { setSelectedCategory("All"); setSearchQuery(""); }}
+              variant="flat"
+              color="primary"
+              radius="full"
+              className="font-black uppercase"
             >
-              Clear filters
-            </button>
+              Reset Filters
+            </Button>
           </motion.div>
         )}
       </div>

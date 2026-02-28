@@ -1,1 +1,0 @@
-release the cursor on click

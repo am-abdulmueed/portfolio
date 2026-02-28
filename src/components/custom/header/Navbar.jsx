@@ -15,7 +15,7 @@ import {
 } from "@nextui-org/react";
 import ThemeSwitcher from "../ThemeSwitcher";
 import { usePathname } from "next/navigation";
-import { Github, Menu, X } from "lucide-react";
+import { Github, Menu, X, Home, Cpu, Layers, Sparkles, Download, Info, Mail } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaDiscord } from "react-icons/fa";
@@ -54,13 +54,14 @@ export default function Navbar() {
     });
   }, []);
   const menus = [
-    { title: "Home", path: "/" },
-    { title: "Architecture", path: "/architecture" },
-    { title: "Projects", path: "/projects" },
-    { title: "Download", path: "/download" },
-    { title: "About Us", path: "/about" },
-    { title: "Contact", path: "/contact" },
-    { title: "GitHub", path: "https://github.com/am-abdulmueed/", isExternal: true },
+    { title: "Home", path: "/", icon: <Home size={20} /> },
+    { title: "Architecture", path: "/architecture", icon: <Cpu size={20} /> },
+    { title: "Projects", path: "/projects", icon: <Layers size={20} /> },
+    { title: "Why Hire Me", path: "/why-hire-me", icon: <Sparkles size={20} /> },
+    { title: "Download", path: "/download", icon: <Download size={20} /> },
+    { title: "About Us", path: "/about", icon: <Info size={20} /> },
+    { title: "Contact", path: "/contact", icon: <Mail size={20} /> },
+    { title: "GitHub", path: "https://github.com/am-abdulmueed/", isExternal: true, icon: <FaGithub size={20} /> },
   ];
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState(false);
@@ -107,76 +108,87 @@ export default function Navbar() {
         transition={{ duration: 0.25, ease: "easeOut" }}
         className="fixed top-0 left-0 right-0 z-50"
       >
-      <NavbarNext
-        isBordered={false}
-        maxWidth="2xl"
-        className={`pt-2 ${scroll ? "bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 border-b border-default-200/40 shadow-sm" : "bg-transparent"}`}
-        position="fixed"
-        disableScrollHandler
-        onMenuOpenChange={setIsMenuOpen}
-        isMenuOpen={isMenuOpen}
-      >
-        <NavbarContent className="md:hidden pr-3" justify="start">
-          <NavbarBrand>
-            <Logo />
-          </NavbarBrand>
-        </NavbarContent>
+        <NavbarNext
+          isBordered={false}
+          maxWidth="2xl"
+          className={`pt-2 ${scroll ? "bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 border-b border-default-200/40 shadow-sm" : "bg-transparent"}`}
+          position="fixed"
+          disableScrollHandler
+          onMenuOpenChange={setIsMenuOpen}
+          isMenuOpen={isMenuOpen}
+        >
+          <NavbarContent className="md:hidden pr-3" justify="start">
+            <NavbarBrand>
+              <Logo />
+            </NavbarBrand>
+          </NavbarContent>
 
-        <NavbarContent className="md:hidden" justify="end">
-          <ThemeSwitcher />
-          <button
-            className="md:hidden text-3xl font-bold leading-none focus:outline-none transition-transform hover:scale-110 active:scale-95"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? <X size={28} /> : "≡"}
-          </button>
-        </NavbarContent>
+          <NavbarContent className="md:hidden" justify="end">
+            <div className="flex items-center gap-4">
+              <ThemeSwitcher />
+              <button
+                className="relative z-50 p-2 text-foreground focus:outline-none"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              >
+                <div className="flex flex-col gap-1.5 items-end">
+                  <motion.span
+                    animate={isMenuOpen ? { rotate: 45, y: 8, width: "32px" } : { rotate: 0, y: 0, width: "24px" }}
+                    className="h-1 bg-foreground rounded-full"
+                  />
+                  <motion.span
+                    animate={isMenuOpen ? { opacity: 0, x: 20 } : { opacity: 1, x: 0, width: "32px" }}
+                    className="h-1 bg-foreground rounded-full"
+                  />
+                  <motion.span
+                    animate={isMenuOpen ? { rotate: -45, y: -8, width: "32px" } : { rotate: 0, y: 0, width: "16px" }}
+                    className="h-1 bg-foreground rounded-full"
+                  />
+                </div>
+              </button>
+            </div>
+          </NavbarContent>
 
-        <NavbarContent className="hidden md:flex gap-4" justify="start">
-          <NavbarBrand className="" justify="start">
-            <Logo />
-            <NextLink href="/">
-              <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gradientstart/60 to-50% to-gradientend/60">
-                Muxio
-              </h1>
-            </NextLink>
-          </NavbarBrand>
-        </NavbarContent>
+          <NavbarContent className="hidden md:flex gap-4" justify="start">
+            <NavbarBrand className="" justify="start">
+              <Logo />
+            </NavbarBrand>
+          </NavbarContent>
 
-        <NavbarContent className="hidden md:flex gap-4" justify="end">
-          <div ref={containerRef} className="relative flex items-center gap-4">
-            {menus.map((menu, index) => (
-              <NavbarItem key={index} isActive={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path}>
-                <Button
-                  ref={(el) => (menuRefs.current[index] = el)}
-                  color="default"
-                  variant={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path ? "solid" : "light"}
-                  as={menu.isExternal ? Link : NextLink}
-                  size="md"
-                  href={menu.path}
-                  isExternal={menu.isExternal}
-                  showAnchorIcon={menu.isExternal}
-                  className="data-[active=true]:shadow-md"
-                >
-                  <p className="font-bold">{menu.title}</p>
-                </Button>
-              </NavbarItem>
-            ))}
-            {indicator.visible && (
-              <motion.div
-                className="absolute -bottom-2 h-1 rounded-full bg-gradient-to-r from-gradientstart to-gradientend"
-                initial={false}
-                animate={{ left: indicator.left, width: indicator.width }}
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              />
-            )}
-          </div>
-          <NavbarItem>
-            <ThemeSwitcher></ThemeSwitcher>
-          </NavbarItem>
-        </NavbarContent>
-      </NavbarNext>
+          <NavbarContent className="hidden md:flex gap-4" justify="end">
+            <div ref={containerRef} className="relative flex items-center gap-4">
+              {menus.map((menu, index) => (
+                <NavbarItem key={index} isActive={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path}>
+                  <Button
+                    ref={(el) => (menuRefs.current[index] = el)}
+                    color="default"
+                    variant={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path ? "solid" : "light"}
+                    as={menu.isExternal ? Link : NextLink}
+                    size="md"
+                    href={menu.path}
+                    isExternal={menu.isExternal}
+                    showAnchorIcon={menu.isExternal}
+                    startContent={!menu.isExternal && menu.icon}
+                    className="data-[active=true]:shadow-md font-bold px-4"
+                  >
+                    {menu.title}
+                  </Button>
+                </NavbarItem>
+              ))}
+              {indicator.visible && (
+                <motion.div
+                  className="absolute -bottom-2 h-1 rounded-full bg-gradient-to-r from-gradientstart to-gradientend"
+                  initial={false}
+                  animate={{ left: indicator.left, width: indicator.width }}
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
+            </div>
+            <NavbarItem>
+              <ThemeSwitcher></ThemeSwitcher>
+            </NavbarItem>
+          </NavbarContent>
+        </NavbarNext>
       </motion.div>
       <motion.div
         className="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-gradientstart to-gradientend z-[60]"
@@ -192,104 +204,83 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[90] bg-black/50 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[90] bg-background/80 backdrop-blur-md md:hidden"
               onClick={() => setIsMenuOpen(false)}
             />
             <motion.div
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "100%" }}
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              drag="y"
-              dragConstraints={{ top: 0 }}
-              dragElastic={{ top: 0, bottom: 0.5 }}
-              onDragEnd={(e, { offset, velocity }) => {
-                if (offset.y > 50 || velocity.y > 500) {
-                  setIsMenuOpen(false);
-                }
-              }}
-              className="fixed bottom-0 left-0 right-0 z-[100] h-auto max-h-[85vh] bg-background/95 backdrop-blur-xl rounded-t-3xl border-t border-default-200 shadow-2xl p-6 md:hidden flex flex-col overflow-y-auto pb-10"
+              className="fixed inset-y-0 right-0 z-[100] w-[85%] bg-background border-l border-default-200 shadow-2xl md:hidden flex flex-col overflow-y-auto"
             >
-              <div className="flex justify-center mb-4">
-                <div className="w-12 h-1.5 rounded-full bg-default-300" />
-              </div>
-              <div className="flex flex-col gap-2">
-                {menus.map((item, index) => (
-                  <Link
-                    key={`${item}-${index}`}
-                    className="w-full"
-                    color="foreground"
-                    href={item.path}
-                    as={item.isExternal ? undefined : NextLink}
-                    isExternal={item.isExternal}
-                    showAnchorIcon={item.isExternal}
-                    onPress={() => setIsMenuOpen(false)}
-                    size="lg"
-                  >
-                    <p
-                      className={
-                        (item.path === '/blogs' && isBlogPage) || pathName === item.path
-                          ? "font-bold text-lg text-primary w-full text-center py-2"
-                          : "font-bold text-lg w-full text-center py-2"
-                      }
+              <div className="p-8 pt-24 flex flex-col h-full">
+                <div className="flex flex-col gap-6">
+                  <p className="text-[10px] font-black uppercase tracking-[0.5em] text-primary mb-2">Navigation</p>
+                  {menus.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 + 0.1 }}
                     >
-                      {item.title}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-              <div className="mt-6 mb-0">
-                <div className="w-full h-px bg-default-200/60" />
-                <p className="text-center text-sm text-default-500 mt-3">Connect</p>
-                <div className="flex justify-center gap-4 mt-2 mb-1">
-                  <Link
-                    isExternal
-                    href="https://github.com/am-abdulmueed"
-                    aria-label="GitHub"
-                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
-                  >
-                    <FaGithub size={22} />
-                  </Link>
-                  <Link
-                    isExternal
-                    href="https://x.com/a.b.d.u.l.m.u.e.e.d"
-                    aria-label="X (Twitter)"
-                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
-                  >
-                    <FaXTwitter size={22} />
-                  </Link>
-                  <Link
-                    isExternal
-                    href="https://www.instagram.com/a.b.d.u.l.m.u.e.e.d/"
-                    aria-label="Instagram"
-                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
-                  >
-                    <FaInstagram size={22} />
-                  </Link>
-                  <Link
-                    isExternal
-                    href="mailto:am.abdulmueed3@gmail.com?subject=Inquiry%20from%20Muxio%20Website&body=Ref%3A%20https%3A%2F%2Fam-abdulmueed.vercel.app%0A%0AName%3A%20%0APhone%20(Optional)%3A%20%0AMessage%3A%20"
-                    aria-label="Email"
-                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
-                  >
-                    <FaEnvelope size={22} />
-                  </Link>
-                  <Link
-                    isExternal
-                    href="https://discord.com/users/am_abdulmueed"
-                    aria-label="Discord"
-                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
-                  >
-                    <FaDiscord size={22} />
-                  </Link>
-                  <Link
-                    isExternal
-                    href="https://www.linkedin.com/in/abdulmueed/"
-                    aria-label="LinkedIn"
-                    className="rounded-full p-2 hover:bg-default-200/50 transition-colors"
-                  >
-                    <FaLinkedin size={22} />
-                  </Link>
+                      <Link
+                        color="foreground"
+                        href={item.path}
+                        as={item.isExternal ? undefined : NextLink}
+                        isExternal={item.isExternal}
+                        onPress={() => setIsMenuOpen(false)}
+                        className="group flex items-center gap-4 py-2 w-full"
+                      >
+                        <div className={`p-3 rounded-2xl transition-all duration-300 ${(item.path === '/blogs' && isBlogPage) || pathName === item.path
+                            ? "bg-gradient-to-br from-primary to-primary-600 text-white shadow-lg shadow-primary/30 scale-110"
+                            : "bg-default-100 text-default-500 group-hover:bg-primary/10 group-hover:text-primary group-hover:scale-105"
+                          }`}>
+                          {React.cloneElement(item.icon, {
+                            className: (item.path === '/blogs' && isBlogPage) || pathName === item.path
+                              ? "text-white"
+                              : ""
+                          })}
+                        </div>
+                        <span className={`text-xl font-black tracking-tight ${(item.path === '/blogs' && isBlogPage) || pathName === item.path
+                          ? "text-primary"
+                          : "text-foreground group-hover:text-primary transition-colors"
+                          }`}>
+                          {item.title}
+                        </span>
+                        {((item.path === '/blogs' && isBlogPage) || pathName === item.path) && (
+                          <div className="ml-auto w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                        )}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className="mt-12 pb-10">
+                  <div className="w-full h-px bg-default-200/60 mb-8" />
+                  <p className="text-[10px] font-black uppercase tracking-[0.5em] text-primary mb-6">Social Mission</p>
+                  <div className="grid grid-cols-3 gap-4">
+                    {[
+                      { icon: <FaGithub size={20} />, href: "https://github.com/am-abdulmueed", label: "GitHub" },
+                      { icon: <FaXTwitter size={20} />, href: "https://x.com/a.b.d.u.l.m.u.e.e.d", label: "X" },
+                      { icon: <FaLinkedin size={20} />, href: "https://www.linkedin.com/in/abdulmueed/", label: "In" },
+                      { icon: <FaDiscord size={20} />, href: "https://discord.com/users/am_abdulmueed", label: "Discord" },
+                      { icon: <FaInstagram size={18} />, href: "https://www.instagram.com/a.b.d.u.l.m.u.e.e.d/", label: "Insta" },
+                      { icon: <FaEnvelope size={18} />, href: "mailto:am.abdulmueed3@gmail.com", label: "Email" },
+                    ].map((social, idx) => (
+                      <Link
+                        key={idx}
+                        isExternal
+                        href={social.href}
+                        className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-default-100 hover:bg-primary/10 hover:text-primary transition-all group shadow-sm"
+                      >
+                        <div className="text-default-500 group-hover:text-primary transition-colors">
+                          {social.icon}
+                        </div>
+                        <span className="text-[9px] font-black uppercase tracking-widest text-default-400 group-hover:text-primary">{social.label}</span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>

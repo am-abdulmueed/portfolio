@@ -1,75 +1,94 @@
 "use client";
 
 import { Button, Chip, Card, CardBody } from "@nextui-org/react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { motion } from "framer-motion";
-import { MdDownload, MdStar } from "react-icons/md";
+import { MdDownload } from "react-icons/md";
 import Announcement from "../Announcement";
-import { FaAndroid, FaWindows, FaApple, FaLinux } from "react-icons/fa";
 import RatingCard from "../RatingCard";
+import AnimatedShinyText from "../AnimatedShinyText";
 
 const HomeHeading = () => {
   const version = "1.01";
   const router = useRouter();
 
   return (
-    <div className="flex flex-col gap-4 relative">
-      <Announcement />
-      <div className="relative">
-        <h2 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-6xl pb-2 bg-clip-text text-transparent bg-gradient-to-r from-gradientstart to-gradientend">
-          Muxio: Discover, trend & stream from top platforms
-        </h2>
-        <motion.div
-          className="absolute left-0 bottom-0 h-[3px] bg-gradient-to-r from-gradientstart to-gradientend rounded-full"
-          initial={{ width: "0%" }}
-          animate={{ width: "60%" }}
-          transition={{ duration: 0.8 }}
-        />
+    <div className="flex flex-col gap-6 relative mt-12 md:mt-0">
+      <div className="flex flex-col gap-2">
+        <Announcement />
       </div>
-      <h4 className="scroll-m-20 text-xl font-medium tracking-tight text-default-500 max-w-2xl">
-        Stream your favorite music, videos, podcasts, radio and more from
-        YouTube Music with muxio for free.
-      </h4>
-      <div className="flex flex-col items-start gap-6 mt-6">
-        <div className="flex items-center gap-4 relative z-[100]">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
+
+      <div className="relative space-y-4">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-7xl leading-[1.1] bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground/90 to-muted-foreground">
+            Muxio: The Future of <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary italic animate-gradient-x bg-[length:200%_auto]">
+              Music Discovery
+            </span>
+          </h2>
+        </motion.div>
+
+        <motion.p
+          className="text-lg md:text-xl text-default-500 max-w-xl leading-relaxed font-medium"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          An all-in-one platform to stream, discover, and download from top platforms.
+          Experience music like never before with Muxio — built for creators, listeners, and everyone in between.
+        </motion.p>
+      </div>
+
+      <div className="flex flex-wrap items-center gap-6 mt-4">
+        <motion.div
+          whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
+          whileTap={{ scale: 0.95 }}
+          className="relative z-10"
+        >
+          <div className="absolute -inset-1 bg-gradient-to-r from-gradientstart to-gradientend rounded-full blur opacity-40 animate-pulse"></div>
+          <Button
+            color="primary"
+            size="lg"
+            radius="full"
+            className="font-bold shadow-xl px-10 relative h-14 text-lg"
+            endContent={<MdDownload size={24} className="animate-bounce" />}
+            onPress={() => router.push('/download')}
           >
-            <Button
-              color="primary"
-              size="lg"
-              radius="full"
-              className="font-semibold shadow-lg shadow-primary/40 cursor-pointer relative z-[100] pointer-events-auto"
-              endContent={<MdDownload size={20} />}
-              onPress={() => router.push('/download')}
-            >
-              Download Now
-            </Button>
-          </motion.div>
-          <p className="text-default-500 font-medium">
-             v{version}
-          </p>
+            Get Muxio Free
+          </Button>
+        </motion.div>
+        <div className="flex flex-col">
+          <span className="text-xs font-bold text-default-400 uppercase tracking-tighter">Current Build</span>
+          <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">v{version}</span>
         </div>
       </div>
-      <div className="flex gap-2 items-center text-sm text-default-400 mt-2">
-         <span>Supports:</span>
-         <Chip size="sm" variant="dot" color="success">Android</Chip>
-         <Chip size="sm" variant="dot" color="warning">iOS</Chip>
+
+      <div className="flex gap-4 items-center mt-2">
+        <RatingCard rating={4.9} users="20k+" />
       </div>
+
+      {/* Decorative Orbs */}
       <motion.div
-        className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 blur-2xl"
-        animate={{ y: [0, -6, 0], x: [0, 6, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
+        className="absolute -top-20 -left-20 w-40 h-40 rounded-full bg-primary/20 blur-[80px] -z-10"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3]
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
       />
       <motion.div
-        className="absolute -bottom-6 -left-12 w-32 h-32 rounded-full bg-gradient-to-br from-secondary/20 to-primary/20 blur-2xl"
-        animate={{ y: [0, 8, 0], x: [0, -6, 0] }}
-        transition={{ duration: 7, repeat: Infinity }}
+        className="absolute bottom-0 -right-20 w-60 h-60 rounded-full bg-secondary/10 blur-[100px] -z-10"
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.2, 0.4, 0.2]
+        }}
+        transition={{ duration: 10, repeat: Infinity }}
       />
-      <RatingCard rating={4.8} users="20k+" />
     </div>
   );
 };
