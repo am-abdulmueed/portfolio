@@ -10,7 +10,7 @@ import RatingCard from "../RatingCard";
 import AnimatedShinyText from "../AnimatedShinyText";
 
 const HomeHeading = () => {
-  const version = "1.01";
+  const version = "2.0.7";
   const router = useRouter();
 
   return (

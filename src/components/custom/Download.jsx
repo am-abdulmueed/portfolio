@@ -8,7 +8,6 @@ export default function Download() {
 
   useEffect(() => {
     const node = nodeRef.current;
-    // Hardcoded download count
     const sum = 1827561;
 
     if (node) {
@@ -26,12 +25,12 @@ export default function Download() {
   }, []);
 
   return (
-    <div className="relative group">
+    <div className="relative group overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-[3rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
 
       <Card className="bg-background/60 backdrop-blur-2xl border border-white/10 shadow-2xl w-full rounded-[3rem] overflow-hidden">
-        <CardBody className="py-16 flex flex-col items-center justify-center gap-4 relative">
+        <CardBody className="py-14 px-6 flex flex-col items-center justify-center gap-4 relative">
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -39,12 +38,14 @@ export default function Download() {
             className="absolute -top-10 -left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"
           />
 
-          <h1
-            className="text-center text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-primary via-primary/80 to-secondary drop-shadow-2xl"
-            ref={nodeRef}
-          >
-            0
-          </h1>
+          <div className="w-full flex justify-center">
+            <h1
+              className="inline-block min-w-[9ch] text-center font-black tracking-tight tabular-nums leading-none text-[clamp(2.5rem,12vw,6rem)] md:text-8xl bg-clip-text text-transparent bg-gradient-to-br from-primary via-primary/80 to-secondary drop-shadow-2xl"
+              ref={nodeRef}
+            >
+              1,827,561
+            </h1>
+          </div>
           <div className="flex flex-col items-center">
             <h2 className="text-center text-2xl font-black tracking-[0.2em] uppercase text-default-400">
               Downloads

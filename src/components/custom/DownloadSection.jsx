@@ -91,7 +91,7 @@ const DownloadSection = () => {
           </motion.p>
 
           <motion.div
-            className="flex items-center gap-6 pt-4"
+            className="flex flex-col sm:flex-row items-center gap-6 pt-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -200,6 +200,49 @@ const DownloadSection = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* NexGama Special Section */}
+        <div className="mt-20">
+          <div className="flex items-center gap-4 px-2 mb-8">
+            <div className="h-10 w-1.5 bg-gradient-to-b from-primary to-secondary rounded-full" />
+            <h3 className="text-3xl font-black uppercase tracking-tight italic">NexGama <span className="text-primary">Gaming</span></h3>
+          </div>
+
+          <Card className="bg-foreground text-background p-6 md:p-12 rounded-[2.5rem] md:rounded-[4rem] overflow-hidden group shadow-3xl">
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 opacity-40 group-hover:rotate-6 transition-transform duration-1000" />
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 text-center md:text-left">
+              <div className="relative w-24 h-24 md:w-32 md:h-32 shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/nexgama/icon.png"
+                  alt="NexGama Icon"
+                  className="w-full h-full rounded-3xl shadow-2xl group-hover:scale-110 transition-transform duration-500 border border-white/10 object-contain"
+                />
+                <div className="absolute -bottom-2 -right-2 bg-[#121212] text-white p-2 rounded-xl shadow-xl border border-white/20 z-20">
+                  <FaAndroid size={16} className="text-white" />
+                </div>
+              </div>
+
+              <div className="flex-1 space-y-4">
+                <h4 className="text-3xl md:text-5xl font-black italic uppercase leading-none tracking-tighter">Pro Level Gaming <br />On The Go</h4>
+                <p className="text-background/70 text-sm md:text-lg font-medium max-w-xl">Download the NexGama standalone app for a dedicated, optimized gaming experience with 1000+ PC-grade titles.</p>
+              </div>
+
+              <Button
+                size="lg"
+                radius="full"
+                as={Link}
+                href="https://play.google.com/store/apps/details?id=com.betapix.nexgama"
+                target="_blank"
+                className="h-16 md:h-20 px-10 md:px-14 bg-background text-foreground font-black text-lg md:text-xl uppercase tracking-widest shadow-2xl hover:scale-105 transition-transform w-full md:w-auto"
+                startContent={<FaGooglePlay size={24} />}
+              >
+                Get App
+              </Button>
+            </div>
+          </Card>
         </div>
 
         <div className="mt-32 pt-16 border-t border-white/5 text-center space-y-4">

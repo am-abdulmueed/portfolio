@@ -46,7 +46,12 @@ export const metadata = {
     "web developer",
     "Full-stack Developer",
     "Web Designer",
-    "freelance developer"
+    "freelance developer",
+    "NexGama",
+    "nex gama",
+    "pro games",
+    "online gaming",
+    "advanced game"
   ],
   icons: {
     icon: ["/abdul.webp"],

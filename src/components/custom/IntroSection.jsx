@@ -70,7 +70,7 @@ const IntroSection = () => {
                 <div>
                   <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] leading-none mb-1">Status</p>
                   <p className="text-sm font-black uppercase tracking-tight">Verified Project</p>
-                  <p className="text-[10px] font-bold opacity-50">MUXIO v1.01</p>
+                  <p className="text-[10px] font-bold opacity-50">MUXIO v2.0.7</p>
                 </div>
               </motion.div>
             </motion.div>
