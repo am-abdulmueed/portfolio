@@ -114,8 +114,8 @@ const FeatureSection = () => {
             viewport={{ once: true }}
             transition={{ delay: i * 0.05 }}
             className={`px-6 py-2.5 rounded-2xl text-sm font-bold transition-all duration-300 ${selectedCategory === cat
-                ? "bg-primary text-primary-foreground shadow-[0_0_20px_rgba(var(--primary),0.3)] scale-105"
-                : "bg-background/40 backdrop-blur-md border border-white/5 text-muted-foreground hover:bg-white/10"
+              ? "bg-primary text-primary-foreground shadow-[0_0_20px_rgba(var(--primary),0.3)] scale-105"
+              : "bg-background/40 backdrop-blur-md border border-white/5 text-muted-foreground hover:bg-white/10"
               }`}
           >
             {cat}
