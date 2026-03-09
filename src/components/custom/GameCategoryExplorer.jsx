@@ -146,7 +146,7 @@ const GameCategoryExplorer = () => {
                                 variant={selectedCategory === cat.id ? "solid" : "flat"}
                                 color={selectedCategory === cat.id ? "primary" : "default"}
                                 startContent={cat.icon}
-                                className={`h-10 md:h-12 min-w-[100px] md:min-w-0 px-4 md:px-6 rounded-full font-black uppercase text-[9px] md:text-[10px] tracking-widest transition-all ${selectedCategory === cat.id ? "shadow-lg shadow-primary/20 scale-105 text-white" : "bg-white/5"
+                                className={`h-10 md:h-12 min-w-[100px] md:min-w-0 px-4 md:px-6 rounded-full font-black uppercase text-[9px] md:text-[10px] tracking-widest transition-all ${selectedCategory === cat.id ? "shadow-lg shadow-primary/20 scale-105" : "bg-white/5"
                                     }`}
                             >
                                 {cat.label}
@@ -189,7 +189,7 @@ const GameCategoryExplorer = () => {
                                                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                                                     />
                                                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                                        <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white scale-75 group-hover:scale-100 transition-transform shadow-xl">
+                                                        <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground scale-75 group-hover:scale-100 transition-transform shadow-xl">
                                                             <Play size={24} className="fill-current ml-1" />
                                                         </div>
                                                     </div>

@@ -172,8 +172,8 @@ export default function Navbar() {
                     href={menu.path}
                     isExternal={menu.isExternal}
                     showAnchorIcon={menu.isExternal}
-                    startContent={!menu.isExternal && <div className="scale-80 min-[1500px]:scale-100">{menu.icon}</div>}
-                    className="data-[active=true]:shadow-sm font-bold px-1 min-[1400px]:px-4 min-w-0 h-8 text-[10px] min-[1400px]:text-[13px] transition-all duration-300"
+                    startContent={!menu.isExternal && <div className="shrink-0">{menu.icon}</div>}
+                    className="data-[active=true]:shadow-sm font-bold px-1.5 min-[1400px]:px-4 min-w-0 h-8 text-[11px] min-[1400px]:text-[13px] transition-all duration-300"
                   >
                     <span className="truncate">
                       {menu.title === "Architecture" ? "Arch" :
