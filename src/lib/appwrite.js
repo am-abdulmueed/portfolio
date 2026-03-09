@@ -1,14 +1,17 @@
-import { Client, Databases, Query } from 'appwrite';
+// Appwrite imports removed because functionality is mocked below
+
 
 // Appwrite functionality is disabled
-const client = new Client()
-    .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('dummy-project');
-
-const databases = new Databases(client);
-
-// Dummy values to prevent build errors
 export const DATABASE_ID = 'dummy-database';
 export const COLLECTION_ID = 'dummy-collection';
 
-export { databases, Query }; 
+// Dummy implementation to avoid network requests that cause build errors
+export const databases = {
+    listDocuments: async () => ({ documents: [] }),
+    getDocument: async () => null,
+};
+
+export const Query = {
+    orderDesc: () => '',
+    equal: () => '',
+};
