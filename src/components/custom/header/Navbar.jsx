@@ -112,21 +112,22 @@ export default function Navbar() {
       >
         <NavbarNext
           isBordered={false}
-          maxWidth="2xl"
-          className={`pt-2 ${scroll ? "bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 border-b border-default-200/40 shadow-sm" : "bg-transparent"}`}
+          maxWidth="full"
+          className={`pt-1 ${scroll ? "bg-background/70 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 border-b border-default-200/40 shadow-sm" : "bg-transparent"}`}
           position="fixed"
           disableScrollHandler
           onMenuOpenChange={setIsMenuOpen}
           isMenuOpen={isMenuOpen}
         >
-          <NavbarContent className="md:hidden pr-3" justify="start">
+          {/* Mobile/Tablet View (Below 1200px) */}
+          <NavbarContent className="min-[1200px]:hidden pr-3" justify="start">
             <NavbarBrand>
               <Logo pathName={pathName} />
             </NavbarBrand>
           </NavbarContent>
 
-          <NavbarContent className="md:hidden" justify="end">
-            <div className="flex items-center gap-4">
+          <NavbarContent className="min-[1200px]:hidden" justify="end">
+            <div className="flex items-center gap-2">
               <ThemeSwitcher />
               <button
                 className="relative z-50 p-2 text-foreground focus:outline-none"
@@ -135,30 +136,31 @@ export default function Navbar() {
               >
                 <div className="flex flex-col gap-1.5 items-end">
                   <motion.span
-                    animate={isMenuOpen ? { rotate: 45, y: 8, width: "32px" } : { rotate: 0, y: 0, width: "24px" }}
-                    className="h-1 bg-foreground rounded-full"
+                    animate={isMenuOpen ? { rotate: 45, y: 8, width: "28px" } : { rotate: 0, y: 0, width: "20px" }}
+                    className="h-0.5 bg-foreground rounded-full"
                   />
                   <motion.span
-                    animate={isMenuOpen ? { opacity: 0, x: 20 } : { opacity: 1, x: 0, width: "32px" }}
-                    className="h-1 bg-foreground rounded-full"
+                    animate={isMenuOpen ? { opacity: 0, x: 20 } : { opacity: 1, x: 0, width: "28px" }}
+                    className="h-0.5 bg-foreground rounded-full"
                   />
                   <motion.span
-                    animate={isMenuOpen ? { rotate: -45, y: -8, width: "32px" } : { rotate: 0, y: 0, width: "16px" }}
-                    className="h-1 bg-foreground rounded-full"
+                    animate={isMenuOpen ? { rotate: -45, y: -8, width: "28px" } : { rotate: 0, y: 0, width: "12px" }}
+                    className="h-0.5 bg-foreground rounded-full"
                   />
                 </div>
               </button>
             </div>
           </NavbarContent>
 
-          <NavbarContent className="hidden md:flex gap-4" justify="start">
-            <NavbarBrand className="" justify="start">
+          {/* Large Desktop View (1200px and up) */}
+          <NavbarContent className="hidden min-[1200px]:flex gap-4 px-2" justify="start">
+            <NavbarBrand className="min-w-fit" justify="start">
               <Logo pathName={pathName} />
             </NavbarBrand>
           </NavbarContent>
 
-          <NavbarContent className="hidden md:flex gap-4" justify="end">
-            <div ref={containerRef} className="relative flex items-center gap-4">
+          <NavbarContent className="hidden min-[1200px]:flex gap-1" justify="end">
+            <div ref={containerRef} className="relative flex items-center gap-0.5 min-[1400px]:gap-2">
               {menus.map((menu, index) => (
                 <NavbarItem key={index} isActive={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path}>
                   <Button
@@ -166,28 +168,33 @@ export default function Navbar() {
                     color="default"
                     variant={(menu.path === '/blogs' && isBlogPage) || pathName === menu.path ? "solid" : "light"}
                     as={menu.isExternal ? Link : NextLink}
-                    size="md"
+                    size="sm"
                     href={menu.path}
                     isExternal={menu.isExternal}
                     showAnchorIcon={menu.isExternal}
-                    startContent={!menu.isExternal && menu.icon}
-                    className="data-[active=true]:shadow-md font-bold px-4"
+                    startContent={!menu.isExternal && <div className="scale-80 min-[1500px]:scale-100">{menu.icon}</div>}
+                    className="data-[active=true]:shadow-sm font-bold px-1 min-[1400px]:px-4 min-w-0 h-8 text-[10px] min-[1400px]:text-[13px] transition-all duration-300"
                   >
-                    {menu.title}
+                    <span className="truncate">
+                      {menu.title === "Architecture" ? "Arch" :
+                        menu.title === "Why Hire Me" ? "Hire Me" :
+                          menu.title === "About Us" ? "About" :
+                            menu.title}
+                    </span>
                   </Button>
                 </NavbarItem>
               ))}
               {indicator.visible && (
                 <motion.div
-                  className="absolute -bottom-2 h-1 rounded-full bg-gradient-to-r from-gradientstart to-gradientend"
+                  className="absolute -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-gradientstart to-gradientend"
                   initial={false}
                   animate={{ left: indicator.left, width: indicator.width }}
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
             </div>
-            <NavbarItem>
-              <ThemeSwitcher></ThemeSwitcher>
+            <NavbarItem className="ml-1">
+              <ThemeSwitcher />
             </NavbarItem>
           </NavbarContent>
         </NavbarNext>

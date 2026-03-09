@@ -159,3 +159,15 @@
     scrollbar-color: rgba(0, 255, 204, 0.3) transparent;
   }
 }
+
+/* Global Text Selection */
+::selection {
+  background-color: rgba(59, 130, 246, 0.5); /* Blue translucent highlight */
+  color: #ffffff; /* White text for contrast */
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: rgba(59, 130, 246, 0.5);
+  color: #ffffff;
+}

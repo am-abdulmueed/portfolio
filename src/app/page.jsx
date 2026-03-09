@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function RootHome() {
   return (
-    <main className="relative min-h-screen bg-background overflow-hidden transition-colors duration-700 selection:bg-primary selection:text-white">
+    <main className="relative min-h-screen bg-background overflow-hidden transition-colors duration-700">
       {/* Cinematic Noise Texture */}
       <div className="fixed inset-0 z-[1] pointer-events-none opacity-[0.03] dark:opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 

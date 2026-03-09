@@ -145,7 +145,7 @@ const RootLayout = ({ children }) => {
       </head>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased selection:bg-blue-500/30 selection:text-blue-500",
+          "min-h-screen bg-background font-sans antialiased",
           sfpDisplay.variable,
         )} suppressHydrationWarning
       >
