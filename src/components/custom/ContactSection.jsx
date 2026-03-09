@@ -273,7 +273,7 @@ const ContactSection = () => {
                     </div>
 
                     <div className="pt-4 flex flex-col gap-4">
-                      <motion.div whileHover={{ scale: 2.0.7 }} whileTap={{ scale: 0.99 }}>
+                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.99 }}>
                         <Button
                           type="submit"
                           radius="full"
