@@ -100,8 +100,8 @@ export default function RootHome() {
               </div>
 
               <div className="space-y-6 text-left">
-                <div className="inline-flex px-6 py-2 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-md">
-                  <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-primary">High-Performance Gaming</span>
+                <div className="inline-flex px-6 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border-2 border-primary/30 backdrop-blur-md">
+                  <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] text-primary-600 dark:text-primary-400">High-Performance Gaming</span>
                 </div>
                 <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black italic uppercase tracking-tighter leading-none group-hover:skew-x-2 transition-transform duration-500 break-words">NexGama</h2>
                 <p className="text-default-500 text-lg md:text-xl font-medium leading-relaxed max-w-sm">
@@ -144,8 +144,8 @@ export default function RootHome() {
               </div>
 
               <div className="space-y-6 text-left">
-                <div className="inline-flex px-6 py-2 rounded-full bg-secondary/20 border border-secondary/30 backdrop-blur-md">
-                  <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-secondary">Cinematic Soundscape</span>
+                <div className="inline-flex px-6 py-2 rounded-full bg-secondary/10 dark:bg-secondary/20 border-2 border-secondary/30 backdrop-blur-md">
+                  <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] text-secondary-600 dark:text-secondary-400">Cinematic Soundscape</span>
                 </div>
                 <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black italic uppercase tracking-tighter leading-none group-hover:-skew-x-2 transition-transform duration-500 break-words">Muxio</h2>
                 <p className="text-default-500 text-lg md:text-xl font-medium leading-relaxed max-w-sm">
