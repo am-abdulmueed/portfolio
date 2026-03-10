@@ -89,7 +89,7 @@ export default function RootHome() {
             href="/nexgama"
             className="group relative min-h-[500px] md:min-h-[600px] border-none bg-transparent overflow-hidden rounded-[3rem] md:rounded-[4rem] cursor-none md:cursor-pointer shadow-2xl dark:shadow-none"
           >
-            <div className="absolute inset-0 bg-content1/70 dark:bg-white/[0.01] backdrop-blur-3xl border border-black/10 dark:border-white/5 group-hover:bg-primary/5 group-hover:border-primary/40 transition-all duration-700" />
+            <div className="absolute inset-0 bg-white/90 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-default-200 dark:border-white/10 group-hover:bg-primary/5 group-hover:border-primary/40 transition-all duration-700" />
 
             {/* Brand Glow */}
             <div className="absolute -inset-20 bg-primary/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
@@ -133,7 +133,7 @@ export default function RootHome() {
             href="/muxio"
             className="group relative min-h-[500px] md:min-h-[600px] border-none bg-transparent overflow-hidden rounded-[3rem] md:rounded-[4rem] shadow-2xl dark:shadow-none"
           >
-            <div className="absolute inset-0 bg-content1/70 dark:bg-white/[0.01] backdrop-blur-3xl border border-black/10 dark:border-white/5 group-hover:bg-secondary/5 group-hover:border-secondary/40 transition-all duration-700" />
+            <div className="absolute inset-0 bg-white/90 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-default-200 dark:border-white/10 group-hover:bg-secondary/5 group-hover:border-secondary/40 transition-all duration-700" />
 
             {/* Brand Glow */}
             <div className="absolute -inset-20 bg-secondary/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
