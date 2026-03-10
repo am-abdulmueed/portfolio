@@ -173,7 +173,7 @@ const ArchitectureSection = () => {
             >
               <Card
                 isBlurred
-                className={`group border border-white/5 bg-background/40 backdrop-blur-2xl rounded-[2.5rem] p-6 h-full hover:border-primary/20 transition-all duration-500 ${open === idx ? 'ring-2 ring-primary/40' : ''}`}
+                className={`group border border-black/10 dark:border-white/5 bg-content1/50 dark:bg-background/40 backdrop-blur-2xl rounded-[2.5rem] p-6 h-full hover:border-primary/20 transition-all duration-500 shadow-xl dark:shadow-none ${open === idx ? 'ring-2 ring-primary/40' : ''}`}
               >
                 <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
                   <div className={`p-6 rounded-3xl bg-gradient-to-br ${layer.color} text-white shadow-2xl group-hover:scale-110 transition-transform duration-500`}>
@@ -216,7 +216,7 @@ const ArchitectureSection = () => {
                       exit={{ opacity: 0, height: 0, mt: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="p-8 rounded-[2rem] bg-white/5 border border-white/5 backdrop-blur-3xl shadow-inner">
+                      <div className="p-8 rounded-[2rem] bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 backdrop-blur-3xl shadow-inner">
                         <div className="flex items-center gap-2 mb-6">
                           <Sparkles size={16} className="text-primary" />
                           <span className="text-[10px] font-black uppercase tracking-widest text-default-400">Flow Visualization</span>

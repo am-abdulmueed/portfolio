@@ -28,7 +28,7 @@ const communities = [
 ];
 const Footer = () => {
   return (
-    <footer className="relative isolate px-6 pt-32 pb-16 lg:px-8 border-t border-white/5 bg-background overflow-hidden">
+    <footer className="relative isolate px-6 pt-32 pb-16 lg:px-8 border-t border-black/5 dark:border-white/5 bg-background overflow-hidden">
       {/* Cinematic Aura Background */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-20 pointer-events-none">
         <div className="absolute bottom-[-10%] left-[-10%] w-[800px] h-[800px] bg-primary/20 rounded-full blur-[160px]" />
@@ -40,7 +40,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-6 col-span-1 lg:col-span-1">
             <NextLink href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 md:w-11 md:h-11 bg-foreground rounded-xl border border-white/10 shadow-xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+              <div className="w-10 h-10 md:w-11 md:h-11 bg-foreground rounded-xl border border-black/10 dark:border-white/10 shadow-xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   alt="logo"
@@ -63,7 +63,7 @@ const Footer = () => {
                   key={i}
                   href={social.href}
                   isExternal
-                  className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-default-400 hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm"
+                  className="w-12 h-12 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 flex items-center justify-center text-default-400 hover:bg-primary hover:text-white hover:border-primary transition-all shadow-sm"
                 >
                   {social.icon}
                 </Link>
@@ -79,7 +79,7 @@ const Footer = () => {
               <div className="flex flex-col gap-4">
                 {[
                   { name: "NexGama Engine", path: "/nexgama" },
-                  { name: "Muxio Core", path: "/architecture" },
+                  { name: "Muxio Core", path: "/muxio" },
                   { name: "Project Showcase", path: "/projects" },
                   { name: "Hire Ecosystem", path: "/why-hire-me" }
                 ].map((item, i) => (
@@ -96,8 +96,8 @@ const Footer = () => {
               <div className="flex flex-col gap-4">
                 {[
                   { name: "Download App", path: "/download" },
-                  { name: "Privacy Policy", path: "/privacy-policy" },
-                  { name: "Terms of Service", path: "#" },
+                  { name: "Privacy Policy", path: "/privacy" },
+                  { name: "Terms of Service", path: "/terms" },
                   { name: "Open Source", path: "https://github.com/am-abdulmueed" }
                 ].map((item, i) => (
                   <NextLink key={i} href={item.path} className="text-default-500 hover:text-primary font-bold text-sm tracking-tight transition-colors">

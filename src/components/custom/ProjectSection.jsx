@@ -269,15 +269,15 @@ const ProjectSection = () => {
                     size="sm"
                     variant={showFilters ? "solid" : "light"}
                     color={showFilters ? "primary" : "default"}
-                    onPress={() => setShowFilters(!showFilters)}
-                    className="rounded-xl"
+                    onClick={() => setShowFilters(!showFilters)}
+                    className="rounded-xl z-20 pointer-events-auto"
                   >
                     <SlidersHorizontal size={18} />
                   </Button>
                 }
                 classNames={{
-                  inputWrapper: "bg-background/40 backdrop-blur-2xl border-white/5 h-16 rounded-[1.5rem] shadow-xl group-hover:border-primary/20 transition-all",
-                  input: "text-lg font-medium"
+                  inputWrapper: "bg-white/80 dark:bg-black/60 backdrop-blur-2xl border-2 border-default-200 dark:border-white/10 h-16 rounded-[1.5rem] shadow-xl group-hover:border-primary/40 focus-within:!border-primary transition-all",
+                  input: "text-lg font-black placeholder:text-default-400"
                 }}
               />
             </div>
@@ -293,11 +293,13 @@ const ProjectSection = () => {
                   {categories.map((cat) => (
                     <Chip
                       key={cat}
-                      as="button"
-                      onPress={() => setSelectedCategory(cat)}
+                      onClick={() => setSelectedCategory(cat)}
                       variant={selectedCategory === cat ? "shadow" : "flat"}
                       color={selectedCategory === cat ? "primary" : "default"}
-                      className="cursor-pointer font-black text-[10px] uppercase tracking-widest px-4 h-10 hover:scale-105 transition-transform"
+                      className={`cursor-pointer font-black text-[11px] uppercase tracking-widest px-6 h-12 hover:scale-105 transition-all shadow-md ${selectedCategory === cat
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-default-100 dark:bg-white/10 text-default-600 dark:text-default-400"
+                        }`}
                     >
                       {cat}
                     </Chip>
@@ -324,7 +326,7 @@ const ProjectSection = () => {
               >
                 <Card
                   isBlurred
-                  className="group relative h-full bg-background/40 backdrop-blur-3xl border border-white/5 rounded-[2.5rem] p-4 group overflow-hidden hover:border-primary/30 transition-all duration-500"
+                  className="group relative h-full bg-content1/50 dark:bg-background/40 backdrop-blur-3xl border border-black/10 dark:border-white/5 rounded-[2.5rem] p-4 group overflow-hidden hover:border-primary/30 transition-all duration-500 shadow-xl dark:shadow-none"
                 >
                   <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 blur-[80px] transition-opacity duration-700`} />
 
@@ -359,7 +361,7 @@ const ProjectSection = () => {
                         ))}
                       </div>
 
-                      <div className="flex items-center gap-4 pt-6 border-t border-white/5">
+                      <div className="flex items-center gap-4 pt-6 border-t border-black/5 dark:border-white/5">
                         <Button
                           as={Link}
                           href={project.link}

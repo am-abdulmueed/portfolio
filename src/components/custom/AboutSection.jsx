@@ -105,7 +105,7 @@ const AboutSection = () => {
               <CardBody className="p-0 flex flex-col items-center gap-8 py-4">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-0 group-hover:opacity-100 transition duration-500 blur-xl"></div>
-                  <div className="w-44 h-44 relative rounded-full border-2 border-white/10 p-1 group-hover:border-primary/50 transition-colors bg-default-100 overflow-hidden shadow-2xl">
+                  <div className="w-44 h-44 relative rounded-full border-2 border-black/5 dark:border-white/10 p-1 group-hover:border-primary/50 transition-colors bg-default-100 overflow-hidden shadow-2xl">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="/dev.jpg"
@@ -113,7 +113,7 @@ const AboutSection = () => {
                       className="w-full h-full rounded-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                   </div>
-                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-foreground rounded-full flex items-center justify-center border-4 border-background text-background shadow-xl">
+                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-foreground rounded-full flex items-center justify-center border-4 border-content1 dark:border-background text-background shadow-xl">
                     <Zap size={20} />
                   </div>
                 </div>

@@ -76,6 +76,7 @@
 
     --gradientto: 214 32% 91%;
   }
+
   .theme {
     --animate-shiny-text: shiny-text 8s infinite;
   }
@@ -84,30 +85,44 @@
 @layer base {
   * {
     @apply border-border;
-    cursor: none !important;
   }
+
   html {
     overflow-x: hidden;
     overscroll-behavior-x: none;
     scrollbar-gutter: stable both-edges;
-    cursor: none !important;
   }
+
   body {
     @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  body.has-custom-cursor {
     cursor: none !important;
   }
-  a, button, [role="button"], input, select, textarea {
+
+  body.has-custom-cursor a,
+  body.has-custom-cursor button,
+  body.has-custom-cursor [role="button"],
+  body.has-custom-cursor input,
+  body.has-custom-cursor select,
+  body.has-custom-cursor textarea {
     cursor: none !important;
   }
 }
 
 @theme inline {
   @keyframes shiny-text {
-  0%, 90%, 100% {
-    background-position: calc(-100% - var(--shiny-width)) 0;
+
+    0%,
+    90%,
+    100% {
+      background-position: calc(-100% - var(--shiny-width)) 0;
     }
-  30%, 60% {
-    background-position: calc(100% + var(--shiny-width)) 0;
+
+    30%,
+    60% {
+      background-position: calc(100% + var(--shiny-width)) 0;
     }
   }
 }
@@ -134,6 +149,7 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -143,17 +159,23 @@
   .premium-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
+
   .premium-scrollbar::-webkit-scrollbar-track {
     background: transparent;
   }
+
   .premium-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(0, 255, 204, 0.2); /* Low opacity primary */
+    background: rgba(0, 255, 204, 0.2);
+    /* Low opacity primary */
     border-radius: 10px;
     transition: all 0.3s ease;
   }
+
   .premium-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 255, 204, 0.5); /* High opacity primary on hover */
+    background: rgba(0, 255, 204, 0.5);
+    /* High opacity primary on hover */
   }
+
   .premium-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 255, 204, 0.3) transparent;
@@ -162,8 +184,10 @@
 
 /* Global Text Selection */
 ::selection {
-  background-color: rgba(59, 130, 246, 0.5); /* Blue translucent highlight */
-  color: #ffffff; /* White text for contrast */
+  background-color: rgba(59, 130, 246, 0.5);
+  /* Blue translucent highlight */
+  color: #ffffff;
+  /* White text for contrast */
 }
 
 /* For Firefox */

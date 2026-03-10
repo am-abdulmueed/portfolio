@@ -121,19 +121,28 @@ const GameCategoryExplorer = () => {
                             </h3>
                         </div>
 
-                        <div className="w-full md:max-w-xl">
-                            <Input
-                                placeholder="Search among 1000+ elite games..."
-                                variant="bordered"
-                                size="lg"
-                                startContent={<Search className="text-primary" size={24} />}
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                classNames={{
-                                    inputWrapper: "h-20 rounded-[2.5rem] bg-white/[0.03] border-2 border-white/10 focus-within:!border-primary transition-all shadow-2xl px-8",
-                                    input: "font-black text-xl placeholder:text-default-400"
-                                }}
-                            />
+                        <div className="w-full md:max-w-xl relative group">
+                            <Card
+                                className="bg-content1/50 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-white/5 rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl transition-all duration-500 group-hover:border-primary/30 group-focus-within:border-primary/50 group-focus-within:shadow-2xl group-focus-within:shadow-primary/20"
+                            >
+                                <CardBody className="p-0">
+                                    <Input
+                                        placeholder="Search among 1000+ elite games..."
+                                        variant="flat"
+                                        size="lg"
+                                        startContent={<Search className="text-primary group-focus-within:scale-110 transition-transform mr-2" size={24} />}
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
+                                        classNames={{
+                                            base: "bg-transparent",
+                                            inputWrapper: "h-20 bg-transparent border-none focus-within:!bg-transparent transition-all px-8 shadow-none",
+                                            input: "font-black text-xl placeholder:text-default-400 py-4"
+                                        }}
+                                    />
+                                </CardBody>
+                            </Card>
+                            {/* Decorative Glow */}
+                            <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-[2rem] blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity -z-10" />
                         </div>
                     </div>
 
