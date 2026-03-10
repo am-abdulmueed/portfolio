@@ -94,7 +94,7 @@ const TermsClient = () => {
                     <div className="space-y-6">
                         <h3 className="text-4xl font-black uppercase italic tracking-tighter text-foreground">Need Clarification?</h3>
                         <p className="text-default-600 dark:text-default-400 font-bold text-lg max-w-lg mx-auto leading-relaxed">
-                            Our team is here to ensure absolute transparency in our operations. If you have questions about our protocol, let's talk.
+                            Our team is here to ensure absolute transparency in our operations. If you have questions about our protocol, let&apos;s talk.
                         </p>
                     </div>
 

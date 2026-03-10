@@ -18,7 +18,7 @@ const Logo = ({ pathName }) => {
       setIndex((i) => (i + 1) % words.length);
     }, 2500);
     return () => clearInterval(t);
-  }, [isNexGama, isMuxio]);
+  }, [isNexGama, isMuxio, words.length]);
 
   const Frame = ({ src, alt, href, label, subLabel, color, showRotating = false }) => (
     <div className="flex items-center gap-3">
