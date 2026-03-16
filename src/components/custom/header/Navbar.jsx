@@ -15,7 +15,7 @@ import {
 } from "@nextui-org/react";
 import ThemeSwitcher from "../ThemeSwitcher";
 import { usePathname } from "next/navigation";
-import { Github, Menu, X, Home, Cpu, Layers, Sparkles, Download, Info, Mail, Gamepad2, Music } from "lucide-react";
+import { Github, Menu, X, Home, Cpu, Tv, Sparkles, Download, Info, Mail, Gamepad2, Music } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaDiscord } from "react-icons/fa";
@@ -56,9 +56,10 @@ export default function Navbar() {
   const menus = [
     { title: "Home", path: "/", icon: <Home size={20} /> },
     { title: "Muxio", path: "/muxio", icon: <Music size={20} /> },
+    { title: "PluginStream", path: "/pluginstream", icon: <Tv size={20} /> },
     { title: "NexGama", path: "/nexgama", icon: <Gamepad2 size={20} /> },
     { title: "Architecture", path: "/architecture", icon: <Cpu size={20} /> },
-    { title: "Projects", path: "/projects", icon: <Layers size={20} /> },
+    { title: "Projects", path: "/projects", icon: <Tv size={20} /> },
     { title: "Why Hire Me", path: "/why-hire-me", icon: <Sparkles size={20} /> },
     { title: "Download", path: "/download", icon: <Download size={20} /> },
     { title: "About Us", path: "/about", icon: <Info size={20} /> },

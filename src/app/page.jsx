@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Button, Card, CardBody, Chip } from "@nextui-org/react";
-import { Play, Music, Gamepad2, ArrowRight, Zap, Sparkles, Trophy, Cpu } from "lucide-react";
+import { Play, Music, Gamepad2, ArrowRight, Zap, Sparkles, Trophy, Cpu, Layers } from "lucide-react";
 import NextLink from "next/link";
 import { motion } from "framer-motion";
 
@@ -82,14 +82,14 @@ export default function RootHome() {
         </motion.p>
 
         {/* Entry Grid - Ultra Premium */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-32">
           {/* NexGama - Pro Gaming */}
           <Card
             as={NextLink}
             href="/nexgama"
             className="group relative min-h-[500px] md:min-h-[600px] border-none bg-transparent overflow-hidden rounded-[3rem] md:rounded-[4rem] cursor-none md:cursor-pointer shadow-2xl dark:shadow-none"
           >
-            <div className="absolute inset-0 bg-white/90 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-default-200 dark:border-white/10 group-hover:bg-primary/5 group-hover:border-primary/40 transition-all duration-700" />
+            <div className="absolute inset-0 bg-white/95 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-black/5 dark:border-white/10 group-hover:bg-primary/5 group-hover:border-primary/40 transition-all duration-700 shadow-xl dark:shadow-none" />
 
             {/* Brand Glow */}
             <div className="absolute -inset-20 bg-primary/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
@@ -133,7 +133,7 @@ export default function RootHome() {
             href="/muxio"
             className="group relative min-h-[500px] md:min-h-[600px] border-none bg-transparent overflow-hidden rounded-[3rem] md:rounded-[4rem] shadow-2xl dark:shadow-none"
           >
-            <div className="absolute inset-0 bg-white/90 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-default-200 dark:border-white/10 group-hover:bg-secondary/5 group-hover:border-secondary/40 transition-all duration-700" />
+            <div className="absolute inset-0 bg-white/95 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-black/5 dark:border-white/10 group-hover:bg-secondary/5 group-hover:border-secondary/40 transition-all duration-700 shadow-xl dark:shadow-none" />
 
             {/* Brand Glow */}
             <div className="absolute -inset-20 bg-secondary/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
@@ -166,6 +166,50 @@ export default function RootHome() {
                 </div>
                 <div className="w-16 h-16 md:w-24 md:h-24 flex-shrink-0 rounded-full bg-foreground text-background flex items-center justify-center group-hover:bg-secondary group-hover:text-secondary-foreground transition-all duration-700 shadow-3xl group-hover:scale-110">
                   <ArrowRight className="w-8 h-8 md:w-12 md:h-12" />
+                </div>
+              </div>
+            </CardBody>
+          </Card>
+
+          {/* PluginStream - Cinematic Engine */}
+          <Card
+            as={NextLink}
+            href="/pluginstream"
+            className="group relative min-h-[500px] md:min-h-[600px] border-none bg-transparent overflow-hidden rounded-[3rem] md:rounded-[4rem] shadow-2xl dark:shadow-none"
+          >
+            <div className="absolute inset-0 bg-white/95 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-black/5 dark:border-white/10 group-hover:bg-red-500/5 group-hover:border-red-500/40 transition-all duration-700 shadow-xl dark:shadow-none" />
+
+            {/* Brand Glow */}
+            <div className="absolute -inset-20 bg-red-500/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
+
+            <CardBody className="p-12 md:p-16 flex flex-col justify-between relative z-10">
+              <div className="absolute top-0 right-0 p-16 opacity-[0.02] group-hover:opacity-10 group-hover:scale-125 group-hover:rotate-6 transition-all duration-1000">
+                <Layers size={400} />
+              </div>
+
+              <div className="space-y-6 text-left">
+                <div className="inline-flex px-6 py-2 rounded-full bg-red-500/10 dark:bg-red-500/20 border-2 border-red-500/30 backdrop-blur-md">
+                  <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] text-red-600 dark:text-red-400">Cinematic Engine</span>
+                </div>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black italic uppercase tracking-tighter leading-none group-hover:skew-x-1 transition-transform duration-500 break-words">PluginStream</h2>
+                <p className="text-default-500 text-lg md:text-xl font-medium leading-relaxed max-w-sm">
+                  The ultimate movie experience. 100+ plugins for Netflix, Prime, and beyond.
+                </p>
+              </div>
+
+              <div className="flex justify-between items-end gap-6">
+                <div className="flex gap-6 md:gap-8">
+                  <div className="flex flex-col">
+                    <span className="text-3xl md:text-4xl font-black italic text-foreground leading-none">100+</span>
+                    <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-black text-red-500 mt-2">Plugins</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-3xl md:text-4xl font-black italic text-foreground leading-none">4K</span>
+                    <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-black text-purple-500 mt-2">Ultra HD</span>
+                  </div>
+                </div>
+                <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 rounded-full bg-foreground text-background flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-all duration-700 shadow-3xl group-hover:scale-110">
+                  <ArrowRight className="w-8 h-8 md:w-10 md:h-10" />
                 </div>
               </div>
             </CardBody>

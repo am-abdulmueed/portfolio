@@ -6,6 +6,7 @@ import Image from "next/image";
 const Logo = ({ pathName }) => {
   const isNexGama = pathName === "/nexgama" || pathName?.startsWith("/nexgama");
   const isMuxio = pathName === "/muxio" || pathName?.startsWith("/muxio");
+  const isPluginStream = pathName === "/pluginstream" || pathName?.startsWith("/pluginstream");
   const isHome = pathName === "/";
 
   const words = ["BetaPix", "muxio", "NexGama", "Abdul Mueed"];
@@ -13,12 +14,12 @@ const Logo = ({ pathName }) => {
 
   useEffect(() => {
     // Rotating words now show on Home and other pages (not NexGama/Muxio specific views)
-    if (isNexGama || isMuxio) return;
+    if (isNexGama || isMuxio || isPluginStream) return;
     const t = setInterval(() => {
       setIndex((i) => (i + 1) % words.length);
     }, 2500);
     return () => clearInterval(t);
-  }, [isNexGama, isMuxio, words.length]);
+  }, [isNexGama, isMuxio, isPluginStream, words.length]);
 
   const Frame = ({ src, alt, href, label, subLabel, color, showRotating = false }) => (
     <div className="flex items-center gap-3">
@@ -58,6 +59,10 @@ const Logo = ({ pathName }) => {
 
   if (isNexGama) {
     return <Frame src="/nexgama/logo.png" alt="NexGama" href="/nexgama" label="NexGama" subLabel="Pro Gaming" color="text-primary" />;
+  }
+
+  if (isPluginStream) {
+    return <Frame src="/pluginstream/logo.png" alt="PluginStream" href="/pluginstream" label="PluginStream" subLabel="Movie Engine" color="text-red-500" />;
   }
 
   if (isMuxio) {

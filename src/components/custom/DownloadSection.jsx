@@ -140,7 +140,7 @@ const DownloadSection = () => {
                           <h4 className="font-black text-xl">{item.name}</h4>
                           <Chip size="sm" variant="flat" className="text-[9px] font-black uppercase tracking-widest h-5">{item.tag}</Chip>
                         </div>
-                        <p className="text-sm text-default-400 font-medium">{item.description}</p>
+                        <p className="text-sm text-default-400 font-medium">{item.name === "Play Store" ? "Android Mobile, TV & Auto support" : item.description}</p>
                       </div>
                     </CardBody>
                   </Card>
@@ -248,16 +248,54 @@ const DownloadSection = () => {
         <div className="mt-32 pt-16 border-t border-white/5 text-center space-y-4">
           <p className="text-sm font-black text-primary uppercase tracking-[0.3em]">System Requirements</p>
           <div className="flex flex-wrap justify-center gap-4 text-xs font-bold text-default-400 uppercase tracking-widest">
-            <span>Android 8.0+</span>
+            <span>Android (Mobile/TV/Auto)</span>
             <span className="opacity-30">•</span>
-            <span>iOS 14.1+</span>
+            <span>iOS & iPadOS</span>
             <span className="opacity-30">•</span>
-            <span>Windows 10/11</span>
+            <span>Windows (Desktop)</span>
             <span className="opacity-30">•</span>
-            <span>macOS 11+</span>
+            <span>macOS (Intel/M1/M2)</span>
             <span className="opacity-30">•</span>
-            <span>X11/Wayland</span>
+            <span>Linux (Desktop)</span>
           </div>
+        </div>
+        {/* PluginStream Special Section */}
+        <div className="mt-20">
+          <div className="flex items-center gap-4 px-2 mb-8">
+            <div className="h-10 w-1.5 bg-red-600 rounded-full" />
+            <h3 className="text-3xl font-black uppercase tracking-tight italic">PluginStream <span className="text-red-600">Cinema</span></h3>
+          </div>
+
+          <Card className="bg-red-600 text-white p-6 md:p-12 rounded-[2.5rem] md:rounded-[4rem] overflow-hidden group shadow-3xl border-none">
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/10 opacity-60 group-hover:rotate-6 transition-transform duration-1000" />
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 text-center md:text-left">
+              <div className="relative w-24 h-24 md:w-32 md:h-32 shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/pluginstream/logo.png"
+                  alt="PluginStream Icon"
+                  className="w-full h-full rounded-3xl shadow-2xl group-hover:scale-110 transition-transform duration-500 border border-white/10 object-contain bg-black/20 backdrop-blur-md p-4"
+                />
+              </div>
+
+              <div className="flex-1 space-y-4">
+                <h4 className="text-3xl md:text-5xl font-black italic uppercase leading-none tracking-tighter">Unlimited Global <br />Movies & Shows</h4>
+                <p className="text-white/80 text-sm md:text-lg font-medium max-w-xl">Get the world's most powerful movie engine. 100+ premium plugins for Netflix, Prime, HBO and more directly on your device.</p>
+              </div>
+
+              <Button
+                size="lg"
+                radius="full"
+                as={Link}
+                href="https://github.com/am-abdulmueed/muxio/releases"
+                className="h-16 md:h-20 px-10 md:px-14 bg-white text-red-600 font-black text-lg md:text-xl uppercase tracking-widest shadow-2xl hover:scale-105 transition-transform w-full md:w-auto"
+                startContent={<MdDownload size={24} />}
+              >
+                Download Now
+              </Button>
+            </div>
+          </Card>
         </div>
       </div>
     </section>

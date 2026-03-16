@@ -51,7 +51,20 @@ export const metadata = {
     "nex gama",
     "pro games",
     "online gaming",
-    "advanced game"
+    "advanced game",
+    "free movies app",
+    "premium ott plugins",
+    "muxio plugins",
+    "pluginstream free",
+    "watch netflix free",
+    "online streaming app",
+    "free live tv",
+    "plugins stream free movie",
+    "muxio stream plugins",
+    "pluginStream",
+    "pluginstream download",
+    "betapix",
+    "free entertainment plugins"
   ],
   icons: {
     icon: ["/abdul.webp"],
