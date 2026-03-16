@@ -281,7 +281,7 @@ const DownloadSection = () => {
 
               <div className="flex-1 space-y-4">
                 <h4 className="text-3xl md:text-5xl font-black italic uppercase leading-none tracking-tighter">Unlimited Global <br />Movies & Shows</h4>
-                <p className="text-white/80 text-sm md:text-lg font-medium max-w-xl">Get the world's most powerful movie engine. 100+ premium plugins for Netflix, Prime, HBO and more directly on your device.</p>
+                <p className="text-white/80 text-sm md:text-lg font-medium max-w-xl">Get the world&apos;s most powerful movie engine. 100+ premium plugins for Netflix, Prime, HBO and more directly on your device.</p>
               </div>
 
               <Button

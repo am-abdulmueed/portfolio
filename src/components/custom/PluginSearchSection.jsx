@@ -105,7 +105,7 @@ const PluginSearchSection = () => {
                                 <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto">
                                     <Search size={40} className="text-foreground/20" />
                                 </div>
-                                <p className="text-xl font-bold text-foreground/40 italic">No channels found for "{searchQuery}"</p>
+                                <p className="text-xl font-bold text-foreground/40 italic">No channels found for &quot;{searchQuery}&quot;</p>
                             </div>
                         )
                     )}
