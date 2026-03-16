@@ -11,6 +11,28 @@ export const metadata = {
     alternates: {
         canonical: "/pluginstream",
     },
+    openGraph: {
+        title: "PluginStream - Free Premium Movies & OTT Plugins",
+        description: "Stream Netflix, Prime, Disney+, and HBO for free with PluginStream.",
+        url: "https://pluginstream.vercel.app/pluginstream",
+        siteName: "PluginStream",
+        images: [
+            {
+                url: "/pluginstream/opengraph.jpg",
+                width: 1200,
+                height: 630,
+                alt: "PluginStream - Free Premium Streaming",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "PluginStream - Free Premium Movies & OTT Plugins",
+        description: "Stream Netflix, Prime, Disney+, and HBO for free with PluginStream.",
+        images: ["/pluginstream/opengraph.jpg"],
+    },
 };
 
 export default function PluginStreamPage() {

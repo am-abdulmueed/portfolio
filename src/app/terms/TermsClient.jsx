@@ -52,10 +52,10 @@ const TermsClient = () => {
                         <Scale size={16} className="text-foreground" />
                         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-foreground">Operational Guidelines</span>
                     </div>
-                    <h1 className="text-[1.8rem] sm:text-5xl md:text-7xl font-black italic tracking-tighter uppercase leading-[0.9] text-foreground px-2">
-                        Terms of <span className="bg-clip-text text-transparent bg-gradient-to-r from-secondary to-primary">Service</span>
+                    <h1 className="text-[1.7rem] sm:text-5xl md:text-7xl font-black italic tracking-tighter uppercase leading-[0.9] text-foreground px-2">
+                        Terms of <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#db2777] to-[#9333ea]">Service</span>
                     </h1>
-                    <p className="text-default-500 text-sm md:text-lg font-medium max-w-2xl mx-auto px-4 leading-relaxed">
+                    <p className="text-default-500 text-[13px] md:text-lg font-medium max-w-2xl mx-auto px-6 leading-relaxed">
                         High-performance systems require clear operational boundaries. These terms ensure a safe, fair, and high-performance experience for every explorer.
                     </p>
                 </motion.div>
@@ -70,13 +70,13 @@ const TermsClient = () => {
                             className="w-full"
                         >
                             <Card className="bg-white/70 dark:bg-black/40 backdrop-blur-3xl border-2 border-black/5 dark:border-white/10 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl hover:border-primary/50 transition-all group w-full">
-                                <CardBody className="p-6 md:p-14 flex flex-col md:flex-row gap-6 md:gap-10 items-center md:items-start text-center md:text-left">
-                                    <div className="p-4 md:p-5 rounded-[1.2rem] md:rounded-[1.5rem] bg-gradient-to-br from-default-100 to-default-200 dark:from-white/5 dark:to-white/10 border-2 border-default-300 dark:border-white/10 shrink-0 shadow-lg group-hover:scale-110 transition-transform">
+                                <CardBody className="p-5 md:p-14 flex flex-col md:flex-row gap-5 md:gap-10 items-center md:items-start text-center md:text-left">
+                                    <div className="p-4 md:p-5 rounded-[1.2rem] md:rounded-[1.5rem] bg-default-100 dark:bg-white/5 border-2 border-default-300 dark:border-white/10 shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                         {section.icon}
                                     </div>
-                                    <div className="space-y-4 md:space-y-5 w-full">
-                                        <h2 className="text-xl md:text-3xl font-black uppercase italic tracking-tighter text-foreground group-hover:text-primary transition-colors leading-none">{section.title}</h2>
-                                        <p className="text-default-600 dark:text-default-400 font-bold leading-relaxed text-sm md:text-xl">
+                                    <div className="space-y-3 md:space-y-5 w-full">
+                                        <h2 className="text-[1.25rem] md:text-3xl font-black uppercase italic tracking-tighter text-foreground group-hover:text-primary transition-colors leading-tight">{section.title}</h2>
+                                        <p className="text-default-600 dark:text-default-400 font-bold leading-relaxed text-[14px] md:text-xl">
                                             {section.content}
                                         </p>
                                     </div>
@@ -110,7 +110,7 @@ const TermsClient = () => {
                         Contact Team
                     </Button>
 
-                    <div className="text-[12px] font-black uppercase tracking-[0.4em] text-purple-600 dark:text-purple-400">
+                    <div className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-600 dark:text-secondary">
                         Protocol v2.4 | System Sync: March 2024
                     </div>
                 </motion.div>
