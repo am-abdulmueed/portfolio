@@ -15,7 +15,7 @@ import {
 } from "@nextui-org/react";
 import ThemeSwitcher from "../ThemeSwitcher";
 import { usePathname } from "next/navigation";
-import { Github, Menu, X, Home, Cpu, Tv, Sparkles, Download, Info, Mail, Gamepad2, Music } from "lucide-react";
+import { Home, Cpu, Tv, Sparkles, Download, Info, Mail, Gamepad2, Music } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope, FaDiscord } from "react-icons/fa";

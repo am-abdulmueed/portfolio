@@ -1,13 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
 
 export default function LanguageToggle() {
-  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const pathname = usePathname();
   const [currentLang, setCurrentLang] = useState('vi');
 
   useEffect(() => {

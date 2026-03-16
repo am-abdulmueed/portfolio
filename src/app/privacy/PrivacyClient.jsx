@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Shield, Lock, Eye, Server, RefreshCw, FileText } from "lucide-react";
 import { Card, CardBody } from "@nextui-org/react";

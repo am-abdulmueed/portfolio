@@ -1,5 +1,3 @@
-import HomeHeading from "@/components/custom/typo/HomeHeading";
-import Image from "next/image";
 import IntroSection from "@/components/custom/IntroSection";
 import DescriptionSection from "@/components/custom/DescriptionSection";
 import FeatureSection from "@/components/custom/FeatureSection";

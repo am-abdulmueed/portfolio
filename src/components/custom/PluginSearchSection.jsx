@@ -70,7 +70,7 @@ const PluginSearchSection = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 min-h-[100px]">
                 <AnimatePresence mode="popLayout">
                     {filteredPlugins.length > 0 ? (
-                        filteredPlugins.map((plugin, idx) => (
+                        filteredPlugins.map((plugin) => (
                             <motion.div
                                 key={plugin.name}
                                 layout
