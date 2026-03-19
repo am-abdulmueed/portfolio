@@ -109,24 +109,13 @@ const PluginStreamHero = () => {
                     className="relative w-full max-w-6xl aspect-[21/9] rounded-[2rem] md:rounded-[4rem] overflow-hidden border-2 border-white/10 shadow-3xl mt-12 group bg-black"
                 >
                     <Image
-                        src="/pluginstream/hero.webp"
+                        src="/pluginstream/hero.png"
                         alt="PluginStream Cinematic Experience"
                         fill
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-80"
                         priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
-                    
-                    {/* Floating Branding */}
-                    <div className="absolute bottom-8 left-8 flex items-center gap-4">
-                        <div className="p-4 bg-black/40 backdrop-blur-3xl rounded-3xl border border-white/10">
-                            <Image src="/pluginstream/logo.png" alt="Logo" width={48} height={48} className="object-contain" />
-                        </div>
-                        <div className="text-left">
-                            <h3 className="text-xl font-black italic uppercase tracking-tighter">PluginStream</h3>
-                            <p className="text-[10px] font-bold text-red-500 uppercase tracking-[0.2em]">Next-Gen Movie Engine</p>
-                        </div>
-                    </div>
                 </motion.div>
             </div>
         </section>

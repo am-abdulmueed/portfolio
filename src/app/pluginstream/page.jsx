@@ -2,6 +2,7 @@ import PluginStreamHero from "@/components/custom/PluginStreamHero";
 import PluginStreamFeatures from "@/components/custom/PluginStreamFeatures";
 import PluginSearchSection from "@/components/custom/PluginSearchSection";
 import PremiumComparison from "@/components/custom/PremiumComparison";
+import PluginStreamScreenshots from "@/components/custom/PluginStreamScreenshots";
 import AdSense from "@/components/custom/AdSense";
 
 export const metadata = {
@@ -42,6 +43,8 @@ export default function PluginStreamPage() {
             <div className="fixed inset-0 z-[-1] pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
             <PluginStreamHero />
+
+            <PluginStreamScreenshots />
 
             <div className="lg:px-16 md:px-16 sm:px-10 relative z-10">
                 <AdSense className="my-12 opacity-80" />
