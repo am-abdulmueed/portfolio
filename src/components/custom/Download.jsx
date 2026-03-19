@@ -43,7 +43,7 @@ export default function Download() {
               className="inline-block min-w-[9ch] text-center font-black tracking-tight tabular-nums leading-none text-[clamp(2.5rem,12vw,6rem)] md:text-8xl bg-clip-text text-transparent bg-gradient-to-br from-primary via-primary/80 to-secondary drop-shadow-2xl"
               ref={nodeRef}
             >
-              1,827,561
+              fetching
             </h1>
           </div>
           <div className="flex flex-col items-center">

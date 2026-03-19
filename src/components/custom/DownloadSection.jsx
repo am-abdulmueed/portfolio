@@ -288,7 +288,7 @@ const DownloadSection = () => {
                 size="lg"
                 radius="full"
                 as={Link}
-                href="https://github.com/am-abdulmueed/muxio/releases"
+                href="https://github.com/am-abdulmueed/pluginstream/releases/latest/download/pluginstream.apk"
                 className="h-16 md:h-20 px-10 md:px-14 bg-white text-red-600 font-black text-lg md:text-xl uppercase tracking-widest shadow-2xl hover:scale-105 transition-transform w-full md:w-auto"
                 startContent={<MdDownload size={24} />}
               >

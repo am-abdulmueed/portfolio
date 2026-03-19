@@ -65,10 +65,10 @@ const PluginStreamHero = () => {
                         size="lg"
                         radius="full"
                         as={Link}
-                        href="/download"
+                        href="https://github.com/am-abdulmueed/pluginstream/releases/latest/download/pluginstream.apk"
                         className="h-16 px-10 bg-red-600 text-white font-black text-lg uppercase tracking-widest shadow-2xl hover:scale-105 transition-transform"
                     >
-                        Try 100% Free Now
+                        Download Now
                     </Button>
                     <Button
                         size="lg"

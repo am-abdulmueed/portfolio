@@ -80,6 +80,7 @@ const Footer = () => {
                 {[
                   { name: "NexGama Engine", path: "/nexgama" },
                   { name: "Muxio Core", path: "/muxio" },
+                  { name: "PluginStream", path: "/pluginstream" },
                   { name: "Project Showcase", path: "/projects" },
                   { name: "Hire Ecosystem", path: "/why-hire-me" }
                 ].map((item, i) => (
