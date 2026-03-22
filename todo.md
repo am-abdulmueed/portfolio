@@ -1,30 +1,46 @@
-If you're already using npm and a module bundler such as webpack or Rollup, you can run the following command to install the latest SDK (Learn more):
+Viewed AndroidManifest.xml:1-250
 
-npm install firebase
-Then, initialize Firebase and begin using the SDKs for the products you'd like to use.
+Bhai, aapki app mein pehle se hi Deep Linking ka rasta bana hua hai (`am-abdulmueed.vercel.app` ke liye). Ab aapko bas apni website par yeh kaam karne hain taaki link click karte hi app khule:
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+### 1. Website par kya banana hai?
+Aapko apni website ke **root (main) folder** mein ek naya folder banana hoga:
+- Folder name: `.well-known`
+- File name: `assetlinks.json` (is folder ke andar)
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAmlgnO7NdhjwW2exjRlnouS8MaAzQUybs",
-  authDomain: "am-abdulmueed-website.firebaseapp.com",
-  projectId: "am-abdulmueed-website",
-  storageBucket: "am-abdulmueed-website.firebasestorage.app",
-  messagingSenderId: "485853116233",
-  appId: "1:485853116233:web:e203ace98eda5ebab3cc98",
-  measurementId: "G-GDXTC5HPM5"
-};
+Pura rasta (Path) aisa hona chahiye:
+`https://am-abdulmueed.vercel.app/.well-known/assetlinks.json`
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-Note: This option uses the modular JavaScript SDK, which provides reduced SDK size.
+### 2. `assetlinks.json` file mein kya likhna hai?
+Is file mein yeh code jaye ga:
 
-Learn more about Firebase for web: Get Started, Web SDK API Reference, Samples
+```json
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.maxrave.simpmusic",
+    "sha256_cert_fingerprints": [
+      "YOUR_SHA256_FINGERPRINT_HERE"
+    ]
+  }
+}]
+```
 
+### 3. SHA256 Fingerprint kahan se milega?
+"Asset Links" tabhi kaam karte hain jab website ko pata ho ki aapki app "Official" hai. Iske liye aapko apni App ka **SHA256 fingerprint** nikalna hoga.
+
+**Kaise nikalein?**
+Terminal mein yeh command chalayein (vohi folder jahan aapka keystore hai):
+`keytool -list -v -keystore YOUR_KEYSTORE_FILE`
+
+Agar aap **Debug** build use kar rahe hain, toh Google Play Console ya Android Studio se bhi yeh mil jayega.
+
+### 4. Website ke page par kya likhna hai?
+Jab koi link open karega aur uske paas app **nahi** hogi, toh browser mein aapki website khulegi. Aap wahan ek simple page bana sakte hain jo video ID ko read kare:
+- Link: `https://am-abdulmueed.vercel.app/app/watch?v=VIDEO_ID`
+- Website par aap ek "Download App" button dikha sakte hain ya fir vohi song browser mein play karwa sakte hain.
+
+**Summary:** 
+Jab aap `.well-known/assetlinks.json` file upload kar denge, toh Android system ko bharosa ho jayega ki yeh website aur app aapki hi hain, aur woh link seedha App mein khol dega.
+
+Kya aap chahte hain ki main aapko SHA256 nikalne ki command mein madad karun?

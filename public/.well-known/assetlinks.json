@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.maxrave.simpmusic",
+      "sha256_cert_fingerprints": [
+        "BC:42:EE:91:B3:F6:46:B5:B4:14:6D:6A:BB:3B:27:56:DD:E4:1A:89:B7:99:8A:46:BB:47:A2:DB:E4:9A:7D:59"
+      ]
+    }
+  }
+]
