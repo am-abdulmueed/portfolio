@@ -1,4 +1,3 @@
-import MusicPlayer from '@/components/custom/MusicPlayer';
 import { Suspense } from 'react';
 
 export const metadata = {
