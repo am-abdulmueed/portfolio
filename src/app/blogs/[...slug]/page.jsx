@@ -10,6 +10,27 @@ import AuthorInfo from '@/components/custom/AuthorInfo';
 
 const DEFAULT_IMAGE = '/images/blog/placeholder.png'; // Placeholder image
 
+export async function generateStaticParams() {
+  try {
+    const response = await databases.listDocuments(DATABASE_ID, COLLECTION_ID);
+    const paths = [];
+    const languages = ['en', 'vi']; // Support English and Vietnamese based on your code
+    
+    response.documents.forEach((doc) => {
+      languages.forEach((lang) => {
+        paths.push({
+          slug: [lang, doc.slug]
+        });
+      });
+    });
+    
+    return paths;
+  } catch (error) {
+    console.error('Error generating static params:', error);
+    return [];
+  }
+}
+
 export async function generateMetadata({ params }) {
   const blog = await getBlogPost(params.slug[1]);
   
