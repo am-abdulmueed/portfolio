@@ -1,7 +1,5 @@
 import { Suspense } from 'react';
 
-export const runtime = 'edge';
-
 export const metadata = {
   title: 'Watch Song - Muxio',
   description: 'Listen to your favorite songs on Muxio or open in the official app.',
