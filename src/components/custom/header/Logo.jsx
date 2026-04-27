@@ -62,7 +62,7 @@ const Logo = ({ pathName }) => {
   }
 
   if (isPluginStream) {
-    return <Frame src="/pluginstream/logo.png" alt="PluginStream" href="/pluginstream" label="PluginStream" subLabel="Movie Engine" color="text-red-500" />;
+    return <Frame src="/pluginstream/icon.png" alt="PluginStream" href="/pluginstream" label="PluginStream" subLabel="Movie Engine" color="text-red-500" />;
   }
 
   if (isMuxio) {

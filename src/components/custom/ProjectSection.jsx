@@ -143,6 +143,16 @@ const projects = [
     category: "Library",
     color: "from-sky-500 to-blue-600"
   },
+    {
+    title: "PluginStream",
+    status: "Live",
+    description: "An AI-powered entertainment super-app for movies, dramas, web series, games, and music. Features real-time subtitles, multilingual AI voice dubbing, integrated cloud gaming, and free access to YouTube & YouTube Music.",
+    link: "https://github.com/am-abdulmueed/pluginstream",
+    tech: ["AI", "React Native", "Streaming", "Subtitles", "Cloud Gaming", "YouTube API"],
+    icon: <Film size={24} />,
+    category: "AI",
+    color: "from-red-600 to-rose-700"
+  },
   {
     title: "MusicHub",
     status: "Live",
@@ -162,16 +172,6 @@ const projects = [
     icon: <Cloud size={24} />,
     category: "Web App",
     color: "from-blue-500 to-cyan-400"
-  },
-  {
-    title: "Cloudup",
-    status: "Closed Source",
-    description: "An AI-powered entertainment platform for movies, dramas, and web series.",
-    link: "https://github.com/BetaAE/cloudupprot",
-    tech: ["AI", "React Native", "Streaming", "Subtitles"],
-    icon: <Film size={24} />,
-    category: "AI",
-    color: "from-red-600 to-rose-700"
   },
   {
     title: "Aurio",

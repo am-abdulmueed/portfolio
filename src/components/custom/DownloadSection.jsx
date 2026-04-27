@@ -14,7 +14,7 @@ import RatingCard from "./RatingCard";
 const mobilePlatforms = [
   {
     name: "Play Store",
-    url: "https://play.google.com/store/apps/details?id=com.betapix.muxio",
+    url: "https://github.com/am-abdulmueed/pluginstream/releases/latest/download/pluginstream.apk",
     icon: <FaGooglePlay size={28} />,
     description: "Official Android Store",
     color: "from-[#34A853] to-[#0F9D58]",
@@ -22,7 +22,7 @@ const mobilePlatforms = [
   },
   {
     name: "App Store",
-    url: "https://apps.apple.com/app/com.betapix.muxio",
+    url: "https://github.com/am-abdulmueed/pluginstream/releases/latest/download/pluginstream.apk",
     icon: <FaAppStoreIos size={28} />,
     description: "iOS & iPadOS App",
     color: "from-[#0071E3] to-[#007AFF]",
@@ -34,21 +34,21 @@ const desktopPlatforms = [
   {
     name: "Windows",
     icon: <FaWindows size={32} />,
-    url: "https://github.com/am-abdulmueed/muxio/releases",
+    url: "https://github.com/am-abdulmueed/pluginstream/releases/latest/download/pluginstream.apk",
     description: "Standard .exe installer for PC",
     color: "from-[#0078D4] to-[#00A4EF]",
   },
   {
     name: "macOS",
     icon: <FaApple size={32} />,
-    url: "https://github.com/am-abdulmueed/muxio/releases",
+    url: "https://github.com/am-abdulmueed/pluginstream/releases/latest/download/pluginstream.apk",
     description: "Universal .dmg for Intel & M1/M2",
     color: "from-foreground via-foreground/80 to-muted-foreground",
   },
   {
     name: "Linux",
     icon: <FaLinux size={32} />,
-    url: "https://github.com/am-abdulmueed/muxio/releases",
+    url: "https://github.com/am-abdulmueed/pluginstream/releases/latest/download/pluginstream.apk",
     description: "Portable AppImage & .deb packages",
     color: "from-[#FCC624] to-[#E95420]",
   },
@@ -78,7 +78,7 @@ const DownloadSection = () => {
             transition={{ duration: 0.5 }}
           >
             Ready to <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary italic">Elevate</span> <br />
-            Your Music Experience?
+            Your Entertainment?
           </motion.h1>
 
           <motion.p
@@ -87,7 +87,7 @@ const DownloadSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Choose your device and get started with the world&apos;s most versatile music discovery platform.
+            Choose your device and get started with Music, Movies, YouTube, and Gaming - all in one platform.
           </motion.p>
 
           <motion.div
@@ -150,12 +150,14 @@ const DownloadSection = () => {
 
             <Card className="bg-primary/5 border border-primary/20 rounded-[2.5rem] p-8">
               <div className="flex flex-col gap-4">
-                <h4 className="text-xl font-black">Why Muxio Mobile?</h4>
+                <h4 className="text-xl font-black">Why PluginStream Mobile?</h4>
                 <ul className="grid grid-cols-2 gap-4 text-sm font-medium text-default-500">
-                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> Ad-free Playback</li>
-                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> Background Audio</li>
-                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> Offline Mode</li>
-                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> Synced Lyrics</li>
+                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> 100+ Premium OTTs</li>
+                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> Ad-free YouTube Pro</li>
+                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> Background Playback</li>
+                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> Unlimited Movies & TV</li>
+                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> Built-in Pro Gaming</li>
+                  <li className="flex items-center gap-2"><FaArrowRight className="text-primary" size={12} /> High-Quality Downloads</li>
                 </ul>
               </div>
             </Card>
@@ -273,15 +275,15 @@ const DownloadSection = () => {
               <div className="relative w-24 h-24 md:w-32 md:h-32 shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/pluginstream/logo.png"
+                  src="/pluginstream/icon.png"
                   alt="PluginStream Icon"
-                  className="w-full h-full rounded-3xl shadow-2xl group-hover:scale-110 transition-transform duration-500 border border-white/10 object-contain bg-black/20 backdrop-blur-md p-4"
+                  className="w-full h-full rounded-3xl shadow-2xl group-hover:scale-110 transition-transform duration-500 border border-white/10 object-contain"
                 />
               </div>
 
               <div className="flex-1 space-y-4">
-                <h4 className="text-3xl md:text-5xl font-black italic uppercase leading-none tracking-tighter">Unlimited Global <br />Movies & Shows</h4>
-                <p className="text-white/80 text-sm md:text-lg font-medium max-w-xl">Get the world&apos;s most powerful movie engine. 100+ premium plugins for Netflix, Prime, HBO and more directly on your device.</p>
+             <h4 className="text-3xl md:text-5xl font-black italic uppercase leading-none tracking-tighter">Unlimited Global <br /> Movies & OTTs</h4>
+             <p className="text-white/80 text-sm md:text-lg font-medium max-w-xl">Get the world&apos;s most powerful entertainment engine. Access 100+ premium OTTs like Netflix, Prime, and Disney+, plus YouTube Pro — all free in one app!</p>
               </div>
 
               <Button

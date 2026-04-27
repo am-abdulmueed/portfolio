@@ -10,19 +10,19 @@ const PluginStreamFeatures = () => {
             title: "Premium Content",
             description: "Stream from Netflix, Prime Video, HBO Max, and Apple TV+ without any subscription costs.",
             icon: <Play className="text-red-500" size={32} />,
-            image: "/pluginstream/player.jpg"
+            image: "/pluginstream/premium_content.jpg"
         },
         {
             title: "Fast & Secure",
             description: "Engineered for speed. Enjoy buffer-free 4K streaming with enterprise-grade security.",
             icon: <Zap className="text-yellow-500" size={32} />,
-            image: "/pluginstream/preview.png"
+            image: "/pluginstream/fast_secure.jpg"
         },
         {
             title: "Global Reach",
             description: "100+ plugins covering regions from USA to Turkey, Indonesia to India. Worldwide entertainment.",
             icon: <Globe className="text-blue-500" size={32} />,
-            image: "/pluginstream/mokeup.jpg"
+            image: "/pluginstream/global_reach.jpg"
         }
     ];
 

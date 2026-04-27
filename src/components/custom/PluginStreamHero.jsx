@@ -49,8 +49,7 @@ const PluginStreamHero = () => {
                         transition={{ delay: 0.2 }}
                         className="text-foreground/70 text-sm md:text-2xl font-medium max-w-3xl mx-auto leading-relaxed px-4 md:px-0"
                     >
-                        Access premium content from Netflix, Prime, HBO, and Disney+ with 100+ powerful plugins. 
-                        Worldwide entertainment, fast, free, and secure. Try 100% free now!
+                        100+ premium plugins for Netflix, Prime, HBO & Disney+. Plus YouTube Pro (Ad-Free + Background Play), Movies, Live TV & Games - all free in one app!
                     </motion.p>
                 </div>
 

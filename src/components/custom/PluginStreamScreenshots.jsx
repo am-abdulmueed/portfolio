@@ -5,11 +5,25 @@ import Image from "next/image";
 import { X } from "lucide-react";
 
 const images = [
-  "/pluginstream/5.png",
-  "/pluginstream/6.png",
-  "/pluginstream/7.png",
-  "/pluginstream/8.png",
-  "/pluginstream/9.png",
+  "/pluginstream/pluginstream.png",
+  "/pluginstream/home.png",
+  "/pluginstream/provider.png",
+  "/pluginstream/moveis.png",
+  "/pluginstream/detail.png",
+  "/pluginstream/protube-description.png",
+  "/pluginstream/protube-details.png",
+  "/pluginstream/protube-download-quality.png",
+  "/pluginstream/protube-download.png",
+  "/pluginstream/protube-downloads-selector.png",
+  "/pluginstream/protube-features.png",
+  "/pluginstream/protube-like.png",
+  "/pluginstream/protube-music.png",
+  "/pluginstream/protube-player.png",
+  "/pluginstream/protube-shorts.png",
+  "/pluginstream/protube-vidio-player.png",
+  "/pluginstream/protube-vidio.png",
+  "/pluginstream/vidio_player.png",
+
 ];
 
 const PluginStreamScreenshots = () => {

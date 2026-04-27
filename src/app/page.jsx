@@ -41,15 +41,15 @@ export default function RootHome() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12 inline-flex items-center gap-4 px-8 py-3 rounded-full bg-white/[0.03] dark:bg-white/[0.01] border border-black/5 dark:border-white/5 backdrop-blur-3xl shadow-2xl"
+          className="mb-12 inline-flex items-center gap-4 px-4 md:px-8 py-3 rounded-full bg-white/[0.03] dark:bg-white/[0.01] border border-black/5 dark:border-white/5 backdrop-blur-3xl shadow-2xl"
         >
           <Sparkles size={20} className="text-primary animate-pulse" />
-          <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.6em] text-foreground/60">Elite Digital Ecosystem</span>
+          <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] md:tracking-[0.6em] text-foreground/60">Elite Digital Ecosystem</span>
         </motion.div>
 
         {/* Hero Title - Redefined */}
         <div className="relative mb-16 px-4">
-          <h1 className="text-7xl md:text-[12rem] font-black italic uppercase tracking-[ -0.05em] leading-[0.8] mb-4">
+          <h1 className="text-5xl sm:text-7xl md:text-[12rem] font-black italic uppercase tracking-[-0.05em] leading-[0.8] mb-4">
             <motion.span
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
@@ -82,46 +82,46 @@ export default function RootHome() {
         </motion.p>
 
         {/* Entry Grid - Ultra Premium */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full mb-32">
           {/* NexGama - Pro Gaming */}
           <Card
             as={NextLink}
             href="/nexgama"
-            className="group relative min-h-[500px] md:min-h-[600px] border-none bg-transparent overflow-hidden rounded-[3rem] md:rounded-[4rem] cursor-none md:cursor-pointer shadow-2xl dark:shadow-none"
+            className="group relative min-h-[400px] md:min-h-[520px] border-none bg-transparent overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] cursor-none md:cursor-pointer shadow-xl dark:shadow-none"
           >
-            <div className="absolute inset-0 bg-white/95 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-black/5 dark:border-white/10 group-hover:bg-primary/5 group-hover:border-primary/40 transition-all duration-700 shadow-xl dark:shadow-none" />
+            <div className="absolute inset-0 bg-white/80 dark:bg-white/[0.02] backdrop-blur-2xl border border-black/5 dark:border-white/10 group-hover:bg-primary/5 group-hover:border-primary/30 transition-all duration-500" />
 
             {/* Brand Glow */}
-            <div className="absolute -inset-20 bg-primary/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/20 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
-            <CardBody className="p-12 md:p-20 flex flex-col justify-between relative z-10">
-              <div className="absolute top-0 right-0 p-16 opacity-[0.02] group-hover:opacity-10 group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000">
-                <Gamepad2 size={400} />
+            <CardBody className="p-8 md:p-10 flex flex-col justify-between relative z-10">
+              <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-700">
+                <Gamepad2 size={320} />
               </div>
 
-              <div className="space-y-6 text-left">
-                <div className="inline-flex px-6 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border-2 border-primary/30 backdrop-blur-md">
-                  <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] text-primary-600 dark:text-primary-400">High-Performance Gaming</span>
+              <div className="space-y-4 text-left">
+                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 backdrop-blur-md">
+                  <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-primary-600 dark:text-primary-400">Pro Gaming</span>
                 </div>
-                <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black italic uppercase tracking-tighter leading-none group-hover:skew-x-2 transition-transform duration-500 break-words">NexGama</h2>
-                <p className="text-default-500 text-lg md:text-xl font-medium leading-relaxed max-w-sm">
-                  1000+ elite PC-grade titles. Zero latency. Instant web scale rendering.
+                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.9] group-hover:skew-x-1 transition-transform duration-500 break-words">NexGama</h2>
+                <p className="text-default-500 text-sm md:text-base font-medium leading-relaxed max-w-[260px]">
+                  1000+ elite PC titles. Zero latency streaming.
                 </p>
               </div>
 
-              <div className="flex justify-between items-end gap-6">
-                <div className="flex gap-8 md:gap-12">
+              <div className="flex justify-between items-end gap-4 mt-4">
+                <div className="flex gap-6 md:gap-10">
                   <div className="flex flex-col">
-                    <span className="text-3xl md:text-5xl font-black italic text-foreground leading-none">1.2K+</span>
-                    <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-black text-primary mt-2">Active Titles</span>
+                    <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">1.2K+</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-primary mt-2">Titles</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-3xl md:text-5xl font-black italic text-foreground leading-none">PRO</span>
-                    <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-black text-secondary mt-2">Engine</span>
+                    <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">PRO</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-secondary mt-2">Engine</span>
                   </div>
                 </div>
-                <div className="w-16 h-16 md:w-24 md:h-24 flex-shrink-0 rounded-full bg-foreground text-background flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-700 shadow-3xl group-hover:scale-110">
-                  <ArrowRight className="w-8 h-8 md:w-12 md:h-12" />
+                <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 rounded-[1.2rem] bg-foreground text-background flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-xl group-hover:scale-105">
+                  <ArrowRight className="w-7 h-7 md:w-8 md:h-8" />
                 </div>
               </div>
             </CardBody>
@@ -131,41 +131,41 @@ export default function RootHome() {
           <Card
             as={NextLink}
             href="/muxio"
-            className="group relative min-h-[500px] md:min-h-[600px] border-none bg-transparent overflow-hidden rounded-[3rem] md:rounded-[4rem] shadow-2xl dark:shadow-none"
+            className="group relative min-h-[400px] md:min-h-[520px] border-none bg-transparent overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl dark:shadow-none"
           >
-            <div className="absolute inset-0 bg-white/95 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-black/5 dark:border-white/10 group-hover:bg-secondary/5 group-hover:border-secondary/40 transition-all duration-700 shadow-xl dark:shadow-none" />
+            <div className="absolute inset-0 bg-white/80 dark:bg-white/[0.02] backdrop-blur-2xl border border-black/5 dark:border-white/10 group-hover:bg-secondary/5 group-hover:border-secondary/30 transition-all duration-500" />
 
             {/* Brand Glow */}
-            <div className="absolute -inset-20 bg-secondary/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-secondary/20 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
-            <CardBody className="p-12 md:p-20 flex flex-col justify-between relative z-10">
-              <div className="absolute top-0 right-0 p-16 opacity-[0.02] group-hover:opacity-10 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-1000">
-                <Music size={400} />
+            <CardBody className="p-8 md:p-10 flex flex-col justify-between relative z-10">
+              <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 group-hover:scale-110 group-hover:-rotate-12 transition-all duration-700">
+                <Music size={320} />
               </div>
 
-              <div className="space-y-6 text-left">
-                <div className="inline-flex px-6 py-2 rounded-full bg-secondary/10 dark:bg-secondary/20 border-2 border-secondary/30 backdrop-blur-md">
-                  <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] text-secondary-600 dark:text-secondary-400">Cinematic Soundscape</span>
+              <div className="space-y-4 text-left">
+                <div className="inline-flex px-4 py-1.5 rounded-full bg-secondary/10 dark:bg-secondary/20 border border-secondary/20 backdrop-blur-md">
+                  <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-secondary-600 dark:text-secondary-400">Hi-Fi Audio</span>
                 </div>
-                <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7rem] font-black italic uppercase tracking-tighter leading-none group-hover:-skew-x-2 transition-transform duration-500 break-words">Muxio</h2>
-                <p className="text-default-500 text-lg md:text-xl font-medium leading-relaxed max-w-sm">
-                  Pure high-fidelity audio environment. Engineered for clarity, speed, and immersion.
+                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.9] group-hover:-skew-x-1 transition-transform duration-500 break-words">Muxio</h2>
+                <p className="text-default-500 text-sm md:text-base font-medium leading-relaxed max-w-[260px]">
+                  Pure high-fidelity sound. Engineered for immersion.
                 </p>
               </div>
 
-              <div className="flex justify-between items-end gap-6">
-                <div className="flex gap-8 md:gap-12">
+              <div className="flex justify-between items-end gap-4 mt-4">
+                <div className="flex gap-6 md:gap-10">
                   <div className="flex flex-col">
-                    <span className="text-3xl md:text-5xl font-black italic text-foreground leading-none">Hi-Fi</span>
-                    <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-black text-secondary mt-2">Bitrate</span>
+                    <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">Hi-Fi</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-secondary mt-2">Bitrate</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-3xl md:text-5xl font-black italic text-foreground leading-none">ZERO</span>
-                    <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-black text-primary mt-2">Loss</span>
+                    <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">ZERO</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-primary mt-2">Loss</span>
                   </div>
                 </div>
-                <div className="w-16 h-16 md:w-24 md:h-24 flex-shrink-0 rounded-full bg-foreground text-background flex items-center justify-center group-hover:bg-secondary group-hover:text-secondary-foreground transition-all duration-700 shadow-3xl group-hover:scale-110">
-                  <ArrowRight className="w-8 h-8 md:w-12 md:h-12" />
+                <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 rounded-[1.2rem] bg-foreground text-background flex items-center justify-center group-hover:bg-secondary group-hover:text-secondary-foreground transition-all duration-500 shadow-xl group-hover:scale-105">
+                  <ArrowRight className="w-7 h-7 md:w-8 md:h-8" />
                 </div>
               </div>
             </CardBody>
@@ -175,41 +175,41 @@ export default function RootHome() {
           <Card
             as={NextLink}
             href="/pluginstream"
-            className="group relative min-h-[500px] md:min-h-[600px] border-none bg-transparent overflow-hidden rounded-[3rem] md:rounded-[4rem] shadow-2xl dark:shadow-none"
+            className="group relative min-h-[400px] md:min-h-[520px] border-none bg-transparent overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl dark:shadow-none"
           >
-            <div className="absolute inset-0 bg-white/95 dark:bg-white/[0.03] backdrop-blur-3xl border-2 border-black/5 dark:border-white/10 group-hover:bg-red-500/5 group-hover:border-red-500/40 transition-all duration-700 shadow-xl dark:shadow-none" />
+            <div className="absolute inset-0 bg-white/80 dark:bg-white/[0.02] backdrop-blur-2xl border border-black/5 dark:border-white/10 group-hover:bg-red-500/5 group-hover:border-red-500/30 transition-all duration-500" />
 
             {/* Brand Glow */}
-            <div className="absolute -inset-20 bg-red-500/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -z-10" />
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-red-500/20 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
-            <CardBody className="p-12 md:p-16 flex flex-col justify-between relative z-10">
-              <div className="absolute top-0 right-0 p-16 opacity-[0.02] group-hover:opacity-10 group-hover:scale-125 group-hover:rotate-6 transition-all duration-1000">
-                <Layers size={400} />
+            <CardBody className="p-8 md:p-10 flex flex-col justify-between relative z-10">
+              <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
+                <Layers size={320} />
               </div>
 
-              <div className="space-y-6 text-left">
-                <div className="inline-flex px-6 py-2 rounded-full bg-red-500/10 dark:bg-red-500/20 border-2 border-red-500/30 backdrop-blur-md">
-                  <span className="text-[10px] md:text-sm font-black uppercase tracking-[0.2em] text-red-600 dark:text-red-400">Cinematic Engine</span>
+              <div className="space-y-4 text-left">
+                <div className="inline-flex px-4 py-1.5 rounded-full bg-red-500/10 dark:bg-red-500/20 border border-red-500/20 backdrop-blur-md">
+                  <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-red-600 dark:text-red-400">Cinema</span>
                 </div>
-                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black italic uppercase tracking-tighter leading-none group-hover:skew-x-1 transition-transform duration-500 break-words">PluginStream</h2>
-                <p className="text-default-500 text-lg md:text-xl font-medium leading-relaxed max-w-sm">
-                  The ultimate movie experience. 100+ plugins for Netflix, Prime, and beyond.
+                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.9] group-hover:skew-x-1 transition-transform duration-500 break-words">PluginStream</h2>
+                <p className="text-default-500 text-sm md:text-base font-medium leading-relaxed max-w-[260px]">
+                  100+ premium plugins for Netflix, Prime & more.
                 </p>
               </div>
 
-              <div className="flex justify-between items-end gap-6">
-                <div className="flex gap-6 md:gap-8">
+              <div className="flex justify-between items-end gap-4 mt-4">
+                <div className="flex gap-6 md:gap-10">
                   <div className="flex flex-col">
-                    <span className="text-3xl md:text-4xl font-black italic text-foreground leading-none">100+</span>
-                    <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-black text-red-500 mt-2">Plugins</span>
+                    <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">100+</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-red-500 mt-2">Plugins</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-3xl md:text-4xl font-black italic text-foreground leading-none">4K</span>
-                    <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-black text-purple-500 mt-2">Ultra HD</span>
+                    <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">4K</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-purple-500 mt-2">UHD</span>
                   </div>
                 </div>
-                <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 rounded-full bg-foreground text-background flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-all duration-700 shadow-3xl group-hover:scale-110">
-                  <ArrowRight className="w-8 h-8 md:w-10 md:h-10" />
+                <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 rounded-[1.2rem] bg-foreground text-background flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-all duration-500 shadow-xl group-hover:scale-105">
+                  <ArrowRight className="w-7 h-7 md:w-8 md:h-8" />
                 </div>
               </div>
             </CardBody>

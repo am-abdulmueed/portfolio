@@ -96,12 +96,11 @@ PROJECTS LIST
     Link: https://github.com/am-abdulmueed/cloud-storage
     Technology: Cloud Storage, File Upload, WebApp
 
-15. Cloudup
-    Status: Closed Source
-    Description: An AI-powered entertainment platform for movies, dramas, and web series. Features real-time subtitles and multilingual AI voice dubbing.
-    Link: https://github.com/BetaAE/cloudupprot
-    Technology: AI, React Native, Streaming, Subtitles
-
+15. PluginStream
+    Status: OpenSource
+    Description: An AI-powered entertainment super-app for movies, dramas, web series, games, and music. Features real-time subtitles, multilingual AI voice dubbing, integrated cloud gaming, and free access to YouTube & YouTube Music
+    Link: https://github.com/am-abdulmueed/pluginstream
+    Technology: AI, React Native, Streaming, Subtitles, Cloud Gaming, YouTube API
 16. Aurio
     Status: Closed Source
     Description: A futuristic music streaming app inspired by Spotify and YouTube Music. Smart, responsive UI and latest tracks.
