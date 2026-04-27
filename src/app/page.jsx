@@ -83,11 +83,11 @@ export default function RootHome() {
 
         {/* Entry Grid - Ultra Premium */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full mb-32">
-          {/* NexGama - Pro Gaming */}
+          {/* NexGama - High-Performance Gaming */}
           <Card
             as={NextLink}
             href="/nexgama"
-            className="group relative min-h-[400px] md:min-h-[520px] border-none bg-transparent overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] cursor-none md:cursor-pointer shadow-xl dark:shadow-none"
+            className="group relative min-h-[420px] md:min-h-[540px] border-none bg-transparent overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] cursor-none md:cursor-pointer shadow-xl dark:shadow-none"
           >
             <div className="absolute inset-0 bg-white/80 dark:bg-white/[0.02] backdrop-blur-2xl border border-black/5 dark:border-white/10 group-hover:bg-primary/5 group-hover:border-primary/30 transition-all duration-500" />
 
@@ -101,11 +101,13 @@ export default function RootHome() {
 
               <div className="space-y-4 text-left">
                 <div className="inline-flex px-4 py-1.5 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 backdrop-blur-md">
-                  <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-primary-600 dark:text-primary-400">Pro Gaming</span>
+                  <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-primary-600 dark:text-primary-400">High-Performance Gaming</span>
                 </div>
-                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.9] group-hover:skew-x-1 transition-transform duration-500 break-words">NexGama</h2>
+                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.85] group-hover:skew-x-1 transition-transform duration-500">
+                  Nex<br />Gama
+                </h2>
                 <p className="text-default-500 text-sm md:text-base font-medium leading-relaxed max-w-[260px]">
-                  1000+ elite PC titles. Zero latency streaming.
+                  1000+ elite PC-grade titles. Zero latency. Instant web scale rendering.
                 </p>
               </div>
 
@@ -113,7 +115,7 @@ export default function RootHome() {
                 <div className="flex gap-6 md:gap-10">
                   <div className="flex flex-col">
                     <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">1.2K+</span>
-                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-primary mt-2">Titles</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-primary mt-2">Active Titles</span>
                   </div>
                   <div className="flex flex-col">
                     <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">PRO</span>
@@ -127,11 +129,11 @@ export default function RootHome() {
             </CardBody>
           </Card>
 
-          {/* Muxio - Audio Architecture */}
+          {/* Muxio - Cinematic Soundscape */}
           <Card
             as={NextLink}
             href="/muxio"
-            className="group relative min-h-[400px] md:min-h-[520px] border-none bg-transparent overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl dark:shadow-none"
+            className="group relative min-h-[420px] md:min-h-[540px] border-none bg-transparent overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl dark:shadow-none"
           >
             <div className="absolute inset-0 bg-white/80 dark:bg-white/[0.02] backdrop-blur-2xl border border-black/5 dark:border-white/10 group-hover:bg-secondary/5 group-hover:border-secondary/30 transition-all duration-500" />
 
@@ -145,11 +147,13 @@ export default function RootHome() {
 
               <div className="space-y-4 text-left">
                 <div className="inline-flex px-4 py-1.5 rounded-full bg-secondary/10 dark:bg-secondary/20 border border-secondary/20 backdrop-blur-md">
-                  <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-secondary-600 dark:text-secondary-400">Hi-Fi Audio</span>
+                  <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-secondary-600 dark:text-secondary-400">Cinematic Soundscape</span>
                 </div>
-                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.9] group-hover:-skew-x-1 transition-transform duration-500 break-words">Muxio</h2>
+                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.85] group-hover:-skew-x-1 transition-transform duration-500">
+                  Muxi<br />o
+                </h2>
                 <p className="text-default-500 text-sm md:text-base font-medium leading-relaxed max-w-[260px]">
-                  Pure high-fidelity sound. Engineered for immersion.
+                  Pure high-fidelity audio environment. Integrated with YouTube Pro for ad-free music.
                 </p>
               </div>
 
@@ -175,7 +179,7 @@ export default function RootHome() {
           <Card
             as={NextLink}
             href="/pluginstream"
-            className="group relative min-h-[400px] md:min-h-[520px] border-none bg-transparent overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl dark:shadow-none"
+            className="group relative min-h-[420px] md:min-h-[540px] border-none bg-transparent overflow-hidden rounded-[2.5rem] md:rounded-[3.5rem] shadow-xl dark:shadow-none"
           >
             <div className="absolute inset-0 bg-white/80 dark:bg-white/[0.02] backdrop-blur-2xl border border-black/5 dark:border-white/10 group-hover:bg-red-500/5 group-hover:border-red-500/30 transition-all duration-500" />
 
@@ -189,11 +193,13 @@ export default function RootHome() {
 
               <div className="space-y-4 text-left">
                 <div className="inline-flex px-4 py-1.5 rounded-full bg-red-500/10 dark:bg-red-500/20 border border-red-500/20 backdrop-blur-md">
-                  <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-red-600 dark:text-red-400">Cinema</span>
+                  <span className="text-[9px] md:text-xs font-black uppercase tracking-widest text-red-600 dark:text-red-400">Cinematic Engine</span>
                 </div>
-                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.9] group-hover:skew-x-1 transition-transform duration-500 break-words">PluginStream</h2>
+                <h2 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-[0.85] group-hover:skew-x-1 transition-transform duration-500">
+                  Plugin<br />Stream
+                </h2>
                 <p className="text-default-500 text-sm md:text-base font-medium leading-relaxed max-w-[260px]">
-                  100+ premium plugins for Netflix, Prime & more.
+                  The ultimate movie experience. 100+ Premium OTTs for Netflix, Prime, and beyond.
                 </p>
               </div>
 
@@ -201,11 +207,11 @@ export default function RootHome() {
                 <div className="flex gap-6 md:gap-10">
                   <div className="flex flex-col">
                     <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">100+</span>
-                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-red-500 mt-2">Plugins</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-red-500 mt-2">OTTs</span>
                   </div>
                   <div className="flex flex-col">
                     <span className="text-2xl md:text-4xl font-black italic text-foreground leading-none">4K</span>
-                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-purple-500 mt-2">UHD</span>
+                    <span className="text-[8px] md:text-[10px] uppercase tracking-widest font-black text-purple-500 mt-2">Ultra HD</span>
                   </div>
                 </div>
                 <div className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 rounded-[1.2rem] bg-foreground text-background flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-all duration-500 shadow-xl group-hover:scale-105">
