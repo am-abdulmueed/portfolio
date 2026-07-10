@@ -1,1 +1,0 @@
-tum ek kaam kaor ka tum jasa kaa "is website ka ander ek page ha jasa kaaa "Pluginsstream" tum is ko html ma,css,js ma bana doo root per ek folder bana do tum "Html-web" ka name saa bana kar tum is ko html ka ander bana doo jasa kaa page ready haa same wasa hii bana do pluginsstream ka or image style sab kuch same login resue karo ui/ux all sab ka saba
