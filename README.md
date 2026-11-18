@@ -1,78 +1,44 @@
-# SimpMusic Web
+<div align="center">
 
-The official landing page for SimpMusic - Muxio: Discover, trend & stream from top platforms.
+# ⚡ Modern Developer Portfolio
 
-## Landing Page
+**A modern, high-performance portfolio website built with Next.js 14 and Tailwind CSS.**  
+*Featuring immersive Framer Motion animations, glassmorphism UI, dynamic theme switching, and a real-time PDF resume generator.*
 
-This repository contains the official website for SimpMusic, featuring:
+[![Live Demo](https://img.shields.io/badge/Live-Website-success?style=for-the-badge&logo=vercel)](https://am-abdulmueed.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38BDF8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer-Motion-EF4444?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
 
-- App overview and features
-- Download links for all supported platforms
-- Screenshots and mockups
-- Documentation and support information
-
-## Live Website
-
-Visit the official SimpMusic website: [simpmusic.org](https://simpmusic.org)
-
-## Download SimpMusic
-
-Get SimpMusic for Android: [Download](https://simpmusic.org/download)
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to submit issues and enhancement requests.
-
-## 📄 License
-
-This project is open source and available under the MIT License.
+</div>
 
 ---
 
-**Note**: This is the landing page repository. For the main SimpMusic app, visit [SimpMusic](https://github.com/am-abdulmueed/SimpMusic).
+## ✨ Key Features
 
- ## Support & Donations 
- #### Special thanks to all supporter ❤️    
- <div align="left"> 
- <a href="https://simpmusic.org/"><img alt="Visit the website" height="50" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/documentation/website_vector.svg"></a> &nbsp;        
-<a href="https://discord.gg/Rq5tWVM9Hg"><img alt="Discord Server" height="50" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg"></a> &nbsp;        
-<br> <a href="https://www.buymeacoffee.com/abdulmueed"><img alt="Buy me a Coffee" height="50" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/buymeacoffee-singular_vector.svg"></a> &nbsp;        
-<a href="https://liberapay.com/maxrave/"><img alt="liberapay" height="50"        
-src="https://raw.githubusercontent.com/liberapay/liberapay.com/master/www/assets/liberapay/logo-v2_black-on-yellow.svg"></a> 
-</div>
-    
- ### MOMO or Vietnamese banking    
- <p float="left">        
- <img src="https://github.com/am-abdulmueed/SimpMusic/blob/dev/asset/52770992.jpg?raw=true" width="300"> 
- </p>
+* **🚀 Built with Next.js 14:** Leveraging App Router and server-side optimization for blazing-fast performance and SEO.
+* **🎨 Glassmorphism & Modern UI:** Crafted with Tailwind CSS, bringing sleek translucent cards, gradients, and modern aesthetics.
+* **✨ Immersive Animations:** Powered by **Framer Motion** for smooth page transitions, scroll reveals, and interactive micro-interactions.
+* **🌓 Dynamic Theme Switching:** Seamlessly switch between **Dark**, **Light**, and a specialized **Eye-Care** mode for comfortable reading.
+* **📄 Real-Time PDF Resume Generator:** Interactive resume viewer with an integrated feature to download or generate PDFs dynamically on the fly.
+* **📱 Fully Responsive:** Optimized layout ensuring a pixel-perfect experience across mobile phones, tablets, and desktops.
 
-## SimpMusic is sponsored by:
-<br />
-<a href="https://vercel.com/oss">
-  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
-</a>
-<br />
-<br />
-<a href="https://www.digitalocean.com/?refcode=d7f6eedfb9a9&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" width="300" alt="DigitalOcean Referral Badge" /></a>
-<br>
-<br>
-<a href="https://crowdin.com">
-<img src="https://support.crowdin.com/assets/logos/plate/png/crowdin-logo-with-plate.png" width="300"/>
-</a>
-<br>
-<a href="https://sentry.io">
-<img src="https://github.com/am-abdulmueed/SimpMusic/blob/dev/asset/sentry.svg?raw=true" width="300"/>
-</a>
-<br>
-<br>
+---
 
-Get a free $200 credit over 60 days on DigitalOcean: [GET NOW](https://www.digitalocean.com/?refcode=d7f6eedfb9a9&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+## 🛠️ Tech Stack
 
-Crowdin and Sentry both have a free enterprise plan for Open-source projects. Follow the URLs: 
-- [Open Source License Request Form | Crowdin](https://crowdin.com/page/open-source-project-setup-request)
-- [Sentry for Open Source | Sentry](https://sentry.io/for/open-source/)
+* **Framework:** Next.js 14 (React)
+* **Styling:** Tailwind CSS
+* **Animations:** Framer Motion
+* **Icons:** Lucide React / React Icons
+* **Deployment:** Vercel
 
-Check out the Vercel open-source program:
-- https://vercel.com/open-source-program
+---
 
-*This project is a part of SimpMusic.org Open-source project by me [am-abdulmueed](https://github.com/am-abdulmueed)*
+## 🚀 Getting Started Locally
+
+Agar aap is project ko apne local system par run karna chahte hain, toh in steps ko follow karein:
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/am-abdulmueed/portfolio.git](https://github.com/am-abdulmueed/portfolio.git)
