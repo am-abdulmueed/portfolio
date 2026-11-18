@@ -41,4 +41,4 @@ Agar aap is project ko apne local system par run karna chahte hain, toh in steps
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/am-abdulmueed/portfolio.git](https://github.com/am-abdulmueed/portfolio.git)
+   git clone https://github.com/am-abdulmueed/portfolio.git
